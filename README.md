@@ -1,14 +1,17 @@
-This is a readme file for the Coursework module for Group 24.
+# Software Engineering Methods (Group 24 - Coursework)
+This is a readme file for the Coursework module of Group 24.
 
- #TODO List
+- Master Build Status [![Build Status](https://travis-ci.org/AlexanderRacey/group24_coursework.svg?branch=master)](https://travis-ci.org/AlexanderRacey/group24_coursework) 
+
+# TODO List
 
 Alex: Complete Lab 2 for this coursework.
  
-Jonny: Create instruction set for commiting and pushing. 
+Jonny: Create instruction set for committing and pushing. 
 
-Ross: Fanny around with Docker files and create Code of Conduct.
+Ross: Check Docker files and create Code of Conduct.
 
- #Commit Template
+# Commit Template
 
 Commit: [number of commit]
 
