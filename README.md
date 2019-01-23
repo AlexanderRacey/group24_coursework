@@ -2,6 +2,8 @@
 This is a readme file for the Coursework module of Group 24.
 
 - Master Build Status [![Build Status](https://travis-ci.org/AlexanderRacey/group24_coursework.svg?branch=master)](https://travis-ci.org/AlexanderRacey/group24_coursework) 
+- License [![LICENSE](https://img.shields.io/github/license/AlexanderRacey/group24_coursework.svg?style=flat-square)](https://github.com/AlexanderRacey/group24_coursework/blob/master/LICENSE)
+- Release [![Releases](https://img.shields.io/github/release/AlexanderRacey/group24_coursework/all.svg?style=flat-square)](https://github.com/AlexanderRacey/group24_coursework/releases)
 
 # TODO List
 
