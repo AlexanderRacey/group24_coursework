@@ -8,7 +8,7 @@ License [![LICENSE](https://img.shields.io/github/license/AlexanderRacey/group24
 <br/>
 Release [![Releases](https://img.shields.io/github/release/AlexanderRacey/group24_coursework/all.svg?style=flat-square)](https://github.com/AlexanderRacey/group24_coursework/releases)
       
-####The team
+#### The team
 
 - **Ross Bell** - <i>Product Owner</i>
 - **Jonathan Binns** - <i>Scrum Master</i>
@@ -29,7 +29,7 @@ This projects' [backlog](https://github.com/AlexanderRacey/group24_coursework/pr
      Bug Fixes: [any bugs fixed, include file name/line]
      Notes: [any other thing that has been changed]
 
-######<i>You can also find the full project specification [here](https://github.com/kevin-chalmers/set08103/blob/master/assessment/README.md).</i>
+###### <i>You can also find the full project specification [here](https://github.com/kevin-chalmers/set08103/blob/master/assessment/README.md).</i>
 
 
 ## Code of Conduct
