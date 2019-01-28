@@ -34,6 +34,7 @@ Changes:
      how does commiting work when we're all working on it at the same time?
      
 #Code of Conduct:
+
 Inform all group memebers if there is any reason that you need to cancel a meeting at least 12hrs before the meeting.
 Do not fail to turn up to a meeting or a checkpoint meetup, unless for valid reason.
 Always contribute to meetings and to the deligated sections of the project.
