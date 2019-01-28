@@ -32,3 +32,9 @@ Changes:
      do we need a ui?
      do we need to generate actual documents for reports?
      how does commiting work when we're all working on it at the same time?
+     
+#Code of Conduct:
+Inform all group memebers if there is any reason that you need to cancel a meeting at least 12hrs before the meeting.
+Do not fail to turn up to a meeting or a checkpoint meetup, unless for valid reason.
+Always contribute to meetings and to the deligated sections of the project.
+Ask for help or ask if others need help in the  group, make sure that no one is struggling.
