@@ -1,5 +1,13 @@
 # Software Engineering Methods - Group 24
 
+Master Build Status [![Build Status](https://travis-ci.org/AlexanderRacey/group24_coursework.svg?branch=master)](https://travis-ci.org/AlexanderRacey/group24_coursework) 
+<br/>
+Develop Build Status [![Build Status](https://travis-ci.org/AlexanderRacey/group24_coursework.svg?branch=develop)](https://travis-ci.org/AlexanderRacey/group24_coursework)
+<br/>
+License [![LICENSE](https://img.shields.io/github/license/AlexanderRacey/group24_coursework.svg?style=flat-square)](https://github.com/AlexanderRacey/group24_coursework/blob/master/LICENSE)
+<br/>
+Release [![Releases](https://img.shields.io/github/release/AlexanderRacey/group24_coursework/all.svg?style=flat-square)](https://github.com/AlexanderRacey/group24_coursework/releases)
+      
 ####The team
 
 - **Ross Bell** - <i>Product Owner</i>
@@ -22,6 +30,15 @@ This projects' [backlog](https://github.com/AlexanderRacey/group24_coursework/pr
      Notes: [any other thing that has been changed]
 
 ######<i>You can also find the full project specification [here](https://github.com/kevin-chalmers/set08103/blob/master/assessment/README.md).</i>
+
+
+## Code of Conduct
+
+ - Inform all members if there is any reason that you need to cancel a meeting at least 12 hours before the meeting.
+ - Do not fail to turn up to a meeting or a checkpoint meet-up, unless for a valid reason.
+ - Always contribute to meetings and to the delegated sections of the project.
+ - Ask for help or ask if others need help in the  group, make sure that no one is struggling.
+ 
 
 ## Code Review
 
@@ -184,3 +201,5 @@ The final deliverable will be pulled automatically from your GitHub.  The final 
 - Kanban/Project Board being used.
 - Quality and coverage of unit tests.
 - Project requirements met.
+
+
