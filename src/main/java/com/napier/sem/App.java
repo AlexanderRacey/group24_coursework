@@ -12,6 +12,11 @@ public class App
         // Connect to the database
         app.connect();
 
+        // Get a random city from the database
+        City test_city = app.getCity(app.randomCityID());
+        // Print city to console
+        test_city.print();
+
         // Disconnect from the database
         app.disconnect();
     }
@@ -80,5 +85,51 @@ public class App
                 System.out.println("Error closing connection to database");
             }
         }
+    }
+
+    /**
+     *
+     */
+    public City getCity(int ID)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement statement = con.createStatement();
+            // Create string for SQL statement
+            String stringSelect =
+                    "SELECT Name, CountryCode, District, Population "
+                            + "FROM city "
+                            + "WHERE ID = " + ID;
+            // Execute SQL statement
+            ResultSet result_set = statement.executeQuery(stringSelect);
+            // Return new employee if valid.
+            // Check one is returned
+            if (result_set.next())
+            {
+                City city = new City();
+                city.name = result_set.getString("Name");
+                city.country_code = result_set.getString("CountryCode");
+                city.disctrict = result_set.getString("District");
+                city.population = result_set.getInt("Population");
+                return city;
+            }
+            else
+                return null;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get city details");
+            return null;
+        }
+    }
+
+    /**
+     * Random City ID Generator
+     */
+    public static int randomCityID(){
+        int id = (int)(Math.random()*((4079-1)+1))+1;
+        return id;
     }
 }
