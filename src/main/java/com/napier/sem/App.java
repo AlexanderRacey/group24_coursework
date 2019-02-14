@@ -1,5 +1,7 @@
 package com.napier.sem;
 
+import com.napier.sem.features.ListAllCountries;
+
 import java.sql.*;
 
 public class App
@@ -12,10 +14,29 @@ public class App
         // Connect to the database
         app.connect();
 
-        // Get a random city from the database
-        City test_city = app.getCity(app.randomCityID());
-        // Print city to console
-        test_city.print();
+        /**
+         * Lists all countries in the world by population
+         */
+        /*
+        ListAllCountries listAllCountries = new ListAllCountries();
+        listAllCountries.inTheWorld(app.connection);
+         */
+
+        /**
+         * Lists all countries in ASIA by population
+         */
+        /*
+        ListAllCountries listAllCountries = new ListAllCountries();
+        listAllCountries.onContinent("Asia", app.connection);
+         */
+
+        /**
+         * Lists all countries in WESTERN EUROPE by population
+         */
+        /*
+        ListAllCountries listAllCountries = new ListAllCountries();
+        listAllCountries.inRegion("Western Europe", app.connection);
+        */
 
         // Disconnect from the database
         app.disconnect();
@@ -24,7 +45,7 @@ public class App
     /**
      * Connection to MySQL database.
      */
-    private Connection con = null;
+    private Connection connection = null;
 
     /**
      * Connect to the MySQL database.
@@ -49,9 +70,9 @@ public class App
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(30000);
+                Thread.sleep(5000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                connection = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             }
@@ -72,12 +93,12 @@ public class App
      */
     public void disconnect()
     {
-        if (con != null)
+        if (connection != null)
         {
             try
             {
                 // Close connection
-                con.close();
+                connection.close();
                 System.out.println("Successfully disconnected");
             }
             catch (Exception e)
@@ -85,51 +106,5 @@ public class App
                 System.out.println("Error closing connection to database");
             }
         }
-    }
-
-    /**
-     *
-     */
-    public City getCity(int ID)
-    {
-        try
-        {
-            // Create an SQL statement
-            Statement statement = con.createStatement();
-            // Create string for SQL statement
-            String stringSelect =
-                    "SELECT Name, CountryCode, District, Population "
-                            + "FROM city "
-                            + "WHERE ID = " + ID;
-            // Execute SQL statement
-            ResultSet result_set = statement.executeQuery(stringSelect);
-            // Return new employee if valid.
-            // Check one is returned
-            if (result_set.next())
-            {
-                City city = new City();
-                city.name = result_set.getString("Name");
-                city.country_code = result_set.getString("CountryCode");
-                city.disctrict = result_set.getString("District");
-                city.population = result_set.getInt("Population");
-                return city;
-            }
-            else
-                return null;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get city details");
-            return null;
-        }
-    }
-
-    /**
-     * Random City ID Generator
-     */
-    public static int randomCityID(){
-        int id = (int)(Math.random()*((4079-1)+1))+1;
-        return id;
     }
 }
