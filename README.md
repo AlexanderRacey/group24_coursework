@@ -202,4 +202,9 @@ The final deliverable will be pulled automatically from your GitHub.  The final 
 - Quality and coverage of unit tests.
 - Project requirements met.
 
-
+### Running Instructions
+-Maven compile
+-Maven Package
+-Run button
+-clic on app thing
+-delete containers if not working 
