@@ -18,14 +18,14 @@ public class App
          * Lists all cities in the world by population
          */
 
-        /*
-        ListAllCities listAllCities = new ListAllCities();
-        ListAllCities.citiesInWorld(app.connection);
-        */
+
+        ListAllCities listAllCitiesWorld = new ListAllCities();
+        listAllCitiesWorld.citiesInWorld(app.connection);
+
 
         /*
-        ListAllCities listAllCities = new ListAllCities();
-        ListAllCities.citiesContinent("Asia", app.connection);
+        ListAllCities listAllCitiesContinent = new ListAllCities();
+        listAllCitiesContinent.citiesContinent("Asia", app.connection);
         */
 
         // Disconnect from the database

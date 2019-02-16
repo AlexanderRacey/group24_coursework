@@ -24,7 +24,7 @@ public class ListAllCities
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
-                            + "FROM City "
+                            + "FROM city "
                             + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
@@ -46,7 +46,7 @@ public class ListAllCities
     }
 
     /**
-     * Request 2 - List all cities in a continent by order of size
+     * Request 8 - List all cities in a continent by order of size
      */
 
     public void citiesContinent(String continent, Connection connection)
@@ -61,7 +61,7 @@ public class ListAllCities
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
-                            + "FROM City "
+                            + "FROM city "
                             + "WHERE Continent = '" + continent + "'"
                             + "ORDER BY Population DESC";
             // Execute SQL statement
