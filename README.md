@@ -208,3 +208,7 @@ The final deliverable will be pulled automatically from your GitHub.  The final 
 - Run button
 - Click on app thing
 - Delete containers if not working 
+
+#### UI Design 
+- https://tinyurl.com/UIdesignGroup24
+- Open this, each number will be an option for the user to enter, etc
