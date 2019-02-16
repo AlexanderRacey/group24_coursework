@@ -16,18 +16,19 @@ public class App
 
 
          // Lists all capital cities in the world by population
+        /*
         ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
         listAllCapitalCities.inTheWorld(app.connection);
-
+        */
 
         /**
          * Lists all Capital Cities in ASIA by population
-         */
+         **/
 
-        /*
+
         ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.onContinent( "AFG", app.connection);
-        */
+        listAllCapitalCities.onContinent( "Asia", app.connection);
+
 
         // Disconnect from the database
         app.disconnect();
