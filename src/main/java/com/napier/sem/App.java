@@ -1,6 +1,6 @@
 package com.napier.sem;
 
-import com.napier.sem.features.ListAllCountries;
+import com.napier.sem.features.ListAllCapitalCities;
 
 import java.sql.*;
 
@@ -14,29 +14,14 @@ public class App
         // Connect to the database
         app.connect();
 
-        /**
-         * Lists all countries in the world by population
-         */
-        /*
-        ListAllCountries listAllCountries = new ListAllCountries();
-        listAllCountries.inTheWorld(app.connection);
-         */
 
         /**
-         * Lists all countries in ASIA by population
+         * Lists all Capital Cities in ASIA by population
          */
 
-        ListAllCountries listAllCountries = new ListAllCountries();
-        listAllCountries.onContinent("Asia", app.connection);
+        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
+        listAllCapitalCities.onContinent( "Asia", app.connection);
 
-
-        /**
-         * Lists all countries in WESTERN EUROPE by population
-         */
-        /*
-        ListAllCountries listAllCountries = new ListAllCountries();
-        listAllCountries.inRegion("Western Europe", app.connection);
-        */
 
         // Disconnect from the database
         app.disconnect();
