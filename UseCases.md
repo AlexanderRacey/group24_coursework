@@ -85,40 +85,55 @@ N/A
 ####Schedule
 Due: Release 1.0.
 
-## Use Case 3 - 
+## Use Case 3 - Display the population of people living in cities and the population of people not living in cities for a given continent, region and country
 
 ### Characteristic Information
 
 #### Goal in Context
+As an Analyst I want to see total, urban and rural population of a continent, region or country so I can to produce a report. 
 
 #### Scope
+Company
 
 ####Level
+Primary Task
 
 ####Preconditions
+Knowing which, continent, region or country
+Having a database with relevant data
 
 ####Success End Condition
+The number of people who live in cities, the number of people who dont live in cities are displayed
 
 ####Failed End Condition
+The data isn't displayed
 
 ####Primary Actor
+Analyst
 
 ####Trigger
+Request is given for the population of a place in cities and not in cities
 
 ####Main Success Scenario
-    1
+1. Request is given for the information
+2. The place that data is needed for is input into the program
+3. The information is displayed
     
 ####Extensions
+1. The data is stored in a .txt file for analysis
 
 ####Sub-Variations
+N/A
 
 ####Schedule
+Due: Release 1.0.
 
 ## Use Case 4 - 
 
 ### Characteristic Information
 
 #### Goal in Context
+
 
 #### Scope
 
