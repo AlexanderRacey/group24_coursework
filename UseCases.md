@@ -42,34 +42,48 @@ N/A
 ####Schedule
 Due: Release 1.0.
 
-## Use Case 2 - 
+## Use Case 2 - The population of the world, a continent, a region, a country, a district, a city should be accessible
 
 ### Characteristic Information
 
 #### Goal in Context
+As a member of GlobalStat I need to access the population of the world, continent, region, country, district or city to be able to analyse it
 
 #### Scope
+Company
 
 ####Level
+Primary Task
 
 ####Preconditions
+Database contains related information.    
+We know what the user wants to get population data for.
 
 ####Success End Condition
+The population data of a given place is available to look at
 
 ####Failed End Condition
+The population data isn't displayed
 
 ####Primary Actor
+GlobalStat
 
 ####Trigger
+A request for the information is sent to GlobalStat
 
 ####Main Success Scenario
-    1
+1. Someone requests population data for a certain place
+2. The place is entered into the program
+3. Population data is retrieved
     
 ####Extensions
+1. Data is sent to a .txt file to be analysed
 
 ####Sub-Variations
+N/A
 
 ####Schedule
+Due: Release 1.0.
 
 ## Use Case 3 - 
 
