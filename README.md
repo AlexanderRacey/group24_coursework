@@ -103,13 +103,13 @@ The aim of this code review is to check that task management is set-up and that 
 
 The following must be in place:
 
-- [ ] Issues being used on GitHub.
-- [ ] Tasks defined as user stories.
-- [ ] Project integrated with Zube.io.
-- [ ] Kanban/Project Board being used.
-- [ ] Sprint Boards being used.
-- [ ] Full use cases defined.
-- [ ] Use case diagram created.
+- [x] Issues being used on GitHub.
+- [x] Tasks defined as user stories.
+- [x] Project integrated with Zube.io.
+- [x] Kanban/Project Board being used.
+- [x] Sprint Boards being used.
+- [x] Full use cases defined.
+- [x] Use case diagram created.
 
 #### Submission 2 Criteria 
 
