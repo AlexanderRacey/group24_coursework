@@ -128,35 +128,48 @@ N/A
 ####Schedule
 Due: Release 1.0.
 
-## Use Case 4 - 
+## Use Case 4 - Display all the capital cities in the world, a continent or a region based on population from largest to smallest
 
 ### Characteristic Information
 
 #### Goal in Context
-
+As an Analyst I want to view the population for capital cities worldwide, continental or regional, so I can produce a ranking 
 
 #### Scope
+Company
 
 ####Level
+Primary Task
 
 ####Preconditions
+We know the continent or region         
+The database has relevant information
 
 ####Success End Condition
+A list of capital cities is displayed
 
 ####Failed End Condition
+The required list isn't displayed
 
 ####Primary Actor
+Analyst
 
 ####Trigger
+A request is sent to an analyst
 
 ####Main Success Scenario
-    1
+1. A request is sent to the analyst
+2. Analyst inputs the place into the program
+3. The relevant information is displayed
     
 ####Extensions
+1. The information is stored ina .txt file to be analysed
 
 ####Sub-Variations
+N/A
 
 ####Schedule
+Due: Release 1.0.
 
 ## Use Case 5 - 
 
