@@ -171,118 +171,221 @@ N/A
 ####Schedule
 Due: Release 1.0.
 
-## Use Case 5 - 
+## Use Case 5 - Display the top n populated capital cities in the world, a continent or a region
 
 ### Characteristic Information
 
 #### Goal in Context
+As an Analyst I want to view the top n capital cities populations worldwide, continental or regional, in descending order so that I can easily inspect trends
 
 #### Scope
+Company
 
 ####Level
+Primary Task
 
 ####Preconditions
+We know the place to take capital cities from
+We know how many capital cities are to be displayed
+the database has relevant data
 
 ####Success End Condition
+The top n populated capital cities in a place are displayed
 
 ####Failed End Condition
+the correct number of capital cities and their populations aren't displayed
 
 ####Primary Actor
+Analyst
 
 ####Trigger
+A request is sent to an analyst
 
 ####Main Success Scenario
-    1
+1. An analyst receives a request
+2. They type in how many capital cities they want to display and the place they want to take the cities from
+3. The cities and their population data is displayed
     
 ####Extensions
+1. The data is stored in a .txt for analysis
 
 ####Sub-Variations
+N/A
 
 ####Schedule
+Due: Release 1.0.
 
-## Use Case 6 - 
+## Use Case 6 - Display all the cities in the world, a continent, a region, a country or a district by population largest to smallest
 
 ### Characteristic Information
 
 #### Goal in Context
+As an Analyst I want to view all cities worldwide, continental, regional, country-wide or from a specific country district, in descending order based on their population so that I can easily inspect population trends.
 
 #### Scope
+Company
 
 ####Level
+Primary Task
 
 ####Preconditions
+Know which place to view the cities from 
+Have the relevant data in the database
 
 ####Success End Condition
+The list of cities in a specified place is displayed
 
 ####Failed End Condition
+the list of cities for a specified place is not displayed correctly
 
 ####Primary Actor
+Analyst
 
 ####Trigger
+An analyst receives a request
 
 ####Main Success Scenario
-    1
+1. An analyst receives a request
+2. The place is entered into the program
+3. All the cities are displayed
     
 ####Extensions
+1. The cities are saved in  a .txt file so trends can be inspected easily
 
 ####Sub-Variations
+N/A
 
 ####Schedule
+Due: Release 1.0.
 
-## Use Case 7 - 
+## Use Case 7 - Display the top n, where n is provided by the user, populated cities in the world, a continent, a region, a country or a district  
 
 ### Characteristic Information
 
 #### Goal in Context
+As an Analyst I want to view a specific number of cities worldwide, continental, regional, country-wide or from a specific district, in descending order based on their population so that I can easily inspect population trends.
 
 #### Scope
+Company
 
 ####Level
+Primary Task
 
 ####Preconditions
+Know how many cities need to be displayed
+Know where the cities to be displayed are from 
+Have a relevant database
 
 ####Success End Condition
+The top n populated cities are displayed for a specific place
 
 ####Failed End Condition
+The correct cities are not displayed
 
 ####Primary Actor
+Analyst
 
 ####Trigger
+A request is sent to an analyst
 
 ####Main Success Scenario
-    1
+1. A request is sent to an analyst
+2. The number of cities and the place where the cities are from is entered into the program
+3. The cities are displayed in  the correct order
     
 ####Extensions
+1. The returned cities could be added to a .txt file for analysis
 
 ####Sub-Variations
+N/A
 
 ####Schedule
+Due: Release 1.0.
 
-## Use Case 8 - 
+## Use Case 8 - Display the top n, where N is defined by the user, populated countries in the world, a continent or a region.
 
 ### Characteristic Information
 
 #### Goal in Context
+As an Analyst I want to see the population for a specified amount of countries worldwide, continental or regional, based on their population so that I can create a ranking. 
 
 #### Scope
+Company
 
 ####Level
+Primary Task
 
 ####Preconditions
+Knowing how many countries to display
+Knowing where the countries to be displayed are from
+Having the relevant data
 
 ####Success End Condition
+The correct countries are displayed
 
 ####Failed End Condition
+The correct number, or the correct countries are not displayed
 
 ####Primary Actor
+Analyst
 
 ####Trigger
+Analyst receives a request
 
 ####Main Success Scenario
-    1
+1. Analyst receives a request
+2. Analyst enters the number and the places where the countries are to be taken from
+3. The correct countries are  to be displayed
     
 ####Extensions
+1. The countries are displayed in a .txt to be analysed
 
 ####Sub-Variations
+N/A 
 
 ####Schedule
+Due: Release 1.0.
+
+## Use Case 9 - Display all the counries worldwide, per continent, or per region by population from largest to smallest
+
+### Characteristic Information
+
+#### Goal in Context
+ As an Analyst I want to view all countries worldwide, continental or regional, in descending order based on their population so that I can easily inspect population trends. 
+
+#### Scope
+Company
+
+####Level
+Primary Task
+
+####Preconditions
+Know where the countries to be selected are from
+Have the relevant data
+
+####Success End Condition
+The correct countries are displayed in the correct order
+
+####Failed End Condition
+The correct countries are displayed in the wrong order or the incorrect countries are displayed
+
+####Primary Actor
+Analyst
+
+####Trigger
+Analyst receives a request
+
+####Main Success Scenario
+1. Analyst receives a request
+2. Analyst enters the place the countries are to be taken from
+3. The countries are displayed
+    
+####Extensions
+1. The countries displayed are written to a .txt for analysis
+
+####Sub-Variations
+N/A
+
+####Schedule
+Due: Release 1.0.
+Due: Release 1.0.
