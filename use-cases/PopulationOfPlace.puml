@@ -1,0 +1,21 @@
+@startuml
+
+actor HR as "Global Stat"
+
+rectangle Database
+
+rectangle "Language Data" {
+    usecase UC4 as "Get population of the world,
+    a continent, a region,
+    a country, a district
+    or a city"
+
+    usecase UCa as "Print Population"
+
+    HR - UC4
+    UC4 ..> UCa : include
+    UC4 - Database
+
+}
+
+@enduml
