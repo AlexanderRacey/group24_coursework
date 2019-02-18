@@ -62,3 +62,7 @@
 **DUE DATE**: *date or release of deployment*
 
 *any other schedule/staffing information you need*
+
+## DIAGRAM
+
+*PNG placed here*

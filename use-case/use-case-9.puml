@@ -1,0 +1,19 @@
+@startuml
+
+actor A1 as "Employee"
+
+database World
+
+rectangle "Information System" {
+
+    usecase UC9 as "Get Language Trends
+    Worldwide"
+
+    usecase UC9a as "Produce report"
+
+    A1 - UC9
+    UC9 ..> UC9a : output
+    UC9 <-> World
+}
+
+@enduml
