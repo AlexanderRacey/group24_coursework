@@ -1,24 +1,13 @@
 package com.napier.sem;
 
+import com.napier.sem.features.*;
 import java.sql.*;
 
 public class App
 {
     public static void main(String[] args)
     {
-        // Create App instance
-        App app = new App();
-
-        // Connect to the database
-        app.connect();
-
-        // Get a random city from the database
-        City test_city = app.getCity(app.randomCityID());
-        // Print city to console
-        test_city.print();
-
-        // Disconnect from the database
-        app.disconnect();
+        // Test your feature here
     }
 
     /**
