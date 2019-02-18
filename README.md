@@ -23,6 +23,8 @@ The organisation has provided an SQL database to work from available [here](http
 
 This projects' [backlog](https://github.com/AlexanderRacey/group24_coursework/projects/1#column-4270590) is being recorded under a Kanban Board.
 
+##### *You find the USE CASES [here](./use-case)*
+
 ### Commit Template
      Changes: [brief description]
      Added: [list of anything added]
