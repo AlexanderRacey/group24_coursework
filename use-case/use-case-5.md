@@ -48,3 +48,7 @@ None.
 ## SCHEDULE
 
 **DUE DATE**: Release 1.1
+
+## DIAGRAM
+
+![UC1](use-case-diagrams/use-case-5.png)

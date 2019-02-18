@@ -1,0 +1,32 @@
+@startuml
+
+actor A1 as "Analyst"
+
+database World
+
+rectangle "Input" {
+
+usecase spread as "Ranking Spread"
+
+usecase region as "Region"
+
+spread .. region
+
+A1 --> spread
+}
+
+rectangle "Information System" {
+
+    usecase UC2 as "Get specified
+    spread of
+    countries by region"
+
+    usecase UC2a as "Produce ranking"
+
+    spread - UC2
+    region - UC2
+    UC2 ..> UC2a : output
+    UC2 <-> World
+}
+
+@enduml
