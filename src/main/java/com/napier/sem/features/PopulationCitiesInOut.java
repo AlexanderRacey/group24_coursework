@@ -15,18 +15,19 @@ public class PopulationCitiesInOut {
      * @param connection - Connection to the opened database
      */
 
-    public void inEachContinent(Connection connection)
+    public void inEachContinent(String continent, Connection connection)
     {
-        System.out.println("City    |    Population");
+        System.out.println("Continent    |    Population Inside Cities    |    Population Outside Cities");
         try
         {
             // Create an SQL statement
             Statement statement = connection.createStatement();
-            // Create string for SQL statement
+            // Create strings for SQL statements
             String stringSelect =
-                    "SELECT `Name`, `Population`"
+                    "SELECT (`Continent`, `Population` FROM country) AS PopOutCities"
                             + "FROM country "
-                            + "ORDER BY Population DESC";
+                            + "WHERE Continent = '" + continent + "'"
+                            + "GROUP BY Continent";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
             // Return new country and population table if valid.
@@ -34,9 +35,9 @@ public class PopulationCitiesInOut {
             while (result_set.next())
             {
                 Country country = new Country();
-                country.name = result_set.getString("Name");
-                country.population = result_set.getInt("Population");
-                System.out.println(country.name + "   |   " + country.population);
+                country.continent = result_set.getString("Continent");
+                country.population = result_set.getInt("Population Inside Cities");
+                System.out.println(country.continent + "   |   " + country.population);
             }
         }
         catch (Exception e)
@@ -54,7 +55,7 @@ public class PopulationCitiesInOut {
     public void inEachRegion(String continent, Connection connection)
     {
         System.out.println(" -- " + continent.toUpperCase() + " -- ");
-        System.out.println("Country    |    Population");
+        System.out.println("Region    |    Population Inside Cities    |    Population Outside Cities");
         try
         {
             // Create an SQL statement
@@ -86,33 +87,40 @@ public class PopulationCitiesInOut {
 
     /**
      * Request 25 - The population of people, people living in cities, and people not living in cities in each country.
-     * @param region - Region to analyze
      * @param connection - Connection to the opened database
      */
-    public void inEachCountry(String region, Connection connection)
+    public void inEachCountry(Connection connection)
     {
-        System.out.println(" -- " + region.toUpperCase() + " -- ");
-        System.out.println("Country    |    Population");
+        System.out.println("Country    |    Population Inside Cities    |    Population Outside Cities");
         try
         {
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Name`, `Population`"
-                            + "FROM country "
-                            + "WHERE Region = '" + region + "'"
-                            + "ORDER BY Population DESC";
+                    "SELECT `Population`"
+                            + "FROM city "
+                            + "GROUP BY CountryCode";
+                            //+ "INNER JOIN country ON city.CountryCode = country.Code"
+                            //+ "ORDER BY CountryCode ";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
             // Return new country and population table if valid.
             // Take countries one by one from the top
             while (result_set.next())
             {
+
                 Country country = new Country();
                 country.name = result_set.getString("Name");
-                country.population = result_set.getInt("Population");
+                country.population = result_set.getInt("Population Inside Cities");
                 System.out.println(country.name + "   |   " + country.population);
+
+                /*
+                City city = new City();
+                city.name = result_set.getString("Name");
+                city.population = result_set.getInt("Population");
+                System.out.println(city.name + "   |   " + city.population);
+                */
             }
         }
         catch (Exception e)

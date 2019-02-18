@@ -17,10 +17,16 @@ public class App
         /**
          * The population of people, people living in cities, and people not living in cities in each continent.
          */
-        /*
+
         PopulationCitiesInOut populationCitiesInOut = new PopulationCitiesInOut();
-        populationCitiesInOut.inEachContinent(app.connection);
-         */
+        populationCitiesInOut.inEachContinent("Asia", app.connection);
+        populationCitiesInOut.inEachContinent("Europe", app.connection);
+        populationCitiesInOut.inEachContinent("North America", app.connection);
+        populationCitiesInOut.inEachContinent("Africa", app.connection);
+        populationCitiesInOut.inEachContinent("Oceania", app.connection);
+        populationCitiesInOut.inEachContinent("Antarctica", app.connection);
+        populationCitiesInOut.inEachContinent("South America", app.connection);
+
 
         /**
          * The population of people, people living in cities, and people not living in cities in each region.
