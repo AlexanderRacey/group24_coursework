@@ -1,14 +1,15 @@
 @startuml
 
-actor HR as "HR Advisor"
+actor HR as "Analyst"
 
 rectangle Database
 
-rectangle "HR System" {
-    usecase UC4 as "Get salaries
-    by role"
+rectangle "World Data" {
+    usecase UC4 as "Get specific number of
+    cities populations in a specific
+    place in decending order"
 
-    usecase UCa as "Print salaries"
+    usecase UCa as "Print cities"
 
     HR - UC4
     UC4 ..> UCa : include
