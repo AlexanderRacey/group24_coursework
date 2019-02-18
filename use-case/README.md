@@ -1,6 +1,6 @@
 # USE CASE FORMATTING
 
-### <i>The following structure was used for the use cases presented in this section</i>
+### The following structure was used for the use cases presented in this section
 
 
 # USE CASE: <number> <the name should be the goal as a short active verb phrase>
