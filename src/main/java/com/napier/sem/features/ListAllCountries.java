@@ -1,6 +1,10 @@
 package com.napier.sem.features;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.napier.sem.*;
+
+import java.io.FileOutputStream;
 import java.sql.*;
 
 /**
@@ -16,6 +20,23 @@ public class ListAllCountries {
     public void inTheWorld(Connection connection)
     {
         System.out.println("Country    |    Population");
+
+        Document report = new Document();
+
+        try
+        {
+            PdfWriter.getInstance(report, new FileOutputStream("/reports/Countries-Worldwide-by-Population.pdf"));
+            report.open();
+            report.add(new Paragraph("Country    |    Population"));
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong with creating the report file");
+        }
+
+        Font font = FontFactory.getFont(FontFactory.COURIER, 10, BaseColor.BLACK);
+
         try
         {
             // Create an SQL statement
@@ -35,13 +56,17 @@ public class ListAllCountries {
                 country.name = result_set.getString("Name");
                 country.population = result_set.getInt("Population");
                 System.out.println(country.name + "   |   " + country.population);
+                Chunk line = new Chunk(country.name + "   |   " + country.population, font);
+                report.add(new Paragraph(line));
             }
         }
         catch (Exception e)
         {
+            report.close();
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        report.close();
     }
 
     /**

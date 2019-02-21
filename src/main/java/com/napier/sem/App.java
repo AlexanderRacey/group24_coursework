@@ -1,7 +1,6 @@
 package com.napier.sem;
 
-import com.napier.sem.features.ListAllCountries;
-
+import com.napier.sem.features.*;
 import java.sql.*;
 
 public class App
@@ -17,10 +16,9 @@ public class App
         /**
          * Lists all countries in the world by population
          */
-        /*
-        ListAllCountries listAllCountries = new ListAllCountries();
-        listAllCountries.inTheWorld(app.connection);
-         */
+         ListAllCountries listAllCountries = new ListAllCountries();
+         listAllCountries.inTheWorld(app.connection);
+
 
         /**
          * Lists all countries in ASIA by population
