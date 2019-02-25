@@ -23,10 +23,10 @@ public class App
         listAllCitiesWorld.citiesInWorld(app.connection);
         */
 
-        /*
+
         ListAllCities listAllCitiesContinent = new ListAllCities();
         listAllCitiesContinent.citiesContinent("Asia", app.connection);
-        */
+
 
         /*
         ListAllCities listAllCitiesCountry = new ListAllCities();

@@ -14,6 +14,7 @@ public class ListAllCities
      * Request 1 - All the countries in the world organised by largest population to smallest
      * @param connection - Connection to the opened database
      */
+    /*
     public void citiesInWorld(Connection connection)
     {
         System.out.println("City    |    Population");
@@ -44,11 +45,12 @@ public class ListAllCities
             System.out.println("Something went wrong");
         }
     }
+    */
 
     /**
      * Request 8 - List all cities in a continent by order of size
      */
-    /*
+
     public void citiesContinent(String continent, Connection connection)
     {
         System.out.println("-- " + continent.toUpperCase() + " --");
@@ -60,9 +62,9 @@ public class ListAllCities
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Name`, `Population`"
-                            + "FROM city "
-                            + "WHERE Continent = '" + continent + "'"
+                    "SELECT city.`Name`, city.`Population`"
+                            + "FROM country JOIN city on country.Code = city.CountryCode "
+                            + "WHERE  country.`Continent` = '" + continent + "'"
                             + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
@@ -82,12 +84,13 @@ public class ListAllCities
             System.out.println("Something went wrong");
         }
     }
-    */
+
 
     /**
      * Requirement 9 - List All Cities in Country
      */
 
+    /*
     public void citiesInCountry(String countryName, Connection connection)
     {
         System.out.println("-- " + countryName.toUpperCase() + " --");
@@ -135,6 +138,7 @@ public class ListAllCities
             System.out.println("Something went wrong");
         }
     }
+    */
 
 
 }
