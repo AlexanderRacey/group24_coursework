@@ -1,0 +1,27 @@
+@startuml
+
+actor A1 as "Analyst"
+
+database World
+
+rectangle "Input" {
+
+usecase region as "Region"
+
+A1 --> region
+}
+
+rectangle "Information System" {
+
+    usecase UC5 as "Get all capital cities
+    by population
+    from the specified region"
+
+    usecase UC5a as "Produce ranking"
+
+    region - UC5
+    UC5 ..> UC5a : output
+    UC5 <-> World
+}
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+
+actor A1 as "Employee"
+
+database World
+
+rectangle "Input" {
+usecase region as "Area"
+
+A1 --> region
+}
+
+rectangle "Information System" {
+
+    usecase UC8 as "Get population of
+    specified area"
+
+    usecase UC8a as "Produce report"
+
+    region - UC8
+    UC8 ..> UC8a : output
+    UC8 <-> World
+}
+
+@enduml
