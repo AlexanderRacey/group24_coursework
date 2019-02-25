@@ -1,0 +1,33 @@
+@startuml
+
+actor A1 as "Analyst"
+
+rectangle Database
+
+rectangle "Input" {
+
+usecase spread as "Ranking Spread"
+
+usecase region as "Region"
+
+spread .. region
+
+A1 --> spread
+}
+
+rectangle "Information System" {
+
+    usecase UC6 as "Get specified spread
+    of Capital Cities
+    by population
+    from specified region"
+
+    usecase UC6a as "Produce ranking"
+
+    spread - UC6
+    region - UC6
+    UC6 ..> UC6a : output
+    UC6 <-> Database
+}
+
+@enduml

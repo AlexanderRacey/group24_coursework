@@ -2,6 +2,8 @@ package com.napier.sem;
 
 import com.napier.sem.features.PopulationCitiesInOut;
 
+//import com.napier.sem.features.*;
+
 import java.sql.*;
 
 public class App
