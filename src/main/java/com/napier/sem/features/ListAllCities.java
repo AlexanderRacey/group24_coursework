@@ -48,7 +48,7 @@ public class ListAllCities
     /**
      * Request 8 - List all cities in a continent by order of size
      */
-
+    /*
     public void citiesContinent(String continent, Connection connection)
     {
         System.out.println("-- " + continent.toUpperCase() + " --");
@@ -73,6 +73,59 @@ public class ListAllCities
                 City city = new City();
                 city.name = result_set.getString("Name");
                 city.population = result_set.getInt("Population");
+                System.out.println(city.name + "   |   " + city.population);
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+    }
+    */
+
+    /**
+     * Requirement 9 - List All Cities in Country
+     */
+
+    public void citiesInCountry(String countryName, Connection connection)
+    {
+        System.out.println("-- " + countryName.toUpperCase() + " --");
+        System.out.println("City    |     Population");
+
+        try
+        {
+            // Create an SQL statement
+            Statement statement = connection.createStatement();
+
+            // Create string for SQL statement
+            String stringSelect1 =
+                    "SELECT `Code`"
+                            + "FROM country "
+                            + "WHERE Name = '" + countryName + "'";
+
+            // Execute SQL statement
+            ResultSet result_set1 = statement.executeQuery(stringSelect1);
+
+            String countryCode ="";
+
+            while (result_set1.next())
+            {
+                countryCode = result_set1.getString("Code");
+            }
+
+            String stringSelect2 = "SELECT `Name`, `Population`"
+                    + "FROM city "
+                    + "WHERE CountryCode = '" + countryCode +"'"
+                    + "ORDER BY Population DESC";
+
+            ResultSet result_set2 = statement.executeQuery(stringSelect2);
+
+            while (result_set2.next())
+            {
+                City city = new City();
+                city.name = result_set2.getString("Name");
+                city.population = result_set2.getInt("Population");
                 System.out.println(city.name + "   |   " + city.population);
             }
         }
