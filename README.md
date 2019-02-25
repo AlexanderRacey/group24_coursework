@@ -105,13 +105,13 @@ The aim of this code review is to check that task management is set-up and that 
 
 The following must be in place:
 
-- [ ] Issues being used on GitHub.
-- [ ] Tasks defined as user stories.
-- [ ] Project integrated with Zube.io.
-- [ ] Kanban/Project Board being used.
-- [ ] Sprint Boards being used.
-- [ ] Full use cases defined.
-- [ ] Use case diagram created.
+- [x] Issues being used on GitHub.
+- [x] Tasks defined as user stories.
+- [x] Project integrated with Zube.io.
+- [x] Kanban/Project Board being used.
+- [x] Sprint Boards being used.
+- [x] Full use cases defined.
+- [x] Use case diagram created.
 
 #### Submission 2 Criteria 
 
@@ -204,4 +204,13 @@ The final deliverable will be pulled automatically from your GitHub.  The final 
 - Quality and coverage of unit tests.
 - Project requirements met.
 
+#### Running Instructions
+- Maven compile
+- Maven Package
+- Run button
+- Click on app thing
+- Delete containers if not working 
 
+#### UI Design 
+- https://tinyurl.com/UIdesignGroup24
+- Open this, each number will be an option for the user to enter, etc
