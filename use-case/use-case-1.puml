@@ -1,0 +1,23 @@
+@startuml
+
+actor A1 as "Analyst"
+
+database World
+
+rectangle "Input" {
+
+    usecase region as "Region"
+    A1 -> region
+}
+
+rectangle "Information System" {
+    usecase UC1 as "Get countries by region"
+
+    usecase UC1a as "Produce report"
+
+    region - UC1
+    UC1 ..> UC1a : result
+    UC1 <-> World
+}
+
+@enduml
