@@ -23,15 +23,23 @@ public class App
         listAllCitiesWorld.citiesInWorld(app.connection);
         */
 
-
+        /*
         ListAllCities listAllCitiesContinent = new ListAllCities();
         listAllCitiesContinent.citiesContinent("Asia", app.connection);
-
+        */
 
         /*
         ListAllCities listAllCitiesCountry = new ListAllCities();
         listAllCitiesCountry.citiesInCountry("France", app.connection);
         */
+
+        /*
+        ListAllCities listAllCitiesRegion = new ListAllCities();
+        listAllCitiesRegion.citiesInRegion("North America", app.connection);
+        */
+
+        ListAllCities listAllCitiesDistrict = new ListAllCities();
+        listAllCitiesDistrict.citiesInDistrict("Scotland",app.connection);
 
         // Disconnect from the database
         app.disconnect();
