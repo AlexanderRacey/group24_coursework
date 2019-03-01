@@ -17,8 +17,9 @@ public class App
         // Connect to the database
         app.connect();
 
-
-         // Lists all capital cities in the world by population
+        /**
+         * Lists all capital cities in the world by population
+         **/
         /*
         ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
         listAllCapitalCities.inTheWorld(app.connection);
@@ -28,10 +29,16 @@ public class App
          * Lists all Capital Cities in ASIA by population
          **/
 
-
+        /*
         ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
         listAllCapitalCities.onContinent( "Asia", app.connection);
+        */
 
+        /**
+         * Lists all Capital Cities in Caribbean by population
+         **/
+        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
+        listAllCapitalCities.inRegion( "Caribbean", app.connection);
 
         // Disconnect from the database
         app.disconnect();
