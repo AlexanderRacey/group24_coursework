@@ -214,6 +214,48 @@ public class ListAllCities
         }
     }
 
+    /**
+     * Request 12 - top n world
+     */
+
+    public void nCitiesInWorld(String number, Connection connection)
+    {
+        System.out.println("City    |    Population");
+        try
+        {
+            // Create an SQL statement
+            Statement statement = connection.createStatement();
+            // Create string for SQL statement
+            String stringSelect =
+                    "SELECT `Name`, `Population`"
+                            + "FROM city "
+                            + "ORDER BY Population DESC";
+            // Execute SQL statement
+            ResultSet result_set = statement.executeQuery(stringSelect);
+            // Return new city and population table if valid.
+            // Take cities one by one from the top
+
+            int num = Integer.parseInt(number);
+
+            int count =0;
+
+            while (result_set.next() && count<num)
+            {
+                City city = new City();
+                city.name = result_set.getString("Name");
+                city.population = result_set.getInt("Population");
+                System.out.println(city.name + "   |   " + city.population);
+                count++;
+            }
+
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+    }
 
 
 }

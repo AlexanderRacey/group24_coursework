@@ -34,7 +34,7 @@ public class App
 
         /*
         ListAllCities listAllCitiesCountry = new ListAllCities();
-        listAllCitiesCountry.citiesInCountry("France", app.connection);
+        listAllCitiesCountry.citiesInCountry("Costa Rica", app.connection);
         */
 
         /*
@@ -42,8 +42,13 @@ public class App
         listAllCitiesRegion.citiesInRegion("North America", app.connection);
         */
 
+        /*
         ListAllCities listAllCitiesDistrict = new ListAllCities();
         listAllCitiesDistrict.citiesInDistrict("Scotland",app.connection);
+        */
+
+        ListAllCities listNCitiesWorld = new ListAllCities();
+        listNCitiesWorld.nCitiesInWorld("5",app.connection);
 
         // Disconnect from the database
         app.disconnect();
