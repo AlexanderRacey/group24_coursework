@@ -99,8 +99,8 @@ public class PopulationCitiesInOut {
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT (`CountryCode`, `Population` FROM City GROUP BY CountryCode ORDER BY CountryCode AS PopCities)"
-                            + "(`Name`, `Population` FROM Country AS PopCountry)"
+                    "SELECT (`Population` FROM City GROUP BY CountryCode ORDER BY CountryCode AS PopIn)"
+                            + "((`Name`, `Population` FROM Country) - PopIn) AS PopOut)"
                             + "INNER JOIN City ON Country.Code = City.CountryCode";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
@@ -111,10 +111,10 @@ public class PopulationCitiesInOut {
                 Country country = new Country();
                 City city = new City();
                 country.name = result_set.getString("Name");
-                city.population = result_set.getInt("Population Inside Cities");
-                country.population = result_set.getInt("Population Outside Cities");
+                city.popIn = result_set.getInt("PopIn");
+                country.popOut = result_set.getInt("PopOut");
 
-                System.out.println(country.name + "   |   " + city.population + "    |    " + country.population);
+                System.out.println(country.name + "   |   " + city.popIn + "    |    " + country.popOut);
             }
         }
         catch (Exception e)
