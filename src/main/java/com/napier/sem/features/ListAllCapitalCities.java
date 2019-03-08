@@ -13,7 +13,7 @@ public class ListAllCapitalCities {
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT  city.`Name`, city.`CountryCode`, city.`Population`"
+                    "SELECT  city.`Name`, country.`Name` AS `country`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE country.`Capital` = city.`ID`"
                             + "ORDER BY city.`Population` DESC";
@@ -24,10 +24,12 @@ public class ListAllCapitalCities {
             while (result_set.next()) {
                 City city = new City();
                 city.name = result_set.getString("Name");
-                city.country_code = result_set.getString("CountryCode");
                 city.population = result_set.getInt("Population");
 
-                System.out.println(city.name + "   |   " + city.country_code + "   |   " + city.population);
+                Country country = new Country();
+                country.name = result_set.getString("country");
+
+                System.out.println(city.name + "   |   " + country.name + "   |   " + city.population);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -48,7 +50,7 @@ public class ListAllCapitalCities {
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT  city.`Name`, city.`CountryCode`, city.`Population`"
+                    "SELECT  city.`Name`, country.`Name` AS `country`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE country.`Capital` = city.`ID` AND country.`Continent` = '" + continent + "'"
                             + "ORDER BY city.`Population` DESC";
@@ -60,10 +62,12 @@ public class ListAllCapitalCities {
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
-                city.country_code = result_set.getString("CountryCode");
                 city.population = result_set.getInt("Population");
 
-                System.out.println(city.name + "   |   " + city.country_code + "   |   " + city.population);
+                Country country = new Country();
+                country.name = result_set.getString("country");
+
+                System.out.println(city.name + "   |   " + country.name  + "   |   " + city.population);
             }
         }
         catch (Exception e)
@@ -84,7 +88,7 @@ public class ListAllCapitalCities {
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT  city.`Name`, city.`CountryCode`, city.`Population`"
+                    "SELECT  city.`Name`, country.`Name` AS `country`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE country.`Capital` = city.`ID` AND country.`Region` = '" + region + "'"
                             + "ORDER BY city.`Population` DESC";
@@ -96,10 +100,12 @@ public class ListAllCapitalCities {
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
-                city.country_code = result_set.getString("CountryCode");
                 city.population = result_set.getInt("Population");
 
-                System.out.println(city.name + "   |   " + city.country_code + "   |   " + city.population);
+                Country country = new Country();
+                country.name = result_set.getString("country");
+
+                System.out.println(city.name + "   |   " + country.name  + "   |   " + city.population);
             }
         }
         catch (Exception e)
