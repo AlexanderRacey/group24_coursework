@@ -1,6 +1,5 @@
 package com.napier.sem;
 
-import com.napier.sem.features.ListAllCapitalCities;
 import com.napier.sem.features.*;
 
 
@@ -41,65 +40,78 @@ public class App
         listAllCapitalCities.inRegion( "Caribbean", app.connection);
         */
 
-        //7 - list all cities in world by pop
+        /**
+         * 7 - list all cities in world by pop
+         **/
         /*
         ListAllCities listAllCitiesWorld = new ListAllCities();
         listAllCitiesWorld.citiesInWorld(app.connection);
         */
 
-        //8 - list all cities in entered continent by pop
+        /**
+         * 8 - list all cities in entered continent by pop
+         **/
         /*
         ListAllCities listAllCitiesContinent = new ListAllCities();
         listAllCitiesContinent.citiesContinent("Asia", app.connection);
         */
 
-        //9 - list all cities in country by pop
-        /*
+        /**
+         * 9 - list all cities in country by pop
+         **/
+
         ListAllCities listAllCitiesCountry = new ListAllCities();
         listAllCitiesCountry.citiesInCountry("France", app.connection);
-        */
 
-        //10 - list all cities in region by pop
-        /*
+        /**
+         * 10 - list all cities in region by pop
+         **/
+
         ListAllCities listAllCitiesRegion = new ListAllCities();
         listAllCitiesRegion.citiesInRegion("North America", app.connection);
-        */
 
-        //11 - list all cities in district by pop
-        /*
+        /**
+         * 11 - list all cities in district by pop
+         **/
+
         ListAllCities listAllCitiesDistrict = new ListAllCities();
         listAllCitiesDistrict.citiesInDistrict("Scotland",app.connection);
-        */
 
-        // list n cities world, user enters n, by pop
-        /*
+        /**
+         * list n cities world, user enters n, by pop
+         **/
+
         ListAllCities listNCitiesWorld = new ListAllCities();
         listNCitiesWorld.nCitiesInWorld("5",app.connection);
-        */
 
-        // list n cities continent, user enters n & continent, by pop
-        /*
+        /**
+         * list n cities continent, user enters n & continent, by pop
+         **/
+
         ListAllCities listNCitiesContinent = new ListAllCities();
         listNCitiesContinent.nCitiesContinent("Asia","5",app.connection);
-        */
 
-        // list n cities region, user enters n & region, by pop
-        /*
+        /**
+         * list n cities region, user enters n & region, by pop
+         **/
+
         ListAllCities listNCitiesRegion = new ListAllCities();
         listNCitiesRegion.nCitiesInRegion("North America","5",app.connection);
-        */
 
-        // list n cities country, user enters n & country, by pop
-        /*
+        /**
+         * list n cities country, user enters n & country, by pop
+         **/
+
         ListAllCities listNCitiesCountry = new ListAllCities();
         listNCitiesCountry.nCitiesInCountry("France","5",app.connection);
-        */
 
-        // list n cities district, user enters n & district, by pop
-        /*
+        /**
+         * list n cities district, user enters n & district, by pop
+         **/
+
         ListAllCities listNCitiesDistrict = new ListAllCities();
         listNCitiesDistrict.nCitiesInDistrict("England","5",app.connection);
-        */
+
 
         // Disconnect from the database
         app.disconnect();

@@ -53,11 +53,15 @@ public class ListAllCities
 
     public void citiesContinent(String continent, Connection connection)
     {
-        System.out.println("-- " + continent.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + continent.toUpperCase() + " --");
+            System.out.println("City    |     Population");
+
+            if(continent == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -91,11 +95,15 @@ public class ListAllCities
 
     public void citiesInRegion(String region, Connection connection)
     {
-        System.out.println("-- " + region.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + region.toUpperCase() + " --");
+            System.out.println("City    |     Population");
+
+            if(region == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -131,11 +139,14 @@ public class ListAllCities
 
     public void citiesInCountry(String countryName, Connection connection)
     {
-        System.out.println("-- " + countryName.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + countryName.toUpperCase() + " --");
+            System.out.println("City    |     Population");
+            if(countryName == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
@@ -183,10 +194,14 @@ public class ListAllCities
 
     public void citiesInDistrict(String district, Connection connection)
     {
-        System.out.println("-- " + district.toUpperCase() + " --");
-        System.out.println("City    |    Population");
         try
         {
+            System.out.println("-- " + district.toUpperCase() + " --");
+            System.out.println("City    |    Population");
+            if(district == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -220,9 +235,13 @@ public class ListAllCities
 
     public void nCitiesInWorld(String number, Connection connection)
     {
-        System.out.println("City    |    Population");
         try
         {
+            System.out.println("City    |    Population");
+            if(number == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -263,11 +282,18 @@ public class ListAllCities
 
     public void nCitiesContinent(String continent, String number, Connection connection)
     {
-        System.out.println("-- " + continent.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + continent.toUpperCase() + " --");
+            System.out.println("City    |     Population");
+            if(number == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
+            if(continent == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -306,11 +332,18 @@ public class ListAllCities
 
     public void nCitiesInRegion(String region, String number, Connection connection)
     {
-        System.out.println("-- " + region.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + region.toUpperCase() + " --");
+            System.out.println("City    |     Population");
+            if(number == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
+            if(region == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -348,11 +381,19 @@ public class ListAllCities
      */
     public void nCitiesInCountry(String countryName, String number, Connection connection)
     {
-        System.out.println("-- " + countryName.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + countryName.toUpperCase() + " --");
+            System.out.println("City    |     Population");
+            if(number == null)
+            {
+            throw new NullPointerException("Continent is null");
+            }
+            if(countryName == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
+            //
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
@@ -403,10 +444,18 @@ public class ListAllCities
      */
     public void nCitiesInDistrict(String district,String number, Connection connection)
     {
-        System.out.println("-- " + district.toUpperCase() + " --");
-        System.out.println("City    |    Population");
         try
         {
+            System.out.println("-- " + district.toUpperCase() + " --");
+            System.out.println("City    |    Population");
+            if(number == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
+            if(district == null)
+            {
+                throw new NullPointerException("Continent is null");
+            }
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
