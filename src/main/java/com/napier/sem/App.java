@@ -27,8 +27,8 @@ public class App
          * Lists all capital cities in the world by population
          **/
 
-        //ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        //listAllCapitalCities.inTheWorld(app.connection);
+        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
+        listAllCapitalCities.inTheWorld(app.connection);
 
 
         /**
@@ -125,7 +125,7 @@ public class App
         try
         {
             // Load Database driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         }
         catch (ClassNotFoundException e)
         {
