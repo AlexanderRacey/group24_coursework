@@ -13,8 +13,15 @@ public class App
         // Create App instance
         App app = new App();
 
-        // Connect to the database
-        app.connect("locahost:33060");
+        // Connect to database
+        if (args.length < 1)
+        {
+            app.connect("localhost:3306");
+        }
+        else
+        {
+            app.connect(args[0]);
+        }
 
         /**
          * Lists all capital cities in the world by population
