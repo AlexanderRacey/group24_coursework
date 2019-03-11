@@ -16,7 +16,7 @@ public class App
         // Connect to database
         if (args.length < 1)
         {
-            app.connect("localhost:3306");
+            app.connect("localhost:33060");
         }
         else
         {
@@ -125,7 +125,7 @@ public class App
         try
         {
             // Load Database driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
         }
         catch (ClassNotFoundException e)
         {
@@ -134,7 +134,7 @@ public class App
         }
 
         int retries = 20;
-        for (int i = 0; i < retries; ++i)
+        for (int i = 1; i <= retries; ++i)
         {
             System.out.println("Connecting to database...");
             try
