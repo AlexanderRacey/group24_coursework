@@ -10,6 +10,9 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# Generated PDF Reports
+*.pdf
+
 # Package Files #
 *.jar
 *.war
