@@ -19,10 +19,10 @@ public class App
         /**
          * Lists all capital cities in the world by population
          **/
-        /*
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inTheWorld(app.connection);
-        */
+
+        //ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
+        //listAllCapitalCities.inTheWorld(app.connection);
+
 
         /**
          * Lists all Capital Cities in ASIA by population
@@ -108,7 +108,7 @@ public class App
     /**
      * Connection to MySQL database.
      */
-    private Connection connection = null;
+    public Connection connection = null;
 
     /**
      * Connect to the MySQL database.
@@ -169,5 +169,46 @@ public class App
                 System.out.println("Error closing connection to database");
             }
         }
+    }
+
+    public Country getCountry(Connection connection, String code)
+    {
+        // Initialize country container
+        Country country = new Country();
+
+        try {
+            // Create an SQL statement
+            Statement statement = connection.createStatement();
+            // Create string for SQL statement
+            String stringSelect =
+                    "SELECT  *"
+                            + "FROM country"
+                            + "WHERE country.`Code` = '" + code + "'";
+            // Execute SQL statement
+            ResultSet result_set = statement.executeQuery(stringSelect);
+            // Return new country and population table if valid.
+            // Take countries one by one from the top
+            while (result_set.next()) {
+                country = new Country(          result_set.getString("Code"),
+                        result_set.getString("Name"),
+                        result_set.getString("Continent"),
+                        result_set.getString("Region"),
+                        result_set.getString("SurfaceArea"),
+                        result_set.getString("IndepYear"),
+                        result_set.getString("LifeExpectancy"),
+                        result_set.getString("GNP"),
+                        result_set.getString("GNPOLD"),
+                        result_set.getString("LocalName"),
+                        result_set.getString("GovernmentForm"),
+                        result_set.getString("HeadOfState"),
+                        result_set.getString("Capital"),
+                        result_set.getString("Code2")               );
+            }
+            return country;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+        return country;
     }
 }
