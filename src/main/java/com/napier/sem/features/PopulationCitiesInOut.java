@@ -23,22 +23,38 @@ public class PopulationCitiesInOut {
         {
             // Create an SQL statement
             Statement statement = connection.createStatement();
-            // Create strings for SQL statements
-            String stringSelect =
-                    "SELECT (`Population` FROM city GROUP BY CountryCode) AS PopInCities"
-                            + "JOIN "
-                            + "WHERE Continent = '" + continent + "'"
-                            + "GROUP BY Continent";
+
+            // Create string for first SQL statement ( -- population inside cities in each continent -- )
+            String stringSelect1 =
+                    " SELECT country.Continent, SUM(city.Population) AS Population, city.Name "
+                            + " FROM country JOIN city ON country.Code "
+                            + " GROUP BY Continent, Name ";
+
             // Execute SQL statement
-            ResultSet result_set = statement.executeQuery(stringSelect);
-            // Return new country and population table if valid.
-            // Take countries one by one from the top
-            while (result_set.next())
+            ResultSet result_set1 = statement.executeQuery(stringSelect1);
+            String Continent = "";
+
+            while (result_set1.next())
             {
-                Country country = new Country();
-                country.continent = result_set.getString("Continent");
-                country.population = result_set.getInt("Population Inside Cities");
-                System.out.println(country.continent + "   |   " + country.population);
+                Continent = result_set1.getString("Continent");
+            }
+
+            // Create string for second SQL statement ( -- population inside cities in each continent -- )
+            String stringSelect2 =
+                    " SELECT DISTINCT(country.Continent) AS Continent, SUM(country.Population) AS Population "
+                            + " FROM country"
+                            + " GROUP BY Continent";
+
+            // Execute SQL statement
+            ResultSet result_set2 = statement.executeQuery(stringSelect2);
+
+            // Return new continent and population(of cities) table if valid.
+            while (result_set2.next())
+            {
+                City city = new City();
+                city.name = result_set2.getString("Name");
+                city.population = result_set2.getInt("Population");
+                System.out.println(city.name + "   |   " + city.population);
             }
         }
         catch (Exception e)
@@ -61,22 +77,38 @@ public class PopulationCitiesInOut {
         {
             // Create an SQL statement
             Statement statement = connection.createStatement();
-            // Create string for SQL statement
-            String stringSelect =
-                    "SELECT `Name`, `Population`"
-                            + "FROM country "
-                            + "WHERE Continent = '" + continent + "'"
-                            + "ORDER BY Population DESC";
+
+            // Create string for first SQL statement ( -- population inside cities in each continent -- )
+            String stringSelect1 =
+                    " SELECT country.Region, SUM(city.Population) AS Population, city.Name "
+                            + "FROM country JOIN city ON country.Code = city.CountryCode "
+                            + " GROUP BY Region, Name ";
+
             // Execute SQL statement
-            ResultSet result_set = statement.executeQuery(stringSelect);
-            // Return new country and population table if valid.
-            // Take countries one by one from the top
-            while (result_set.next())
+            ResultSet result_set1 = statement.executeQuery(stringSelect1);
+            String Region = "";
+
+            while (result_set1.next())
             {
-                Country country = new Country();
-                country.name = result_set.getString("Name");
-                country.population = result_set.getInt("Population");
-                System.out.println(country.name + "   |   " + country.population);
+                Region = result_set1.getString("Region");
+            }
+
+            // Create string for second SQL statement ( -- population inside cities in each continent -- )
+            String stringSelect2 =
+                    " SELECT  DISTINCT(country.Region) AS Region, SUM(country.Population) AS Population "
+                            + " FROM country "
+                            + " GROUP BY Region ";
+
+            // Execute SQL statement
+            ResultSet result_set2 = statement.executeQuery(stringSelect2);
+
+            // Return new region with cities and population(of cities) table if valid.
+            while (result_set2.next())
+            {
+                City city = new City();
+                city.name = result_set2.getString("Name");
+                city.population = result_set2.getInt("Population");
+                System.out.println(city.name + "   |   " + city.population);
             }
         }
         catch (Exception e)
@@ -97,24 +129,38 @@ public class PopulationCitiesInOut {
         {
             // Create an SQL statement
             Statement statement = connection.createStatement();
-            // Create string for SQL statement
-            String stringSelect =
-                    "SELECT (`Population` FROM City GROUP BY CountryCode ORDER BY CountryCode AS PopIn)"
-                            + "((`Name`, `Population` FROM Country) - PopIn) AS PopOut)"
-                            + "INNER JOIN City ON Country.Code = City.CountryCode";
-            // Execute SQL statement
-            ResultSet result_set = statement.executeQuery(stringSelect);
-            // Return new country and population table if valid.
-            // Take countries one by one from the top
-            while (result_set.next())
-            {
-                Country country = new Country();
-                City city = new City();
-                country.name = result_set.getString("Name");
-                city.popIn = result_set.getInt("PopIn");
-                country.popOut = result_set.getInt("PopOut");
 
-                System.out.println(country.name + "   |   " + city.popIn + "    |    " + country.popOut);
+            // Create string for first SQL statement ( -- population inside cities in each continent -- )
+            String stringSelect1 =
+                    " SELECT country.Name, SUM(city.Population) AS Population, city.Name AS cName" +
+                            " FROM country JOIN city ON country.Code = city.CountryCode " +
+                            " GROUP BY Name, cName ";
+
+            // Execute SQL statement
+            ResultSet result_set1 = statement.executeQuery(stringSelect1);
+            String Country = "";
+
+            while (result_set1.next())
+            {
+                Country = result_set1.getString("Country");
+            }
+
+            // Create string for second SQL statement ( -- population inside cities in each continent -- )
+            String stringSelect2 =
+                    " SELECT  DISTINCT(country.Name) AS Name, SUM(country.Population) AS Population "
+                            + " FROM country"
+                            + " GROUP BY Name";
+
+            // Execute SQL statement
+            ResultSet result_set2 = statement.executeQuery(stringSelect2);
+
+            // Return new country and population(of cities) table if valid.
+            while (result_set2.next())
+            {
+                City city = new City();
+                city.name = result_set2.getString("Name");
+                city.population = result_set2.getInt("Population");
+                System.out.println(city.name + "   |   " + city.population);
             }
         }
         catch (Exception e)
