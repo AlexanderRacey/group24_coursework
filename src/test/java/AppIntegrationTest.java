@@ -22,9 +22,12 @@ public class AppIntegrationTest
     @Test
     void testGetCountry()
     {
-        Country country = app.getCountry(app.connection, "GBR");
-        assertEquals(country.name, "United Kingdom");
-        assertEquals(country.continent, "Europe");
-        assertEquals(country.region, "British Islands");
+        Country country = app.getCountry(app.connection, "ABW");
+        assertEquals(country.name, "Aruba");
+        assertEquals(country.continent, "North America");
+        assertEquals(country.region, "Caribbean");
     }
+
+
+
 }

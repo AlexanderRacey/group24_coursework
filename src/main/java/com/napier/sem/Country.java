@@ -44,7 +44,7 @@ public class Country {
     public String head_of_state;
 
     // Capital
-    public String capital;
+    public int capital;
 
     // 3 Letter code
     public String code;
@@ -64,30 +64,32 @@ public class Country {
             String name,
             String continent,
             String region,
-            String surface_area,
-            String indepentence_year,
-            String life_expectancy,
-            String gnp,
-            String gnpold,
+            Float surface_area,
+            Integer indepentence_year,
+            Float life_expectancy,
+            Float gnp,
+            Float gnpold,
             String local_name,
             String government_form,
             String head_of_state,
-            String capital,
+            Integer capital,
             String code_short)
+
     {
         this.code = code;
         this.name = name;
         this.continent = continent;
         this.region = region;
-        this.surface_area = Double.parseDouble(surface_area);
-        this.indepentence_year = Integer.parseInt(indepentence_year);
-        this.life_expectancy = Double.parseDouble(life_expectancy);
-        this.gnp = Double.parseDouble(gnp);
-        this.gnpold = Double.parseDouble(gnpold);
+        this.surface_area = surface_area;
+        this.indepentence_year = indepentence_year;
+        this.life_expectancy = life_expectancy;
+        this.gnp = gnp;
+        this.gnpold = gnpold;
         this.local_name = local_name;
         this.government_form = government_form;
         this.head_of_state = head_of_state;
         this.capital = capital;
         this.code_short = code_short;
     }
+
 }

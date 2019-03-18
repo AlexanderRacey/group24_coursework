@@ -140,7 +140,7 @@ public class App
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(5000);
+                Thread.sleep(30000);
                 // Connect to database
                 connection = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
@@ -189,7 +189,7 @@ public class App
             // Create string for SQL statement
             String stringSelect =
                     "SELECT  *"
-                            + "FROM country"
+                            + "FROM country "
                             + "WHERE country.`Code` = '" + code + "'";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
@@ -200,15 +200,15 @@ public class App
                         result_set.getString("Name"),
                         result_set.getString("Continent"),
                         result_set.getString("Region"),
-                        result_set.getString("SurfaceArea"),
-                        result_set.getString("IndepYear"),
-                        result_set.getString("LifeExpectancy"),
-                        result_set.getString("GNP"),
-                        result_set.getString("GNPOLD"),
+                        result_set.getFloat("SurfaceArea"),
+                        result_set.getInt("IndepYear"),
+                        result_set.getFloat("LifeExpectancy"),
+                        result_set.getFloat("GNP"),
+                        result_set.getFloat("GNPOLD"),
                         result_set.getString("LocalName"),
                         result_set.getString("GovernmentForm"),
                         result_set.getString("HeadOfState"),
-                        result_set.getString("Capital"),
+                        result_set.getInt("Capital"),
                         result_set.getString("Code2")               );
             }
             return country;
@@ -216,6 +216,6 @@ public class App
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
-        return country;
+        return null;
     }
 }
