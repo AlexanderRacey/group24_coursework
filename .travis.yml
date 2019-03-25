@@ -19,10 +19,10 @@ before_script:
 
 jobs:
   include:
-  - stage: unit tests
-    install: skip
-    jdk: oraclejdk11
-    script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
+  ##- stage: unit tests
+  ##  install: skip
+  ##  jdk: oraclejdk11
+   ## script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
   - stage: integration tests
     jdk: oraclejdk11
     script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
