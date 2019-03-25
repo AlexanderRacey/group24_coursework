@@ -1,4 +1,5 @@
-import com.napier.sem.*;
+package com.napier.sem;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
