@@ -19,32 +19,28 @@ public class App
         /**
          * The population of people, people living in cities, and people not living in cities in each continent.
          */
-        /*
+
         PopulationCitiesInOut populationCitiesInOut = new PopulationCitiesInOut();
+        //populationCitiesInOut.inEachContinent(app.connection);
         populationCitiesInOut.inEachContinent("Asia", app.connection);
-        populationCitiesInOut.inEachContinent("Europe", app.connection);
-        populationCitiesInOut.inEachContinent("North America", app.connection);
-        populationCitiesInOut.inEachContinent("Africa", app.connection);
-        populationCitiesInOut.inEachContinent("Oceania", app.connection);
-        populationCitiesInOut.inEachContinent("Antarctica", app.connection);
-        populationCitiesInOut.inEachContinent("South America", app.connection);
-        */
 
         /**
          * The population of people, people living in cities, and people not living in cities in each region.
          */
+
         /*
-        PopulationCitiesInOut populationCitiesInOut = new PopulationCitiesInOut();
+        //PopulationCitiesInOut populationCitiesInOut = new PopulationCitiesInOut();
         populationCitiesInOut.inEachRegion(app.connection);
-         */
+        */
 
         /**
          * The population of people, people living in cities, and people not living in cities in each country.
          */
 
+        /*
         PopulationCitiesInOut populationCitiesInOut = new PopulationCitiesInOut();
         populationCitiesInOut.inEachCountry(app.connection);
-
+        */
 
         // Disconnect from the database
         app.disconnect();
@@ -71,14 +67,14 @@ public class App
             System.exit(-1);
         }
 
-        int retries = 10;
+        int retries = 100;
         for (int i = 0; i < retries; ++i)
         {
             System.out.println("Connecting to database...");
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(5000);
+                Thread.sleep(30000);
                 // Connect to database
                 connection = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");

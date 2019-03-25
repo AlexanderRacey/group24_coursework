@@ -18,6 +18,7 @@ public class PopulationCitiesInOut {
 
     public void inEachContinent(String continent, Connection connection)
     {
+        System.out.println(" -- " + continent.toUpperCase() + " -- ");
         System.out.println("Continent    |    Population Inside Cities    |    Population Outside Cities");
         try
         {
@@ -32,14 +33,15 @@ public class PopulationCitiesInOut {
 
             // Execute SQL statement
             ResultSet result_set1 = statement.executeQuery(stringSelect1);
-            String Continent = "";
 
             while (result_set1.next())
             {
-                Continent = result_set1.getString("Continent");
+                // Population inside city
+                Country country = new Country();
+                country.popOut = result_set1.getInt("Population");
             }
 
-            // Create string for second SQL statement ( -- population inside cities in each continent -- )
+            // Create string for second SQL statement ( -- population outside cities in each continent -- )
             String stringSelect2 =
                     " SELECT DISTINCT(country.Continent) AS Continent, SUM(country.Population) AS Population "
                             + " FROM country"
@@ -51,10 +53,10 @@ public class PopulationCitiesInOut {
             // Return new continent and population(of cities) table if valid.
             while (result_set2.next())
             {
-                City city = new City();
-                city.name = result_set2.getString("Name");
-                city.population = result_set2.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                Country country = new Country();
+                country.name = result_set1.getString("Name");
+                country.population = result_set2.getInt("Population");
+                System.out.println(country.name + "   |   " + country.popOut + "    |    " + country.population);
             }
         }
         catch (Exception e)
@@ -66,12 +68,12 @@ public class PopulationCitiesInOut {
 
     /**
      * Request 24 - The population of people, people living in cities, and people not living in cities in each region.
-     * @param continent - continent to analyze
+     * @param region - continent to analyze
      * @param connection - Connection to the opened database
      */
-    public void inEachRegion(String continent, Connection connection)
+    public void inEachRegion(String region, Connection connection)
     {
-        System.out.println(" -- " + continent.toUpperCase() + " -- ");
+        System.out.println(" -- " + region.toUpperCase() + " -- ");
         System.out.println("Region    |    Population Inside Cities    |    Population Outside Cities");
         try
         {
@@ -93,7 +95,7 @@ public class PopulationCitiesInOut {
                 Region = result_set1.getString("Region");
             }
 
-            // Create string for second SQL statement ( -- population inside cities in each continent -- )
+            // Create string for second SQL statement ( -- population outside cities in each continent -- )
             String stringSelect2 =
                     " SELECT  DISTINCT(country.Region) AS Region, SUM(country.Population) AS Population "
                             + " FROM country "
@@ -105,10 +107,10 @@ public class PopulationCitiesInOut {
             // Return new region with cities and population(of cities) table if valid.
             while (result_set2.next())
             {
-                City city = new City();
-                city.name = result_set2.getString("Name");
-                city.population = result_set2.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                Country country = new Country();
+                country.name = result_set1.getString("Name");
+                country.population = result_set2.getInt("Population");
+                System.out.println(country.name + "   |   " + Region + "    |    " + country.population);
             }
         }
         catch (Exception e)
@@ -120,10 +122,12 @@ public class PopulationCitiesInOut {
 
     /**
      * Request 25 - The population of people, people living in cities, and people not living in cities in each country.
+     * @param country - continent to analyze
      * @param connection - Connection to the opened database
      */
-    public void inEachCountry(Connection connection)
+    public void inEachCountry(String country, Connection connection)
     {
+        System.out.println(" -- " + country.toUpperCase() + " -- ");
         System.out.println("Country    |    Population Inside Cities    |    Population Outside Cities");
         try
         {
@@ -145,7 +149,7 @@ public class PopulationCitiesInOut {
                 Country = result_set1.getString("Country");
             }
 
-            // Create string for second SQL statement ( -- population inside cities in each continent -- )
+            // Create string for second SQL statement ( -- population outside cities in each continent -- )
             String stringSelect2 =
                     " SELECT  DISTINCT(country.Name) AS Name, SUM(country.Population) AS Population "
                             + " FROM country"
@@ -157,10 +161,10 @@ public class PopulationCitiesInOut {
             // Return new country and population(of cities) table if valid.
             while (result_set2.next())
             {
-                City city = new City();
-                city.name = result_set2.getString("Name");
-                city.population = result_set2.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                Country countryC = new Country();
+                countryC.name = result_set1.getString("Name");
+                countryC.population = result_set2.getInt("Population");
+                System.out.println(countryC.name + "   |   " + Country + "    |    " + countryC.population);
             }
         }
         catch (Exception e)
