@@ -7,6 +7,8 @@ Develop Build Status [![Build Status](https://travis-ci.org/AlexanderRacey/group
 License [![LICENSE](https://img.shields.io/github/license/AlexanderRacey/group24_coursework.svg?style=flat-square)](https://github.com/AlexanderRacey/group24_coursework/blob/master/LICENSE)
 <br/>
 Release [![Releases](https://img.shields.io/github/release/AlexanderRacey/group24_coursework/all.svg?style=flat-square)](https://github.com/AlexanderRacey/group24_coursework/releases)
+<br/>
+CodeCov [![codecov](https://codecov.io/gh/AlexanderRacey/group24_coursework/branch/master/graph/badge.svg)](https://codecov.io/gh/AlexanderRacey/group24_coursework)      
       
 #### The team
 
