@@ -1,7 +1,7 @@
 package com.napier.sem;
 
 
-import com.napier.sem.features.ListAllCities;
+import com.napier.sem.features.*;
 
 import java.util.Scanner;
 
@@ -75,10 +75,19 @@ public class App
         */
 
         //16 - list n cities district, user enters n & district, by pop
+
+
         /*
         ListAllCities listNCitiesDistrict = new ListAllCities();
         listNCitiesDistrict.nCitiesInDistrict("England","5",app.connection);
         */
+
+        //
+        Extras worldPopulation = new Extras();
+        worldPopulation.worldPop(app.connection);
+
+        Extras continentPopulation = new Extras();
+        continentPopulation.contPop("Asia",app.connection);
 
         // Disconnect from the database
         app.disconnect();
