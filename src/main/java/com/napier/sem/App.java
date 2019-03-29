@@ -19,10 +19,10 @@ public class App
         /**
          * Lists all capital cities in the world by population
          **/
-        /*
+
         ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
         listAllCapitalCities.inTheWorld(app.connection);
-        */
+
 
         /**
          * Lists all Capital Cities in ASIA by population
@@ -60,10 +60,10 @@ public class App
         /**
          * 9 - list all cities in country by pop
          **/
-
+        /*
         ListAllCities listAllCitiesCountry = new ListAllCities();
         listAllCitiesCountry.citiesInCountry("France", app.connection);
-
+        */
         /**
          * 10 - list all cities in region by pop
          **/
@@ -142,7 +142,7 @@ public class App
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                connection = DriverManager.getConnection("jdbc:mysql://" + location + "/employees?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                connection = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             } catch (SQLException sqle) {
