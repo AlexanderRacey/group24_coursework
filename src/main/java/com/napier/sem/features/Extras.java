@@ -193,4 +193,72 @@ public class Extras
         }
     }
 
+    public void cityPop(String city, Connection connection)
+    {
+        System.out.println(city + " Population:");
+        try
+        {
+            long pop;
+            long total = 0;
+            // Create an SQL statement
+            Statement statement = connection.createStatement();
+            // Create string for SQL statement
+            String stringSelect =
+                    "SELECT `Population`"
+                            + "FROM city "
+                            + "WHERE `Name` = '" + city +"'";
+            // Execute SQL statement
+            ResultSet result_set = statement.executeQuery(stringSelect);
+            // Return new city and population table if valid.
+            // Take cities one by one from the top
+            while (result_set.next())
+            {
+                City c = new City();
+                c.population = result_set.getInt("Population");
+                pop = c.population;
+                total = total + pop;
+            }
+
+            System.out.println("Population of " + city + ": " + total);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+    }
+
+
+    public void languageSpeakers(Connection connection)
+    {
+        try
+        {
+            String eng = "English";
+            String chin = "Chinese";
+            String hin = "Hindi";
+            String spa = "Spanish";
+            String arab = "Arabic";
+            String countryCode;
+
+            Statement statement = connection.createStatement();
+
+            String stringSelect =
+                    "SELECT `Percentage`, `CountryCode`"
+                            + "FROM countryLanguage "
+                            + "WHERE `Language` = '"+ eng +"' OR '"+ chin +"' OR '"+ hin + "' OR '"+ spa +"' OR '"+ arab +"'";
+            ResultSet result_set = statement.executeQuery(stringSelect);
+
+            while (result_set.next())
+            {
+
+            }
+
+            //System.out.println("Population of " + continent + ": " + total);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+    }
 }

@@ -110,6 +110,11 @@ public class App
         districtPopulation.districtPop("Scotland", app.connection);
         */
 
+        //E6 - Pop of a city
+        /*
+        Extras cityPopulation = new Extras();
+        cityPopulation.cityPop("Edinburgh", app.connection);
+        */
 
 
 
