@@ -111,5 +111,5 @@ after_success:
 before_install:
 # Decrypts the credentials file.
 # The keyname will be different for your project.
-- openssl aes-256-cbc -K $a1933e5c804aed01310885b6ccda6dbc03cd55d2 -iv $encrypted_b295e594d102_iv
+- openssl aes-256-cbc -K $encrypted_a1933e5c804aed01310885b6ccda6dbc03cd55d2_key -iv $encrypted_a1933e5c804aed01310885b6ccda6dbc03cd55d2_iv
   -in client-secret.json.enc -out client-secret.json -d
