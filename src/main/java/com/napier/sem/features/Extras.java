@@ -19,8 +19,8 @@ public class Extras
         System.out.println("World Population:");
         try
         {
-            int totalPop =0;
-            int pop;
+            long totalPop =0;
+            long pop;
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -58,8 +58,8 @@ public class Extras
         System.out.println(continent + " Population:");
         try
         {
-            int pop;
-            int totalPop = 0;
+            long pop;
+            long total = 0;
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -76,10 +76,10 @@ public class Extras
                 Country country = new Country();
                 country.population = result_set.getInt("Population");
                 pop = country.population;
-                totalPop = totalPop + pop;
+                total = total + pop;
             }
 
-            System.out.println(totalPop);
+            System.out.println("Population of " + continent + ": " + total);
         }
         catch (Exception e)
         {
@@ -88,6 +88,109 @@ public class Extras
         }
     }
 
+    public void regionPop(String region, Connection connection)
+    {
+        System.out.println(region + " Population:");
+        try
+        {
+            long pop;
+            long total = 0;
+            // Create an SQL statement
+            Statement statement = connection.createStatement();
+            // Create string for SQL statement
+            String stringSelect =
+                    "SELECT `Population`"
+                            + "FROM country "
+                            + "WHERE Region = '" + region +"'";
+            // Execute SQL statement
+            ResultSet result_set = statement.executeQuery(stringSelect);
+            // Return new city and population table if valid.
+            // Take cities one by one from the top
+            while (result_set.next())
+            {
+                Country country = new Country();
+                country.population = result_set.getInt("Population");
+                pop = country.population;
+                total = total + pop;
+            }
 
+            System.out.println("Population of " + region + ": " + total);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+    }
+
+    public void countryPop(String country, Connection connection)
+    {
+        System.out.println(country + " Population:");
+        try
+        {
+            long pop;
+            long total = 0;
+            // Create an SQL statement
+            Statement statement = connection.createStatement();
+            // Create string for SQL statement
+            String stringSelect =
+                    "SELECT `Population`"
+                            + "FROM country "
+                            + "WHERE `Name` = '" + country +"'";
+            // Execute SQL statement
+            ResultSet result_set = statement.executeQuery(stringSelect);
+            // Return new city and population table if valid.
+            // Take cities one by one from the top
+            while (result_set.next())
+            {
+                Country c = new Country();
+                c.population = result_set.getInt("Population");
+                pop = c.population;
+                total = total + pop;
+            }
+
+            System.out.println("Population of " + country + ": " + total);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+    }
+
+    public void districtPop(String district, Connection connection)
+    {
+        System.out.println(district + " Population:");
+        try
+        {
+            long pop;
+            long total = 0;
+            // Create an SQL statement
+            Statement statement = connection.createStatement();
+            // Create string for SQL statement
+            String stringSelect =
+                    "SELECT `Population`"
+                            + "FROM city "
+                            + "WHERE district = '" + district +"'";
+            // Execute SQL statement
+            ResultSet result_set = statement.executeQuery(stringSelect);
+            // Return new city and population table if valid.
+            // Take cities one by one from the top
+            while (result_set.next())
+            {
+                City city = new City();
+                city.population = result_set.getInt("Population");
+                pop = city.population;
+                total = total + pop;
+            }
+
+            System.out.println("Population of " + district + ": " + total);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+    }
 
 }

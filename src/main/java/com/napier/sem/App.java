@@ -75,19 +75,45 @@ public class App
         */
 
         //16 - list n cities district, user enters n & district, by pop
-
-
         /*
         ListAllCities listNCitiesDistrict = new ListAllCities();
         listNCitiesDistrict.nCitiesInDistrict("England","5",app.connection);
         */
 
-        //
+        //E1 - List world population
+        /*
         Extras worldPopulation = new Extras();
         worldPopulation.worldPop(app.connection);
+        */
 
+        //E2 - List continent population
+        /*
         Extras continentPopulation = new Extras();
         continentPopulation.contPop("Asia",app.connection);
+        */
+
+        //E3 - List region Population
+        /*
+        Extras regionPopulation = new Extras();
+        regionPopulation.regionPop("South America", app.connection);
+        */
+
+        //E4 - List population of a country
+        /*
+        Extras countryPopulation = new Extras();
+        countryPopulation.countryPop("France", app.connection);
+        */
+
+        //E5 - Lists district population
+        /*
+        Extras districtPopulation = new Extras();
+        districtPopulation.districtPop("Scotland", app.connection);
+        */
+
+
+
+
+
 
         // Disconnect from the database
         app.disconnect();
