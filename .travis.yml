@@ -50,8 +50,8 @@ jobs:
     - mvn package -DskipTests=true -Dmaven.javadoc.skip=true
     before_deploy:
     # Set our Git user name and email.
-    - git config --local user.name "Jonathan Binns"
-    - git config --local user.email "40311703@live.napier.ac.uk"
+    - git config --local user.name "Kevin Chalmers"
+    - git config --local user.email "k.chalmers@napier.ac.uk"
     # Create unique tag for the commit.
     - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y-%m-%d')-$(git log --format=%h -1)}
     # Tag the commit.
@@ -78,21 +78,21 @@ jobs:
     - gcloud auth activate-service-account --key-file client-secret.json
     script:
     # Set the project we will work in.
-    - gcloud config set project semethods-236210
+    - gcloud config set project semethods-234809
     # Set the zone to work in.
     - gcloud config set compute/zone europe-west2-b
     # Assign project ID to a variable to make life easier
-    - export semethods-236210="$(gcloud config get-value project -q)"
+    - export PROJECT_ID="$(gcloud config get-value project -q)"
     # Authenticate against Google's Docker image manager.
     - gcloud auth configure-docker
     # Build the database image.
-    - docker build -t gcr.io/$semethods-236210/db db/.
+    - docker build -t gcr.io/${PROJECT_ID}/db db/.
     # Push the database image.
-    - docker push gcr.io/$semethods-236210/db
+    - docker push gcr.io/${PROJECT_ID}/db
     # Create a container cluster.  We only need one node.
     - gcloud container clusters create hr-cluster --num-nodes=1
     # Tell kubernetes to run the built database image, opening port 3306
-    - kubectl run hr --image=gcr.io/$semethods-236210/db --port 3306
+    - kubectl run hr --image=gcr.io/${PROJECT_ID}/db --port 3306
     # Expose the cluster to the Internet, mapping external port 3306 to internal port 3306.
     - kubectl expose deployment hr --port=3306 --target-port=3306 --type=LoadBalancer
 
