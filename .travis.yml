@@ -82,7 +82,7 @@ jobs:
     # Set the zone to work in.
     - gcloud config set compute/zone europe-west2-b
     # Assign project ID to a variable to make life easier
-    - export PROJECT_ID="$(gcloud config get-value project -q)"
+    - export semethods-236210="$(gcloud config get-value project -q)"
     # Authenticate against Google's Docker image manager.
     - gcloud auth configure-docker
     # Build the database image.
@@ -90,11 +90,11 @@ jobs:
     # Push the database image.
     - docker push gcr.io/$semethods-236210/db
     # Create a container cluster.  We only need one node.
-    - gcloud container clusters create world-cluster --num-nodes=1
+    - gcloud container clusters create hr-cluster --num-nodes=1
     # Tell kubernetes to run the built database image, opening port 3306
-    - kubectl run world --image=gcr.io/$semethods-236210/db --port 3306
+    - kubectl run hr --image=gcr.io/$semethods-236210/db --port 3306
     # Expose the cluster to the Internet, mapping external port 3306 to internal port 3306.
-    - kubectl expose deployment world --port=3306 --target-port=3306 --type=LoadBalancer
+    - kubectl expose deployment hr --port=3306 --target-port=3306 --type=LoadBalancer
 
 stages:
 - unit tests
