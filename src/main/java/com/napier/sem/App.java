@@ -116,7 +116,8 @@ public class App
         cityPopulation.cityPop("Edinburgh", app.connection);
         */
 
-
+        Extras countryReport = new Extras();
+        countryReport.reportCountry("France", app.connection);
 
 
 

@@ -88,6 +88,9 @@ public class Extras
         }
     }
 
+    /**
+     *Request - Population of a region
+     */
     public void regionPop(String region, Connection connection)
     {
         System.out.println(region + " Population:");
@@ -123,6 +126,9 @@ public class Extras
         }
     }
 
+    /**
+     * Request - Population of a country
+     */
     public void countryPop(String country, Connection connection)
     {
         System.out.println(country + " Population:");
@@ -158,6 +164,9 @@ public class Extras
         }
     }
 
+    /**
+     * Request - Population of a district
+     */
     public void districtPop(String district, Connection connection)
     {
         System.out.println(district + " Population:");
@@ -193,6 +202,9 @@ public class Extras
         }
     }
 
+    /**
+     * Request - Population of a city
+     */
     public void cityPop(String city, Connection connection)
     {
         System.out.println(city + " Population:");
@@ -228,7 +240,10 @@ public class Extras
         }
     }
 
-
+    /**
+     * Request - Language speakers **!!NOT FINISHED!!**
+     */
+    /*
     public void languageSpeakers(Connection connection)
     {
         try
@@ -261,4 +276,40 @@ public class Extras
             System.out.println("Something went wrong");
         }
     }
+    */
+
+    public void reportCountry(String country, Connection connection)
+    {
+        System.out.println(country + " Report:");
+        try
+        {
+            Statement statement = connection.createStatement();
+            String stringSelect =
+                    "SELECT `Code`,`Name`,`Continent`,`Region`,`Population`,`Capital`"
+                            + "FROM `country` "
+                            + "WHERE `Name` = '" + country +"'";
+
+            ResultSet result_set = statement.executeQuery(stringSelect);
+
+            while (result_set.next())
+            {
+                Country c = new Country();
+                c.code = result_set.getString("Code");
+                c.name = result_set.getString("Name");
+                c.continent =  result_set.getString("Continent");
+                c.region = result_set.getString("Region");
+                c.population = result_set.getInt("Population");
+                c.capital = result_set.getString("Capital");
+
+                System.out.println("Code: "+ c.code +"\nName: "+ c.name +"\nContinent: "+ c.continent +"\nRegion: "+ c.region +"\nPopulation: "+ c.population +"\nCapital: "+ c.capital);
+            }
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+    }
+
 }
