@@ -3,10 +3,28 @@ package com.napier.sem.features;
 
 import com.napier.sem.*;
 import java.sql.*;
+import java.util.ArrayList;
 
+import com.napier.sem.features.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.sql.*;
+import java.util.ArrayList;
+
+@SpringBootApplication
+@RestController
 public class ListAllCapitalCities {
 
-    public void inTheWorld(Connection connection) {
+
+    @RequestMapping("ListAllCapitalCities")
+    public static ArrayList<City> inTheWorld(Connection connection)
+    {
+        ArrayList<City> cities = new ArrayList<>();
+
         try {
             System.out.println("Name    |    Country    |    Population");
             // Create an SQL statement
@@ -31,12 +49,16 @@ public class ListAllCapitalCities {
                 country.name = result_set.getString("country");
 
                 System.out.println(city.name + "   |   " + country.name + "   |   " + city.population);
+
+                cities.add(city);
             }
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+
+        return cities;
     }
 
 

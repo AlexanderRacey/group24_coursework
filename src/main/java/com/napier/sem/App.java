@@ -1,3 +1,4 @@
+/*
 package com.napier.sem;
 
 import com.napier.sem.features.*;
@@ -5,6 +6,22 @@ import com.napier.sem.features.*;
 
 import java.sql.*;
 
+public class App
+*/
+package com.napier.sem;
+
+import com.napier.sem.features.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.sql.*;
+import java.util.ArrayList;
+
+@SpringBootApplication
+@RestController
 public class App
 {
     public static void main(String[] args)
@@ -24,12 +41,20 @@ public class App
             app.connect(args[0]);
         }
 
+        SpringApplication.run(App.class, args);
+
         /**
          * Lists all capital cities in the world by population
          **/
 
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inTheWorld(app.connection);
+        ListAllCapitalCities.inTheWorld(app.connection);
+
+
+        /**
+         * UPDATE ALL METHODS TO THIS FORMAT
+         **/
+      //  @RequestMapping("employee")
+     //   public Employee getEmployee(@RequestParam(value = "id") String ID);
 
 
         /**
@@ -129,12 +154,12 @@ public class App
     /**
      * Connection to MySQL database.
      */
-    private Connection connection = null;
+    private static Connection connection = null;
 
     /**
      * New Connect to the MySql database
      */
-    public void connect(String location) {
+    public static void connect(String location) {
         try {
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -206,7 +231,7 @@ public class App
     /**
      * Disconnect from the MySQL database.
      */
-    public void disconnect()
+    public static void disconnect()
     {
         if (connection != null)
         {
