@@ -21,8 +21,7 @@ public class App
          */
 
         PopulationCitiesInOut populationCitiesInOut = new PopulationCitiesInOut();
-        //populationCitiesInOut.inEachContinent(app.connection);
-        populationCitiesInOut.inEachContinent("Asia", app.connection);
+        populationCitiesInOut.inEachContinent(app.connection);
 
         /**
          * The population of people, people living in cities, and people not living in cities in each region.

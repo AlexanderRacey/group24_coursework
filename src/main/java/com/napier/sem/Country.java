@@ -22,6 +22,9 @@ public class Country {
     // Population
     public int population;
 
+    // Population inside cities
+    public int popIn;
+
     // Population outside cities
     public int popOut;
 
