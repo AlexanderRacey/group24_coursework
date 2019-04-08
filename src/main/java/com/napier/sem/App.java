@@ -34,7 +34,7 @@ public class App
         {
             //app.connect();
             //app.connect("localhost:33060");
-            app.connect("35.234.138.168:3306");
+            app.connect("35.246.60.223:3306");
         }
         else
         {
