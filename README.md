@@ -7,6 +7,8 @@ Develop Build Status [![Build Status](https://travis-ci.org/AlexanderRacey/group
 License [![LICENSE](https://img.shields.io/github/license/AlexanderRacey/group24_coursework.svg?style=flat-square)](https://github.com/AlexanderRacey/group24_coursework/blob/master/LICENSE)
 <br/>
 Release [![Releases](https://img.shields.io/github/release/AlexanderRacey/group24_coursework/all.svg?style=flat-square)](https://github.com/AlexanderRacey/group24_coursework/releases)
+<br/>
+CodeCov [![codecov](https://codecov.io/gh/AlexanderRacey/group24_coursework/branch/master/graph/badge.svg)](https://codecov.io/gh/AlexanderRacey/group24_coursework)      
       
 #### The team
 
@@ -22,6 +24,8 @@ Our Scrum team mentioned above will be working for an organisation that requires
 The organisation has provided an SQL database to work from available [here](http://downloads.mysql.com/docs/world.sql.zip).
 
 This projects' [backlog](https://github.com/AlexanderRacey/group24_coursework/projects/1#column-4270590) is being recorded under a Kanban Board.
+
+##### *You find the USE CASES [here](./use-case)*
 
 ### Commit Template
      Changes: [brief description]
@@ -103,13 +107,13 @@ The aim of this code review is to check that task management is set-up and that 
 
 The following must be in place:
 
-- [ ] Issues being used on GitHub.
-- [ ] Tasks defined as user stories.
-- [ ] Project integrated with Zube.io.
-- [ ] Kanban/Project Board being used.
-- [ ] Sprint Boards being used.
-- [ ] Full use cases defined.
-- [ ] Use case diagram created.
+- [x] Issues being used on GitHub.
+- [x] Tasks defined as user stories.
+- [x] Project integrated with Zube.io.
+- [x] Kanban/Project Board being used.
+- [x] Sprint Boards being used.
+- [x] Full use cases defined.
+- [x] Use case diagram created.
 
 #### Submission 2 Criteria 
 
@@ -202,4 +206,13 @@ The final deliverable will be pulled automatically from your GitHub.  The final 
 - Quality and coverage of unit tests.
 - Project requirements met.
 
+#### Running Instructions
+- Maven compile
+- Maven Package
+- Run button
+- Click on app thing
+- Delete containers if not working 
 
+#### UI Design 
+- https://tinyurl.com/UIdesignGroup24
+- Open this, each number will be an option for the user to enter, etc
