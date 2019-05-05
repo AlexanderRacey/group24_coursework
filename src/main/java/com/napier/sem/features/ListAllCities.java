@@ -15,7 +15,7 @@ public class ListAllCities
      * @param connection - Connection to the opened database
      */
 
-    public void citiesInWorld(Connection connection)
+    public static void citiesInWorld(Connection connection)
     {
         System.out.println("City    |    Population");
         try
@@ -51,7 +51,7 @@ public class ListAllCities
      * Request 8 - List all cities in a continent by order of size
      */
 
-    public void citiesContinent(String continent, Connection connection)
+    public static void citiesContinent(String continent, Connection connection)
     {
         try
         {
@@ -93,7 +93,7 @@ public class ListAllCities
      * Requirement 9 - list all cities in a region
      */
 
-    public void citiesInRegion(String region, Connection connection)
+    public static void citiesInRegion(String region, Connection connection)
     {
         try
         {
@@ -137,7 +137,7 @@ public class ListAllCities
      */
 
 
-    public void citiesInCountry(String countryName, Connection connection)
+    public static void citiesInCountry(String countryName, Connection connection)
     {
         try
         {
@@ -192,7 +192,7 @@ public class ListAllCities
      * Request 11 - List All cities in district
      */
 
-    public void citiesInDistrict(String district, Connection connection)
+    public static void citiesInDistrict(String district, Connection connection)
     {
         try
         {
@@ -233,7 +233,7 @@ public class ListAllCities
      * Request 12 - top n world
      */
 
-    public void nCitiesInWorld(String number, Connection connection)
+    public static void nCitiesInWorld(String number, Connection connection)
     {
         try
         {
@@ -280,7 +280,7 @@ public class ListAllCities
      * Request 13 - top n cities in Continent
      */
 
-    public void nCitiesContinent(String continent, String number, Connection connection)
+    public static void nCitiesContinent(String continent, String number, Connection connection)
     {
         try
         {
@@ -330,7 +330,7 @@ public class ListAllCities
      * Request 14 - Top n Region
      */
 
-    public void nCitiesInRegion(String region, String number, Connection connection)
+    public static void nCitiesInRegion(String region, String number, Connection connection)
     {
         try
         {
@@ -379,7 +379,7 @@ public class ListAllCities
     /**
      * Request - 15 top n country
      */
-    public void nCitiesInCountry(String countryName, String number, Connection connection)
+    public static void nCitiesInCountry(String countryName, String number, Connection connection)
     {
         try
         {
@@ -442,7 +442,7 @@ public class ListAllCities
     /**
      * Request 16 - n Cities in district
      */
-    public void nCitiesInDistrict(String district,String number, Connection connection)
+    public static void nCitiesInDistrict(String district,String number, Connection connection)
     {
         try
         {

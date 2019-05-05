@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class ListAllCapitalCities {
 
-    public void inTheWorld(Connection connection) {
+    public static void inTheWorld(Connection connection) {
         try {
             System.out.println("Name    |    Country    |    Population");
             // Create an SQL statement
@@ -41,7 +41,7 @@ public class ListAllCapitalCities {
 
 
     //lists all the capital cities in a continent from largest population to smallest
-    public void onContinent(String continent, Connection connection)
+    public static void onContinent(String continent, Connection connection)
     {
         try
         {
@@ -83,7 +83,7 @@ public class ListAllCapitalCities {
     }
 
     //lists all the capital cities in a region from largest population to smallest
-    public void inRegion(String region, Connection connection)
+    public static void inRegion(String region, Connection connection)
     {
         try
         {
