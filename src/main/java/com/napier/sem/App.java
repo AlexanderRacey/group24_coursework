@@ -154,7 +154,8 @@ public class App
     /**
      * Connection to MySQL database.
      */
-    private static Connection connection = null;
+    //private static Connection connection = null;
+    public static Connection connection = null;
 
     /**
      * New Connect to the MySql database
