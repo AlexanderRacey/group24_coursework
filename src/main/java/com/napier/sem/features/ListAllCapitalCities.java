@@ -20,10 +20,10 @@ import java.util.ArrayList;
 public class ListAllCapitalCities {
 
 
-    @RequestMapping("ListAllCapitalCities")
+    @RequestMapping("/ListAllCapitalCities")
     public static ArrayList<City> inTheWorld(Connection connection)
     {
-        ArrayList<City> cities = new ArrayList<>();
+        ArrayList<City> cities = new ArrayList<City>();
 
         try {
             System.out.println("Name    |    Country    |    Population");
