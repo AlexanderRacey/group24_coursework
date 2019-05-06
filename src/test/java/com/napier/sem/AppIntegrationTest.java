@@ -46,7 +46,7 @@ public class AppIntegrationTest
         ListAllCities listAllCitiesWorld = new ListAllCities();
         listAllCitiesWorld.citiesInWorld(null);
     }
-
+/*
     @Test
     void listAllCitiesInContinentNull()
     {
@@ -74,14 +74,14 @@ public class AppIntegrationTest
         ListAllCities listAllCitiesDistrict = new ListAllCities();
         listAllCitiesDistrict.citiesInDistrict(null,null);
     }
-
+*/
     @Test
     void listAllNCitiesInWorldNull()
     {
         ListAllCities listNCitiesWorld = new ListAllCities();
         listNCitiesWorld.nCitiesInWorld(null,null);
     }
-
+/*
     @Test
     void listNCitiesInContinentNull()
     {
@@ -109,5 +109,5 @@ public class AppIntegrationTest
         ListAllCities listNCitiesDistrict = new ListAllCities();
         listNCitiesDistrict.nCitiesInDistrict(null,null,null);
     }
-
+*/
 }
