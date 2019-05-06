@@ -18,7 +18,15 @@ public class App
         App app = new App();
 
         // Connect to the database
-        app.connect();
+        if(args.length < 1)
+        {
+            //app.connect();
+            app.connect("localhost:33060");
+        }
+        else
+        {
+            app.connect(args[0]);
+        }
 
         /**
          * The population of people, people living in cities, and people not living in cities in each continent.
@@ -40,7 +48,7 @@ public class App
          * The population of people, people living in cities, and people not living in cities in each country.
          */
 
-        /* 
+        /*
         PopulationCitiesInOut populationCitiesInOut = new PopulationCitiesInOut();
         populationCitiesInOut.inEachCountry(app.connection);
         */
