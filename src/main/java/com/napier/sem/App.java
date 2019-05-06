@@ -1,8 +1,12 @@
 package com.napier.sem;
+import com.napier.sem.features.ListAllCountries;
+import com.napier.sem.features.*;
+
 
 import com.napier.sem.features.PopulationCitiesInOut;
 
 //import com.napier.sem.features.*;
+
 
 import java.sql.*;
 
@@ -36,10 +40,21 @@ public class App
          * The population of people, people living in cities, and people not living in cities in each country.
          */
 
-        /*
+        /* 
         PopulationCitiesInOut populationCitiesInOut = new PopulationCitiesInOut();
         populationCitiesInOut.inEachCountry(app.connection);
         */
+        if(args.length < 1)
+        {
+            //app.connect();
+            app.connect("localhost:33060");
+        }
+        else
+        {
+            app.connect(args[0]);
+        }
+
+        UserInterface.runMenu(app.connection);
 
         // Disconnect from the database
         app.disconnect();
@@ -51,8 +66,39 @@ public class App
     private Connection connection = null;
 
     /**
-     * Connect to the MySQL database.
+     * New Connect to the MySql database
      */
+    public void connect(String location) {
+        try {
+            // Load Database driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Could not load SQL driver");
+            System.exit(-1);
+        }
+
+        int retries = 50;
+        for (int i = 0; i < retries; ++i) {
+            System.out.println("Connecting to database...");
+            try {
+                // Wait a bit for db to start
+                Thread.sleep(5000);
+                // Connect to database
+                connection = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                System.out.println("Successfully connected");
+                break;
+            } catch (SQLException sqle) {
+                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+                System.out.println(sqle.getMessage());
+            } catch (InterruptedException ie) {
+                System.out.println("Thread interrupted? Should not happen.");
+            }
+        }
+    }
+    /**
+     * Old Connect to the MySQL database.
+     */
+    /*
     public void connect()
     {
         try
@@ -73,7 +119,7 @@ public class App
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(30000);
+                Thread.sleep(5000);
                 // Connect to database
                 connection = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
@@ -90,7 +136,7 @@ public class App
             }
         }
     }
-
+    */
     /**
      * Disconnect from the MySQL database.
      */
