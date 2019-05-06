@@ -2,11 +2,8 @@ package com.napier.sem.features;
 
 import com.napier.sem.*;
 import java.sql.*;
+import java.util.ArrayList;
 
-/**
- * Solves requests 1 - 3
- * Listing countries by population ( Descending )
- */
 public class ListAllCities
 {
 
@@ -15,8 +12,9 @@ public class ListAllCities
      * @param connection - Connection to the opened database
      */
 
-    public void citiesInWorld(Connection connection)
+    public static ArrayList<City> citiesInWorld(Connection connection)
     {
+        ArrayList<City> cities = new ArrayList<City>();
         System.out.println("City    |    Population");
         try
         {
@@ -37,6 +35,8 @@ public class ListAllCities
                 city.name = result_set.getString("Name");
                 city.population = result_set.getInt("Population");
                 System.out.println(city.name + "   |   " + city.population);
+
+                cities.add(city);
             }
         }
         catch (Exception e)
@@ -44,6 +44,8 @@ public class ListAllCities
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+
+        return cities;
     }
 
 
@@ -51,8 +53,9 @@ public class ListAllCities
      * Request 8 - List all cities in a continent by order of size
      */
 
-    public void citiesContinent(String continent, Connection connection)
+    public static ArrayList<City> citiesContinent(String continent, Connection connection)
     {
+        ArrayList<City> cities = new ArrayList<>();
         System.out.println("-- " + continent.toUpperCase() + " --");
         System.out.println("City    |     Population");
 
@@ -76,6 +79,9 @@ public class ListAllCities
                 city.name = result_set.getString("Name");
                 city.population = result_set.getInt("Population");
                 System.out.println(city.name + "   |   " + city.population);
+
+                cities.add(city);
+
             }
         }
         catch (Exception e)
@@ -83,14 +89,17 @@ public class ListAllCities
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+
+        return cities;
     }
 
     /**
      * Requirement 9 - list all cities in a region
      */
 
-    public void citiesInRegion(String region, Connection connection)
+    public static ArrayList<City> citiesInRegion(String region, Connection connection)
     {
+        ArrayList<City> cities = new ArrayList<>();
         System.out.println("-- " + region.toUpperCase() + " --");
         System.out.println("City    |     Population");
 
@@ -114,6 +123,8 @@ public class ListAllCities
                 city.name = result_set.getString("Name");
                 city.population = result_set.getInt("Population");
                 System.out.println(city.name + "   |   " + city.population);
+
+                cities.add(city);
             }
         }
         catch (Exception e)
@@ -121,6 +132,8 @@ public class ListAllCities
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+
+        return cities;
     }
 
 
@@ -129,8 +142,9 @@ public class ListAllCities
      */
 
 
-    public void citiesInCountry(String countryName, Connection connection)
+    public static ArrayList<City> citiesInCountry(String countryName, Connection connection)
     {
+        ArrayList<City> cities = new ArrayList<>();
         System.out.println("-- " + countryName.toUpperCase() + " --");
         System.out.println("City    |     Population");
 
@@ -168,6 +182,8 @@ public class ListAllCities
                 city.name = result_set2.getString("Name");
                 city.population = result_set2.getInt("Population");
                 System.out.println(city.name + "   |   " + city.population);
+
+                cities.add(city);
             }
         }
         catch (Exception e)
@@ -175,6 +191,8 @@ public class ListAllCities
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+
+        return cities;
     }
 
     /**

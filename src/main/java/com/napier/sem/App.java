@@ -21,10 +21,10 @@ public class App
 
 
         //7 - list all cities in world by pop
-        /*
+
         ListAllCities listAllCitiesWorld = new ListAllCities();
         listAllCitiesWorld.citiesInWorld(app.connection);
-        */
+
 
         //8 - list all cities in entered continent by pop
         /*
@@ -116,9 +116,11 @@ public class App
         cityPopulation.cityPop("Edinburgh", app.connection);
         */
 
+        //
+        /*
         Extras countryReport = new Extras();
         countryReport.reportCountry("France", app.connection);
-
+        */
 
 
         // Disconnect from the database
