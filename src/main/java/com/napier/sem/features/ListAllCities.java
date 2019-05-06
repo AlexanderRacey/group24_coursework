@@ -199,7 +199,7 @@ public class ListAllCities
      * Request 11 - List All cities in district
      */
 
-    public void citiesInDistrict(String district, Connection connection)
+    public static void citiesInDistrict(String district, Connection connection)
     {
         System.out.println("-- " + district.toUpperCase() + " --");
         System.out.println("City    |    Population");
@@ -236,7 +236,7 @@ public class ListAllCities
      * Request 12 - top n world
      */
 
-    public void nCitiesInWorld(String number, Connection connection)
+    public static void nCitiesInWorld(String number, Connection connection)
     {
         System.out.println("City    |    Population");
         try
@@ -279,7 +279,7 @@ public class ListAllCities
      * Request 13 - top n cities in Continent
      */
 
-    public void nCitiesContinent(String continent, String number, Connection connection)
+    public static void nCitiesContinent(String continent, String number, Connection connection)
     {
         System.out.println("-- " + continent.toUpperCase() + " --");
         System.out.println("City    |     Population");
@@ -322,7 +322,7 @@ public class ListAllCities
      * Request 14 - Top n Region
      */
 
-    public void nCitiesInRegion(String region, String number, Connection connection)
+    public static void nCitiesInRegion(String region, String number, Connection connection)
     {
         System.out.println("-- " + region.toUpperCase() + " --");
         System.out.println("City    |     Population");
@@ -364,7 +364,7 @@ public class ListAllCities
     /**
      * Request - 15 top n country
      */
-    public void nCitiesInCountry(String countryName, String number, Connection connection)
+    public static void nCitiesInCountry(String countryName, String number, Connection connection)
     {
         System.out.println("-- " + countryName.toUpperCase() + " --");
         System.out.println("City    |     Population");
@@ -419,7 +419,7 @@ public class ListAllCities
     /**
      * Request 16 - n Cities in district
      */
-    public void nCitiesInDistrict(String district,String number, Connection connection)
+    public static void nCitiesInDistrict(String district,String number, Connection connection)
     {
         System.out.println("-- " + district.toUpperCase() + " --");
         System.out.println("City    |    Population");
