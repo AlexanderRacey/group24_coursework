@@ -12,7 +12,7 @@ public class City {
     public String country_code;
 
     // District
-    public String disctrict;
+    public String district;
 
     // Population
     public int population;
@@ -23,7 +23,7 @@ public class City {
     public void print(){
         System.out.println(this.name + " with a population of "
                             + this.population + " is located in the "
-                            + this.disctrict + " district, of "
+                            + this.district + " district, of "
                             + this.country_code);
     }
 }
