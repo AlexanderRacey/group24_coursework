@@ -15,7 +15,7 @@ public class PopulationCitiesInOut {
      * @param connection - Connection to the opened database
      */
 
-    public void inEachContinent(Connection connection)
+    public static void inEachContinent(Connection connection)
     {
         System.out.println("Continent    |    Population Inside Cities    |    Population Outside Cities");
         try
@@ -54,7 +54,7 @@ public class PopulationCitiesInOut {
      * Request 24 - The population of people, people living in cities, and people not living in cities in each region.
      * @param connection - Connection to the opened database
      */
-    public void inEachRegion(Connection connection)
+    public static void inEachRegion(Connection connection)
     {
         System.out.println("Region    |    Population Inside Cities    |    Population Outside Cities");
         try
@@ -93,7 +93,7 @@ public class PopulationCitiesInOut {
      * Request 25 - The population of people, people living in cities, and people not living in cities in each country.
      * @param connection - Connection to the opened database
      */
-    public void inEachCountry(Connection connection)
+    public static void inEachCountry(Connection connection)
     {
         System.out.println("Country    |    Population Inside Cities    |    Population Outside Cities");
         try
