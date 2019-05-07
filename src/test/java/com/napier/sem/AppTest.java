@@ -21,37 +21,43 @@ public class AppTest
     @Test
     void listAllCapitalCitiesInWorldNull()
     {
-        ListAllCapitalCities.inTheWorld(null);
+        ArrayList<City> cities = ListAllCapitalCities.inTheWorld(null);
+        cities.contains("null");
     }
 
     @Test
     void listAllCapitalCitiesNInWorldNull()
     {
-        ListAllCapitalCities.nInTheWorld(null, null);
+        ArrayList<City> cities = ListAllCapitalCities.nInTheWorld(null, null);
+        cities.contains("null");
     }
 
     @Test
     void listAllCapitalCitiesOnContinentNull()
     {
-        ListAllCapitalCities.onContinent(null, null);
+        ArrayList<City> cities = ListAllCapitalCities.onContinent(null, null);
+        cities.contains("null");
     }
 
     @Test
     void listAllCapitalCitiesNOnContinentNull()
     {
-        ListAllCapitalCities.nOnContinent(null, null, null);
+        ArrayList<City> cities = ListAllCapitalCities.nOnContinent(null, null, null);
+        cities.contains("null");
     }
 
     @Test
     void listAllCapitalCitiesInRegionNull()
     {
-        ListAllCapitalCities.inRegion( null, null);
+        ArrayList<City> cities = ListAllCapitalCities.inRegion(null, null);
+        cities.contains("null");
     }
 
     @Test
     void listAllCapitalCitiesNInRegionNull()
     {
-        ListAllCapitalCities.nInRegion( null, null, null);
+        ArrayList<City> cities = ListAllCapitalCities.nInRegion(null, null, null);
+        cities.contains("null");
     }
 
     @Test
