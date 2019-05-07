@@ -25,19 +25,19 @@ public class App
          * Lists all capital cities in the world by population
          **/
 
-        //ListAllCapitalCities.inTheWorld(app.connection);
+        ListAllCapitalCities.inTheWorld(app.connection);
 
         /**
          * Lists all Capital Cities in ASIA by population
          **/
 
-        //ListAllCapitalCities.onContinent( "Asia", app.connection);
+        ListAllCapitalCities.onContinent( "Asia", app.connection);
 
         /**
          * Lists all Capital Cities in Caribbean by population
          **/
 
-        //ListAllCapitalCities.inRegion( "Caribbean", app.connection);
+        ListAllCapitalCities.inRegion( "Caribbean", app.connection);
 
         /**
          * Lists all N capital cities in the world by population

@@ -22,22 +22,37 @@ public class AppTest
     @Test
     void listAllCapitalCitiesInWorldNull()
     {
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inTheWorld(null);
+        ListAllCapitalCities.inTheWorld(null);
+    }
+
+    @Test
+    void listAllCapitalCitiesNInWorldNull()
+    {
+        ListAllCapitalCities.nInTheWorld(null, null);
     }
 
     @Test
     void listAllCapitalCitiesOnContinentNull()
     {
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.onContinent(null, null);
+        ListAllCapitalCities.onContinent(null, null);
+    }
+
+    @Test
+    void listAllCapitalCitiesNOnContinentNull()
+    {
+        ListAllCapitalCities.nOnContinent(null, null, null);
     }
 
     @Test
     void listAllCapitalCitiesInRegionNull()
     {
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inRegion( null, null);
+        ListAllCapitalCities.inRegion( null, null);
+    }
+
+    @Test
+    void listAllCapitalCitiesNInRegionNull()
+    {
+        ListAllCapitalCities.nInRegion( null, null, null);
     }
 
     @Test
