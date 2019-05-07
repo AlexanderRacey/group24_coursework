@@ -24,11 +24,11 @@ public class AppIntegrationTest
     }
 
     @Test
-    void listAllCapitalCitiesInWorld()
-    {
-        ArrayList<City> cities = ListAllCapitalCities.inTheWorld(app.connection);
-        assertEquals(cities.get(0). name, "Seoul");
-    }
+void listAllCapitalCitiesInWorld()
+{
+    ArrayList<City> cities = ListAllCapitalCities.inTheWorld(app.connection);
+    assertEquals(cities.get(0). name, "Seoul");
+}
 
     @Test
     void listAllCapitalCitiesNInWorld()

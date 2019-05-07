@@ -11,11 +11,15 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AppTest
 {
     static App app;
+    static ListAllCapitalCities ListAllCapitalCities;
 
     @BeforeAll
     static void init()
     {
         app = new App();
+        ListAllCapitalCities= new ListAllCapitalCities();
+        app.connect("localhost:33060");
+
     }
 
     @Test
@@ -23,11 +27,18 @@ public class AppTest
     {
         ListAllCapitalCities.inTheWorld(null);
     }
+    @Test
+    void listAllCapitalCitiesInWorld()
+    {
+        ArrayList<City> cities = ListAllCapitalCities.inTheWorld(app.connection);
+        assertEquals(cities.get(0). name, "Seoul");
+    }
 
     @Test
-    void listAllCapitalCitiesNInWorldNull()
+    void listAllCapitalCitiesNInWorld()
     {
-        ListAllCapitalCities.nInTheWorld(null, null);
+        ArrayList<City> cities = ListAllCapitalCities.nInTheWorld("5", app.connection);
+        assertEquals(cities.get(4). name, "Tokyo");
     }
 
     @Test
@@ -37,22 +48,33 @@ public class AppTest
     }
 
     @Test
-    void listAllCapitalCitiesNOnContinentNull()
+    void listAllCapitalCitiesOnContinent()
     {
-        ListAllCapitalCities.nOnContinent(null, null, null);
+        ArrayList<City> cities = ListAllCapitalCities.onContinent("Asia", app.connection);
+        assertEquals(cities.get(0). name, "Seoul");
     }
 
     @Test
-    void listAllCapitalCitiesInRegionNull()
+    void listAllCapitalCitiesNOnContinent()
     {
-        ListAllCapitalCities.inRegion( null, null);
+        ArrayList<City> cities = ListAllCapitalCities.nOnContinent("Asia", "5", app.connection);
+        assertEquals(cities.get(4). name, "Teheran");
     }
 
     @Test
-    void listAllCapitalCitiesNInRegionNull()
+    void listAllCapitalCitiesInRegion()
     {
-        ListAllCapitalCities.nInRegion( null, null, null);
+        ArrayList<City> cities = ListAllCapitalCities.inRegion( "Caribbean", app.connection);
+        assertEquals(cities.get(0). name, "La Habana");
     }
+
+    @Test
+    void listAllCapitalCitiesNInRegion()
+    {
+        ArrayList<City> cities = ListAllCapitalCities.nInRegion( "Caribbean", "5", app.connection);
+        assertEquals(cities.get(4). name, "Nassau");
+    }
+
 
     @Test
     void listAllCitiesInWorldNull()
@@ -123,4 +145,5 @@ public class AppTest
         ListAllCities listNCitiesDistrict = new ListAllCities();
         listNCitiesDistrict.nCitiesInDistrict(null,null,null);
     }
+
 }
