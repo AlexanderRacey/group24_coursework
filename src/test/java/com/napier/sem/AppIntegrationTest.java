@@ -13,12 +13,14 @@ public class AppIntegrationTest
 {
     static App app;
     static ListAllCapitalCities ListAllCapitalCities;
+    static ListAllCities ListAllCities;
 
     @BeforeAll
     static void init()
     {
         app = new App();
         ListAllCapitalCities = new ListAllCapitalCities();
+        ListAllCities = new ListAllCities();
         app.connect("localhost:33060");
 
     }
@@ -67,73 +69,66 @@ public class AppIntegrationTest
 
 
     @Test
-    void listAllCitiesInWorldNull()
+    void listAllCitiesInContinent()
     {
-        ListAllCities listAllCitiesWorld = new ListAllCities();
-        listAllCitiesWorld.citiesInWorld(null);
-    }
-/*
-    @Test
-    void listAllCitiesInContinentNull()
-    {
-        ListAllCities listAllCitiesContinent = new ListAllCities();
-        listAllCitiesContinent.citiesContinent(null, null);
+        ArrayList<City> cities = ListAllCities.citiesContinent("Asia", app.connection);
+        assertEquals(cities.get(0). name, "Mumbai (Bombay)");
     }
 
     @Test
-    void listAllCitiesInCountryNull()
+    void listAllCitiesInCountry()
     {
-        ListAllCities listAllCitiesCountry = new ListAllCities();
-        listAllCitiesCountry.citiesInCountry(null, null);
+        ArrayList<City> cities = ListAllCities.citiesInCountry("France", app.connection);
+        assertEquals(cities.get(0). name, "Paris");
     }
 
     @Test
-    void listAllCitiesInRegionNull()
+    void listAllCitiesInRegion()
     {
-        ListAllCities listAllCitiesRegion = new ListAllCities();
-        listAllCitiesRegion.citiesInRegion(null, null);
+        ArrayList<City> cities = ListAllCities.citiesInRegion("North America", app.connection);
+        assertEquals(cities.get(0). name, "New York");
     }
 
     @Test
-    void listAllCitiesInDistrictNull()
+    void listAllCitiesInDistrict()
     {
-        ListAllCities listAllCitiesDistrict = new ListAllCities();
-        listAllCitiesDistrict.citiesInDistrict(null,null);
-    }
-*/
-    @Test
-    void listAllNCitiesInWorldNull()
-    {
-        ListAllCities listNCitiesWorld = new ListAllCities();
-        listNCitiesWorld.nCitiesInWorld(null,null);
-    }
-/*
-    @Test
-    void listNCitiesInContinentNull()
-    {
-        ListAllCities listNCitiesContinent = new ListAllCities();
-        listNCitiesContinent.nCitiesContinent(null,null,null);
+        ArrayList<City> cities = ListAllCities.citiesInDistrict("England", app.connection);
+        assertEquals(cities.get(0). name, "London");
     }
 
     @Test
-    void listNCitiesInRegionNull()
+    void listAllNCitiesInWorld()
     {
-        ListAllCities listNCitiesRegion = new ListAllCities();
-        listNCitiesRegion.nCitiesInRegion(null,null,null);
+        ArrayList<City> cities = ListAllCities.nCitiesInWorld("5", app.connection);
+        assertEquals(cities.get(4). name, "Jakarta");
     }
 
     @Test
-    void listNCitiesInCountryNull()
+    void listNCitiesInContinent()
     {
-        ListAllCities listNCitiesCountry = new ListAllCities();
-        listNCitiesCountry.nCitiesInCountry(null,null,null);
+        ArrayList<City> cities = ListAllCities.nCitiesContinent("Asia","5", app.connection);
+        assertEquals(cities.get(4). name, "Karachi");
     }
 
     @Test
-    void listNCitiesInDistrictNull()
+    void listNCitiesInRegion()
     {
-        ListAllCities listNCitiesDistrict = new ListAllCities();
-        listNCitiesDistrict.nCitiesInDistrict(null,null,null);
+        ArrayList<City> cities = ListAllCities.nCitiesInRegion("North America","5", app.connection);
+        assertEquals(cities.get(4). name, "Philadelphia");
     }
-*/
+
+    @Test
+    void listNCitiesInCountry()
+    {
+        ArrayList<City> cities = ListAllCities.nCitiesInCountry("France","5", app.connection);
+        assertEquals(cities.get(4). name, "Nice");
+    }
+
+    @Test
+    void listNCitiesInDistrict()
+    {
+        ArrayList<City> cities = ListAllCities.nCitiesInDistrict("England","5", app.connection);
+        assertEquals(cities.get(4). name, "Manchester");
+    }
+
 }
