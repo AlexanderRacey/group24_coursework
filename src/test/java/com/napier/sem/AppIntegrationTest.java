@@ -12,12 +12,15 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AppIntegrationTest
 {
     static App app;
+    static ListAllCapitalCities ListAllCapitalCities;
 
     @BeforeAll
     static void init()
     {
         app = new App();
+        ListAllCapitalCities= new ListAllCapitalCities();
         app.connect("localhost:33060");
+
     }
 
     @Test
@@ -27,15 +30,57 @@ public class AppIntegrationTest
     }
 
     @Test
+    void listAllCapitalCitiesInWorld()
+    {
+        ListAllCapitalCities.inTheWorld(app.connection);
+    }
+
+    @Test
     void listAllCapitalCitiesNInWorldNull()
     {
         ListAllCapitalCities.nInTheWorld(null, null);
     }
 
     @Test
+    void listAllCapitalCitiesNInWorld()
+    {
+        ListAllCapitalCities.nInTheWorld("5", app.connection);
+    }
+
+    @Test
+    void listAllCapitalCitiesNInWorldNullNumber()
+    {
+        ListAllCapitalCities.nInTheWorld(null, app.connection);
+    }
+
+    @Test
+    void listAllCapitalCitiesNInWorldNullConnection()
+    {
+        ListAllCapitalCities.nInTheWorld("5", null);
+    }
+
+    @Test
     void listAllCapitalCitiesOnContinentNull()
     {
         ListAllCapitalCities.onContinent(null, null);
+    }
+
+    @Test
+    void listAllCapitalCitiesOnContinent()
+    {
+        ListAllCapitalCities.onContinent("Asia", app.connection);
+    }
+
+    @Test
+    void listAllCapitalCitiesOnContinentNullContinent()
+    {
+        ListAllCapitalCities.onContinent(null, app.connection);
+    }
+
+    @Test
+    void listAllCapitalCitiesOnContinentNullConnnection()
+    {
+        ListAllCapitalCities.onContinent("Asia", null);
     }
 
     @Test
