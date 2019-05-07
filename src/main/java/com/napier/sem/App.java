@@ -46,6 +46,18 @@ public class App
         ListAllCapitalCities.nInTheWorld("5",app.connection);
 
         /**
+         * Lists all N Capital Cities in ASIA by population
+         **/
+
+        ListAllCapitalCities.nOnContinent( "Asia", "5",app.connection);
+
+        /**
+         * Lists all N Capital Cities in Caribbean by population
+         **/
+
+        ListAllCapitalCities.nInRegion( "Caribbean","5", app.connection);
+
+        /**
          * 7 - list all cities in world by pop
          **/
         /*

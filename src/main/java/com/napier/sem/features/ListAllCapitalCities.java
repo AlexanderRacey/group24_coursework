@@ -158,7 +158,87 @@ public class ListAllCapitalCities {
             // Take countries one by one from the top
             int num = Integer.parseInt(number);
             int count = 0;
-            while (result_set.next() && count <= num) {
+            while (result_set.next() && count < num) {
+                City city = new City();
+                city.name = result_set.getString("Name");
+                city.population = result_set.getInt("Population");
+
+                Country country = new Country();
+                country.name = result_set.getString("country");
+
+                System.out.println(city.name + "   |   " + country.name + "   |   " + city.population);
+
+                count++;
+                cities.add(city);
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+        return cities;
+    }
+
+    public static ArrayList<City> nOnContinent(String continent, String number, Connection connection) {
+        ArrayList<City> cities = new ArrayList<City>();
+
+        try {
+            System.out.println("Name    |    Country    |    Population");
+            // Create an SQL statement
+            Statement statement = connection.createStatement();
+            // Create string for SQL statement
+            String stringSelect =
+                    "SELECT  city.`Name`, country.`Name` AS `country`, city.`Population`"
+                            + "FROM country JOIN city on country.Code = city.CountryCode "
+                            + "WHERE country.`Capital` = city.`ID` AND country.`Continent` = '" + continent + "'"
+                            + "ORDER BY city.`Population` DESC";
+            // Execute SQL statement
+            ResultSet result_set = statement.executeQuery(stringSelect);
+            // Return new country and population table if valid.
+            // Take countries one by one from the top
+            int num = Integer.parseInt(number);
+            int count = 0;
+            while (result_set.next() && count < num) {
+                City city = new City();
+                city.name = result_set.getString("Name");
+                city.population = result_set.getInt("Population");
+
+                Country country = new Country();
+                country.name = result_set.getString("country");
+
+                System.out.println(city.name + "   |   " + country.name + "   |   " + city.population);
+
+                count++;
+                cities.add(city);
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Something went wrong");
+        }
+        return cities;
+    }
+
+    public static ArrayList<City> nInRegion(String region, String number, Connection connection) {
+        ArrayList<City> cities = new ArrayList<City>();
+
+        try {
+            System.out.println("Name    |    Country    |    Population");
+            // Create an SQL statement
+            Statement statement = connection.createStatement();
+            // Create string for SQL statement
+            String stringSelect =
+                    "SELECT  city.`Name`, country.`Name` AS `country`, city.`Population`"
+                            + "FROM country JOIN city on country.Code = city.CountryCode "
+                            + "WHERE country.`Capital` = city.`ID` AND country.`Region` = '" + region + "'"
+                            + "ORDER BY city.`Population` DESC";
+            // Execute SQL statement
+            ResultSet result_set = statement.executeQuery(stringSelect);
+            // Return new country and population table if valid.
+            // Take countries one by one from the top
+            int num = Integer.parseInt(number);
+            int count = 0;
+            while (result_set.next() && count < num) {
                 City city = new City();
                 city.name = result_set.getString("Name");
                 city.population = result_set.getInt("Population");
