@@ -4,9 +4,8 @@ import com.napier.sem.features.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-
 import java.util.ArrayList;
-
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AppTest
@@ -22,22 +21,43 @@ public class AppTest
     @Test
     void listAllCapitalCitiesInWorldNull()
     {
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inTheWorld(null);
+        ArrayList<City> cities = ListAllCapitalCities.inTheWorld(null);
+        cities.contains("null");
+    }
+
+    @Test
+    void listAllCapitalCitiesNInWorldNull()
+    {
+        ArrayList<City> cities = ListAllCapitalCities.nInTheWorld(null, null);
+        cities.contains("null");
     }
 
     @Test
     void listAllCapitalCitiesOnContinentNull()
     {
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.onContinent(null, null);
+        ArrayList<City> cities = ListAllCapitalCities.onContinent(null, null);
+        cities.contains("null");
+    }
+
+    @Test
+    void listAllCapitalCitiesNOnContinentNull()
+    {
+        ArrayList<City> cities = ListAllCapitalCities.nOnContinent(null, null, null);
+        cities.contains("null");
     }
 
     @Test
     void listAllCapitalCitiesInRegionNull()
     {
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inRegion( null, null);
+        ArrayList<City> cities = ListAllCapitalCities.inRegion(null, null);
+        cities.contains("null");
+    }
+
+    @Test
+    void listAllCapitalCitiesNInRegionNull()
+    {
+        ArrayList<City> cities = ListAllCapitalCities.nInRegion(null, null, null);
+        cities.contains("null");
     }
 
     @Test

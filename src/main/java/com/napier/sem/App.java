@@ -1,8 +1,6 @@
 package com.napier.sem;
 
 import com.napier.sem.features.*;
-
-
 import java.sql.*;
 
 public class App
@@ -27,99 +25,110 @@ public class App
          * Lists all capital cities in the world by population
          **/
 
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inTheWorld(app.connection);
-
+        ListAllCapitalCities.inTheWorld(app.connection);
 
         /**
          * Lists all Capital Cities in ASIA by population
          **/
 
-        /*
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.onContinent( "Asia", app.connection);
-        */
+        ListAllCapitalCities.onContinent( "Asia", app.connection);
 
         /**
          * Lists all Capital Cities in Caribbean by population
          **/
-        /*
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inRegion( "Caribbean", app.connection);
-        */
+
+        ListAllCapitalCities.inRegion( "Caribbean", app.connection);
+
+        /**
+         * Lists all N capital cities in the world by population
+         **/
+
+        ListAllCapitalCities.nInTheWorld("5",app.connection);
+
+        /**
+         * Lists all N Capital Cities in ASIA by population
+         **/
+
+        ListAllCapitalCities.nOnContinent( "Asia", "5",app.connection);
+
+        /**
+         * Lists all N Capital Cities in Caribbean by population
+         **/
+
+        ListAllCapitalCities.nInRegion( "Caribbean","5", app.connection);
 
         /**
          * 7 - list all cities in world by pop
          **/
-        /*
+
         ListAllCities listAllCitiesWorld = new ListAllCities();
         listAllCitiesWorld.citiesInWorld(app.connection);
-        */
+
 
         /**
          * 8 - list all cities in entered continent by pop
          **/
-        /*
+
         ListAllCities listAllCitiesContinent = new ListAllCities();
         listAllCitiesContinent.citiesContinent("Asia", app.connection);
-        */
+
 
         /**
          * 9 - list all cities in country by pop
          **/
-        /*
+
         ListAllCities listAllCitiesCountry = new ListAllCities();
         listAllCitiesCountry.citiesInCountry("France", app.connection);
-        */
+
         /**
          * 10 - list all cities in region by pop
          **/
-        /*
+
         ListAllCities listAllCitiesRegion = new ListAllCities();
         listAllCitiesRegion.citiesInRegion("North America", app.connection);
-        */
+
         /**
          * 11 - list all cities in district by pop
          **/
-        /*
+
         ListAllCities listAllCitiesDistrict = new ListAllCities();
         listAllCitiesDistrict.citiesInDistrict("Scotland",app.connection);
-        */
+
         /**
          * list n cities world, user enters n, by pop
          **/
-        /*
+
         ListAllCities listNCitiesWorld = new ListAllCities();
         listNCitiesWorld.nCitiesInWorld("5",app.connection);
-        */
+
         /**
          * list n cities continent, user enters n & continent, by pop
          **/
-        /*
+
         ListAllCities listNCitiesContinent = new ListAllCities();
         listNCitiesContinent.nCitiesContinent("Asia","5",app.connection);
-        */
+
         /**
          * list n cities region, user enters n & region, by pop
          **/
-        /*
+
         ListAllCities listNCitiesRegion = new ListAllCities();
         listNCitiesRegion.nCitiesInRegion("North America","5",app.connection);
-        */
+
         /**
          * list n cities country, user enters n & country, by pop
          **/
-        /*
+
         ListAllCities listNCitiesCountry = new ListAllCities();
         listNCitiesCountry.nCitiesInCountry("France","5",app.connection);
-        */
+
         /**
          * list n cities district, user enters n & district, by pop
          **/
-        /*
+
         ListAllCities listNCitiesDistrict = new ListAllCities();
         listNCitiesDistrict.nCitiesInDistrict("England","5",app.connection);
-        */
+
 
         // Disconnect from the database
         app.disconnect();
@@ -128,7 +137,8 @@ public class App
     /**
      * Connection to MySQL database.
      */
-    private Connection connection = null;
+    //private Connection connection = null;
+    public Connection connection = null;
 
     /**
      * New Connect to the MySql database
