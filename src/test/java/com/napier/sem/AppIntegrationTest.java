@@ -18,29 +18,23 @@ public class AppIntegrationTest
     static void init()
     {
         app = new App();
-        ListAllCapitalCities= new ListAllCapitalCities();
+        ListAllCapitalCities = new ListAllCapitalCities();
         app.connect("localhost:33060");
 
     }
 
     @Test
-void listAllCapitalCitiesInWorld()
-{
-    ArrayList<City> cities = ListAllCapitalCities.inTheWorld(app.connection);
-    assertEquals(cities.get(0). name, "Seoul");
-}
+    void listAllCapitalCitiesInWorld()
+    {
+        ArrayList<City> cities = ListAllCapitalCities.inTheWorld(app.connection);
+        assertEquals(cities.get(0). name, "Seoul");
+    }
 
     @Test
     void listAllCapitalCitiesNInWorld()
     {
         ArrayList<City> cities = ListAllCapitalCities.nInTheWorld("5", app.connection);
         assertEquals(cities.get(4). name, "Tokyo");
-    }
-
-    @Test
-    void listAllCapitalCitiesOnContinentNull()
-    {
-        ListAllCapitalCities.onContinent(null, null);
     }
 
     @Test
