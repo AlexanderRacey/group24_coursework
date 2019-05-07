@@ -3,10 +3,13 @@ package com.napier.sem.features;
 
 import com.napier.sem.*;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ListAllCapitalCities {
 
-    public static void inTheWorld(Connection connection) {
+    public static ArrayList<City> inTheWorld(Connection connection) {
+        ArrayList<City> cities = new ArrayList<City>();
+
         try {
             System.out.println("Name    |    Country    |    Population");
             // Create an SQL statement
@@ -22,7 +25,6 @@ public class ListAllCapitalCities {
             // Return new country and population table if valid.
             // Take countries one by one from the top
             while (result_set.next()) {
-
                 City city = new City();
                 city.name = result_set.getString("Name");
                 city.population = result_set.getInt("Population");
@@ -31,12 +33,15 @@ public class ListAllCapitalCities {
                 country.name = result_set.getString("country");
 
                 System.out.println(city.name + "   |   " + country.name + "   |   " + city.population);
+
+                cities.add(city);
             }
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return cities;
     }
 
 

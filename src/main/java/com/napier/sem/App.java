@@ -1,8 +1,6 @@
 package com.napier.sem;
 
 import com.napier.sem.features.*;
-
-
 import java.sql.*;
 
 public class App
@@ -27,8 +25,8 @@ public class App
          * Lists all capital cities in the world by population
          **/
 
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inTheWorld(app.connection);
+        
+        ListAllCapitalCities.inTheWorld(app.connection);
 
 
         /**
