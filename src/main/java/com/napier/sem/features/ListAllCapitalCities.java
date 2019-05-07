@@ -46,8 +46,10 @@ public class ListAllCapitalCities {
 
 
     //lists all the capital cities in a continent from largest population to smallest
-    public static void onContinent(String continent, Connection connection)
+    public static ArrayList<City> onContinent(String continent, Connection connection)
     {
+        ArrayList<City> cities = new ArrayList<City>();
+
         try
         {
             System.out.println(" -- " + continent.toUpperCase() + " -- ");
@@ -77,7 +79,9 @@ public class ListAllCapitalCities {
                 Country country = new Country();
                 country.name = result_set.getString("country");
 
-                System.out.println(city.name + "   |   " + country.name  + "   |   " + city.population);
+                System.out.println(city.name + "   |   " + country.name + "   |   " + city.population);
+
+                cities.add(city);
             }
         }
         catch (Exception e)
@@ -85,11 +89,14 @@ public class ListAllCapitalCities {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return cities;
     }
 
     //lists all the capital cities in a region from largest population to smallest
-    public static void inRegion(String region, Connection connection)
+    public static ArrayList<City> inRegion(String region, Connection connection)
     {
+        ArrayList<City> cities = new ArrayList<City>();
+
         try
         {
             System.out.println(" -- " + region.toUpperCase() + " -- ");
@@ -119,7 +126,9 @@ public class ListAllCapitalCities {
                 Country country = new Country();
                 country.name = result_set.getString("country");
 
-                System.out.println(city.name + "   |   " + country.name  + "   |   " + city.population);
+                System.out.println(city.name + "   |   " + country.name + "   |   " + city.population);
+
+                cities.add(city);
             }
         }
         catch (Exception e)
@@ -127,6 +136,7 @@ public class ListAllCapitalCities {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return cities;
     }
 
 }
