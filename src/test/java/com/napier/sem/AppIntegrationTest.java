@@ -24,22 +24,10 @@ public class AppIntegrationTest
     }
 
     @Test
-    void listAllCapitalCitiesInWorldNull()
-    {
-        ListAllCapitalCities.inTheWorld(null);
-    }
-
-    @Test
     void listAllCapitalCitiesInWorld()
     {
         ArrayList<City> cities = ListAllCapitalCities.inTheWorld(app.connection);
         assertEquals(cities.get(0). name, "Seoul");
-    }
-
-    @Test
-    void listAllCapitalCitiesNInWorldNull()
-    {
-        ListAllCapitalCities.nInTheWorld(null, null);
     }
 
     @Test
@@ -63,21 +51,24 @@ public class AppIntegrationTest
     }
 
     @Test
-    void listAllCapitalCitiesNOnContinentNull()
+    void listAllCapitalCitiesNOnContinent()
     {
-        ListAllCapitalCities.nOnContinent(null, null, null);
+        ArrayList<City> cities = ListAllCapitalCities.nOnContinent("Asia", "5", app.connection);
+        assertEquals(cities.get(4). name, "Teheran");
     }
 
     @Test
-    void listAllCapitalCitiesInRegionNull()
+    void listAllCapitalCitiesInRegion()
     {
-        ListAllCapitalCities.inRegion( null, null);
+        ArrayList<City> cities = ListAllCapitalCities.inRegion( "Caribbean", app.connection);
+        assertEquals(cities.get(0). name, "La Habana");
     }
 
     @Test
-    void listAllCapitalCitiesNInRegionNull()
+    void listAllCapitalCitiesNInRegion()
     {
-        ListAllCapitalCities.nInRegion( null, null, null);
+        ArrayList<City> cities = ListAllCapitalCities.nInRegion( "Caribbean", "5", app.connection);
+        assertEquals(cities.get(4). name, "Nassau");
     }
 
 
