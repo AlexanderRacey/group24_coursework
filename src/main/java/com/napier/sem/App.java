@@ -42,7 +42,7 @@ public class App
          //7 - list all cities in world by pop
          ListAllCities.citiesInWorld(app.connection);
 
-         //8 - list all cities in entered continent by pop
+         //8 - list all cities in continent by pop
          ListAllCities.citiesContinent("Asia", app.connection);
 
          //9 - list all cities in country by pop
@@ -69,13 +69,26 @@ public class App
          //list n cities district, user enters n & district, by pop
          ListAllCities.nCitiesInDistrict("England","5",app.connection);
 
-
          //Population of the world
          Extras.worldPop(app.connection);
 
+         //Population of continent
+         Extras.contPop("Asia", app.connection);
 
-        // Disconnect from the database
-        app.disconnect();
+         //Population of Region
+         Extras.regionPop("North America", app.connection);
+
+         //Population of Country
+         Extras.countryPop("France", app.connection);
+
+         //Population of District
+         Extras.districtPop("England", app.connection);
+
+         //Population of City
+         Extras.cityPop("London", app.connection);
+
+         // Disconnect from the database
+         app.disconnect();
     }
 
     /**

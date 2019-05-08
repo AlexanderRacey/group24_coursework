@@ -131,4 +131,46 @@ public class AppIntegrationTest
         assertEquals(cities.get(4). name, "Manchester");
     }
 
+    @Test
+    void popInWorldNull()
+    {
+        ArrayList<Country> countries = Extras.worldPop(app.connection);
+        countries.contains("6078749450");
+    }
+
+    @Test
+    void popInContinentNull()
+    {
+        ArrayList<Country> countries = Extras.contPop("Asia", app.connection);
+        countries.contains("3705025700");
+    }
+
+    @Test
+    void popInRegionNull()
+    {
+        ArrayList<Country> countries = Extras.regionPop("North America", app.connection);
+        countries.contains("309632000");
+    }
+
+    @Test
+    void popInCountryNull()
+    {
+        ArrayList<Country> countries = Extras.countryPop("France", app.connection);
+        countries.contains("59225700");
+    }
+
+    @Test
+    void popInDistrictNull()
+    {
+        ArrayList<City> cities = Extras.districtPop("England", app.connection);
+        cities.contains("19978543");
+    }
+
+    @Test
+    void popInCityNull()
+    {
+        ArrayList<City> cities = Extras.cityPop("London", app.connection);
+        cities.contains("7624917");
+    }
+
 }

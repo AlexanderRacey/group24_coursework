@@ -23,9 +23,6 @@ public class Extras
         try
         {
             System.out.println("World Population:");
-            //int totalPop =0;
-            //int pop;
-
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -57,18 +54,17 @@ public class Extras
      * Request - Population of a continent.
      */
 
-    public void contPop(String continent, Connection connection)
+    public static ArrayList<Country> contPop(String continent, Connection connection)
     {
-        System.out.println(continent + " Population:");
+        ArrayList<Country> contPopulation = new ArrayList<Country>();
         try
         {
-            long pop;
-            long total = 0;
+            System.out.println(continent + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Population`"
+                    "SELECT SUM(Population) AS Population "
                             + "FROM country "
                             + "WHERE Continent = '" + continent +"'";
             // Execute SQL statement
@@ -78,35 +74,34 @@ public class Extras
             while (result_set.next())
             {
                 Country country = new Country();
-                country.population = result_set.getInt("Population");
-                pop = country.population;
-                total = total + pop;
-            }
+                country.WorldPopulation = result_set.getLong("Population");
+                System.out.println(country.WorldPopulation);
 
-            System.out.println("Population of " + continent + ": " + total);
+                contPopulation.add(country);
+            }
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return contPopulation;
     }
 
     /**
      *Request - Population of a region
      */
-    public void regionPop(String region, Connection connection)
+    public static ArrayList<Country> regionPop(String region, Connection connection)
     {
-        System.out.println(region + " Population:");
+        ArrayList<Country> regionPopulation = new ArrayList<Country>();
         try
         {
-            long pop;
-            long total = 0;
+            System.out.println(region + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Population`"
+                    "SELECT SUM(Population) AS Population "
                             + "FROM country "
                             + "WHERE Region = '" + region +"'";
             // Execute SQL statement
@@ -116,73 +111,71 @@ public class Extras
             while (result_set.next())
             {
                 Country country = new Country();
-                country.population = result_set.getInt("Population");
-                pop = country.population;
-                total = total + pop;
-            }
+                country.WorldPopulation = result_set.getLong("Population");
+                System.out.println(country.WorldPopulation);
 
-            System.out.println("Population of " + region + ": " + total);
+                regionPopulation.add(country);
+            }
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return regionPopulation;
     }
 
     /**
      * Request - Population of a country
      */
-    public void countryPop(String country, Connection connection)
+    public static ArrayList<Country> countryPop(String searchCountry, Connection connection)
     {
-        System.out.println(country + " Population:");
+        ArrayList<Country> countryPopulation = new ArrayList<Country>();
         try
         {
-            long pop;
-            long total = 0;
+            System.out.println(searchCountry + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Population`"
+                    "SELECT SUM(Population) AS Population "
                             + "FROM country "
-                            + "WHERE `Name` = '" + country +"'";
+                            + "WHERE `Name` = '" + searchCountry +"'";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
             {
-                Country c = new Country();
-                c.population = result_set.getInt("Population");
-                pop = c.population;
-                total = total + pop;
-            }
+                Country country = new Country();
+                country.WorldPopulation = result_set.getLong("Population");
+                System.out.println(country.WorldPopulation);
 
-            System.out.println("Population of " + country + ": " + total);
+                countryPopulation.add(country);
+            }
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return countryPopulation;
     }
 
     /**
      * Request - Population of a district
      */
-    public void districtPop(String district, Connection connection)
+    public static ArrayList<City> districtPop(String district, Connection connection)
     {
-        System.out.println(district + " Population:");
+        ArrayList<City> districtPopulation = new ArrayList<City>();
         try
         {
-            long pop;
-            long total = 0;
+            System.out.println(district + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Population`"
+                    "SELECT SUM(Population) AS Population "
                             + "FROM city "
                             + "WHERE district = '" + district +"'";
             // Execute SQL statement
@@ -192,62 +185,61 @@ public class Extras
             while (result_set.next())
             {
                 City city = new City();
-                city.population = result_set.getInt("Population");
-                pop = city.population;
-                total = total + pop;
-            }
+                city.districtPopulation = result_set.getLong("Population");
+                System.out.println(city.districtPopulation);
 
-            System.out.println("Population of " + district + ": " + total);
+                districtPopulation.add(city);
+            }
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return districtPopulation;
     }
 
     /**
      * Request - Population of a city
      */
-    public void cityPop(String city, Connection connection)
+    public static ArrayList<City> cityPop(String selectCity, Connection connection)
     {
-        System.out.println(city + " Population:");
+        ArrayList<City> cityPopulation = new ArrayList<City>();
         try
         {
-            long pop;
-            long total = 0;
+            System.out.println(selectCity + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Population`"
+                    "SELECT SUM(Population) AS Population "
                             + "FROM city "
-                            + "WHERE `Name` = '" + city +"'";
+                            + "WHERE `Name` = '" + selectCity +"'";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
             {
-                City c = new City();
-                c.population = result_set.getInt("Population");
-                pop = c.population;
-                total = total + pop;
-            }
+                City city = new City();
+                city.districtPopulation = result_set.getLong("Population");
+                System.out.println(city.districtPopulation);
 
-            System.out.println("Population of " + city + ": " + total);
+                cityPopulation.add(city);
+            }
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return cityPopulation;
     }
 
     /**
      * Request - Language speakers **!!NOT FINISHED!!**
      */
-    /*
+
     public void languageSpeakers(Connection connection)
     {
         try
@@ -280,7 +272,7 @@ public class Extras
             System.out.println("Something went wrong");
         }
     }
-    */
+
 
     public void reportCountry(String country, Connection connection)
     {

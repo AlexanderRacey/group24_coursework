@@ -17,6 +17,9 @@ public class City {
     // Population
     public int population;
 
+    //dictrict population
+    public long districtPopulation;
+
     // Population inside cities
     public int popIn;
 
