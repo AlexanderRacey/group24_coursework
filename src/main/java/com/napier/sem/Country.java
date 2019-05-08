@@ -28,10 +28,7 @@ public class Country {
     public long WorldPopulation;
 
     // Population inside cities
-    public int popIn;
-
-    // Population outside cities
-    public int popOut;
+    public long popCiLong;
 
     // Independence year
     public int indepentence_year;
