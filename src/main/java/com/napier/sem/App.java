@@ -1,7 +1,6 @@
 package com.napier.sem;
 
-import com.napier.sem.features.ListAllCountries;
-
+import com.napier.sem.features.*;
 import java.sql.*;
 
 public class App
@@ -12,77 +11,118 @@ public class App
         App app = new App();
 
         // Connect to the database
-        app.connect();
+        if(args.length < 1)
+        {
+            //app.connect();
+            app.connect("localhost:33060");
+        }
+        else
+        {
+            app.connect(args[0]);
+        }
 
-        /**
-         * Lists all countries in the world by population
-         */
-        /*
-        ListAllCountries listAllCountries = new ListAllCountries();
-        listAllCountries.inTheWorld(app.connection);
-         */
+         //Lists all capital cities in the world by population
+         ListAllCapitalCities.inTheWorld(app.connection);
 
-        /**
-         * Lists all countries in ASIA by population
-         */
-        /*
-        ListAllCountries listAllCountries = new ListAllCountries();
-        listAllCountries.onContinent("Asia", app.connection);
-         */
+         //Lists all Capital Cities in ASIA by population
+         ListAllCapitalCities.onContinent( "Asia", app.connection);
 
-        /**
-         * Lists all countries in WESTERN EUROPE by population
-         */
-        /*
-        ListAllCountries listAllCountries = new ListAllCountries();
-        listAllCountries.inRegion("Western Europe", app.connection);
-        */
+         //Lists all Capital Cities in Caribbean by population
+         ListAllCapitalCities.inRegion( "Caribbean", app.connection);
 
-        // Disconnect from the database
-        app.disconnect();
+         //Lists all N capital cities in the world by population
+         ListAllCapitalCities.nInTheWorld("5",app.connection);
+
+         //Lists all N Capital Cities in ASIA by population
+         ListAllCapitalCities.nOnContinent( "Asia", "5",app.connection);
+
+         //Lists all N Capital Cities in Caribbean by population
+         ListAllCapitalCities.nInRegion( "Caribbean","5", app.connection);
+
+         //7 - list all cities in world by pop
+         ListAllCities.citiesInWorld(app.connection);
+
+         //8 - list all cities in continent by pop
+         ListAllCities.citiesContinent("Asia", app.connection);
+
+         //9 - list all cities in country by pop
+         ListAllCities.citiesInCountry("France", app.connection);
+
+         //10 - list all cities in region by pop
+         ListAllCities.citiesInRegion("North America", app.connection);
+
+         //11 - list all cities in district by pop
+         ListAllCities.citiesInDistrict("Scotland",app.connection);
+
+         //list n cities world, user enters n, by pop
+         ListAllCities.nCitiesInWorld("5",app.connection);
+
+         //list n cities continent, user enters n & continent, by pop
+         ListAllCities.nCitiesContinent("Asia","5",app.connection);
+
+         //list n cities region, user enters n & region, by pop
+         ListAllCities.nCitiesInRegion("North America","5",app.connection);
+
+         //list n cities country, user enters n & country, by pop
+         ListAllCities.nCitiesInCountry("France","5",app.connection);
+
+         //list n cities district, user enters n & district, by pop
+         ListAllCities.nCitiesInDistrict("England","5",app.connection);
+
+         //Population of the world
+         Extras.worldPop(app.connection);
+
+         //Population of continent
+         Extras.contPop("Asia", app.connection);
+
+         //Population of Region
+         Extras.regionPop("North America", app.connection);
+
+         //Population of Country
+         Extras.countryPop("France", app.connection);
+
+         //Population of District
+         Extras.districtPop("England", app.connection);
+
+         //Population of City
+         Extras.cityPop("London", app.connection);
+
+         // Disconnect from the database
+         app.disconnect();
     }
 
     /**
      * Connection to MySQL database.
      */
-    private Connection connection = null;
+    //private Connection connection = null;
+    public Connection connection = null;
 
     /**
-     * Connect to the MySQL database.
+     * New Connect to the MySql database
      */
-    public void connect()
-    {
-        try
-        {
+    public void connect(String location) {
+        try {
             // Load Database driver
-            Class.forName("com.mysql.jdbc.Driver");
-        }
-        catch (ClassNotFoundException e)
-        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
             System.out.println("Could not load SQL driver");
             System.exit(-1);
         }
 
         int retries = 10;
-        for (int i = 0; i < retries; ++i)
-        {
+        for (int i = 0; i < retries; ++i) {
             System.out.println("Connecting to database...");
-            try
-            {
+            try {
                 // Wait a bit for db to start
-                Thread.sleep(5000);
+                Thread.sleep(30000);
                 // Connect to database
-                connection = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                connection = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
-            }
-            catch (SQLException sqle)
-            {
+            } catch (SQLException sqle) {
                 System.out.println("Failed to connect to database attempt " + Integer.toString(i));
                 System.out.println(sqle.getMessage());
-            }
-            catch (InterruptedException ie)
-            {
+            } catch (InterruptedException ie) {
                 System.out.println("Thread interrupted? Should not happen.");
             }
         }

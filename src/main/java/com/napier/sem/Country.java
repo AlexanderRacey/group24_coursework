@@ -1,5 +1,7 @@
 package com.napier.sem;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 /**
@@ -22,6 +24,15 @@ public class Country {
     // Population
     public int population;
 
+    //World Pop
+    public long WorldPopulation;
+
+    // Population inside cities
+    public int popIn;
+
+    // Population outside cities
+    public int popOut;
+
     // Independence year
     public int indepentence_year;
 
@@ -31,7 +42,7 @@ public class Country {
     // Gross National Product - CURRENT
     public double gnp;
 
-    // Goss National Product - PREVIOUS
+    // Gross National Product - PREVIOUS
     public double gnpold;
 
     // Local name

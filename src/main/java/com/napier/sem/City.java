@@ -12,10 +12,19 @@ public class City {
     public String country_code;
 
     // District
-    public String disctrict;
+    public String district;
 
     // Population
     public int population;
+
+    //dictrict population
+    public long districtPopulation;
+
+    // Population inside cities
+    public int popIn;
+
+    // Population outside cities
+    public int popOut;
 
     /**
      * Prints the details of the city to the console
@@ -23,7 +32,7 @@ public class City {
     public void print(){
         System.out.println(this.name + " with a population of "
                             + this.population + " is located in the "
-                            + this.disctrict + " district, of "
+                            + this.district + " district, of "
                             + this.country_code);
     }
 }
