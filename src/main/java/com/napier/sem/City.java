@@ -18,7 +18,7 @@ public class City {
     public int population;
 
     // Population inside cities
-    public int popIn;
+    public long popCoLong;
 
     // Population outside cities
     public int popOut;
