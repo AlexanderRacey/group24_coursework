@@ -12,17 +12,12 @@ import java.util.ArrayList;
 public class PopulationCitiesInOut {
 
     /**
-     * Request 23 - The population of people, people living in cities, and people not living in cities in each
-     * continent.
-     *
+     * Request 23 - The population of people, people living in cities, and people not living in cities in each continent.     *
      * @param connection - Connection to the opened database
      */
 
     public static ArrayList<Country> inEachContinent(Connection connection)
     {
-        //ArrayList<City> cities = new ArrayList<>();
-        //ArrayList<Country> countries = new ArrayList<>();
-
         try
         {
             // Prints out list headers
@@ -46,6 +41,7 @@ public class PopulationCitiesInOut {
 
             ArrayList<Country> country = new ArrayList<Country>();
 
+            // Print out results of SQl statement
             while (result_set1.next())
             {
                 Country cnt = new Country();
@@ -79,98 +75,117 @@ public class PopulationCitiesInOut {
      * Request 24 - The population of people, people living in cities, and people not living in cities in each region.
      * @param connection - Connection to the opened database
      */
-    public static ArrayList<City> inEachRegion (Connection connection)
+    public static ArrayList<Country> inEachRegion(Connection connection)
     {
-        ArrayList<City> cities = new ArrayList<City>();
-
         try
         {
             // Prints out list headers
-            System.out.println("*************************************************************************");
-            System.out.println("Region    |    Population Inside Cities    |    Population Outside Cities");
+            System.out.println("**************************************************************************************");
+            System.out.println(" Region | Region Pop | City Pop | City Pop % | Not a City Pop | Not a City Pop %");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
-            // Create string for first SQL statement ( -- population inside cities in each region -- )
+            // Create string for SQL statement ( -- population inside cities in each continent -- )
             String stringSelect1 =
-                    " SELECT DISTINCT country.Region AS Region, SUM(DISTINCT city.Population) AS Population," +
-                            " SUM(DISTINCT country.Population) AS PopulationC, city.Name "
-                         + " FROM country JOIN city ON country.Code = city.CountryCode "
-                         + " WHERE country.Code = city.CountryCode "
-                         + " GROUP BY Region, Name";
+                    " SELECT DISTINCT country.Region AS dRegion," +
+                            " SUM(DISTINCT country.Population) AS coPopulation," +
+                            " SUM(city.Population) AS cPopulation "
+                            + " FROM country JOIN city ON country.Code = city.CountryCode "
+                            + " WHERE country.Code = city.CountryCode "
+                            + " GROUP BY dRegion ";
 
             // Execute SQL statement
             ResultSet result_set1 = statement.executeQuery(stringSelect1);
 
+            ArrayList<Country> country = new ArrayList<Country>();
+
+            // Print out results of SQl statement
             while (result_set1.next())
             {
-                Country country = new Country();
-                City city = new City();
+                Country cnt = new Country();
+                City cCity = new City();
 
-                country.name = result_set1.getString("Region");
-                city.population = result_set1.getInt("Population");
-                country.population = result_set1.getInt("PopulationC");
-                System.out.println(country.name + "   |   " + city.population + "    |    " + country.population);
+                cnt.region = result_set1.getString("dRegion");
+                cnt.popCiLong = result_set1.getLong("coPopulation");
+                cCity.popCoLong = result_set1.getLong("cPopulation");
 
-                cities.add(city);
+                System.out.println(cnt.region + "    |    "
+                        + cnt.popCiLong + "    |    "
+                        + cCity.popCoLong + "    |    "
+                        + (((cCity.popCoLong * 100) / (cnt.popCiLong))) + "%" + "    |    "
+                        + (cnt.popCiLong - cCity.popCoLong) + "    |    "
+                        + (100 - ((cCity.popCoLong * 100) / (cnt.popCiLong))) + "%");
+
+                country.add(cnt);
             }
+            System.out.println("\n");
+            return country;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
+            return null;
         }
-        return (cities);
     }
 
     /**
      * Request 25 - The population of people, people living in cities, and people not living in cities in each country.
      * @param connection - Connection to the opened database
      */
-    public static ArrayList<City> inEachCountry(Connection connection)
+    public static ArrayList<Country> inEachCountry(Connection connection)
     {
-        ArrayList<City> cities = new ArrayList<City>();
-
-
         try
         {
             // Prints out list headers
             System.out.println("**************************************************************************");
-            System.out.println("Country    |    Population Inside Cities    |    Population Outside Cities");
+            System.out.println(" Country | Country Pop | City Pop | City Pop % | Not a City Pop | Not a City Pop %");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
-            // Create string for first SQL statement ( -- population inside cities in each country -- )
+            // Create string for SQL statement ( -- population inside cities in each continent -- )
             String stringSelect1 =
-                    " SELECT DISTINCT country.Name AS Country, SUM(DISTINCT city.Population) AS Population, " +
-                            "SUM(DISTINCT country.Population) AS PopulationC, city.Name "
-                         + " FROM country JOIN city ON country.Code = city.CountryCode "
-                         + " WHERE country.Code = city.CountryCode "
-                         + " GROUP BY Country, Name";
+                    " SELECT DISTINCT country.Name AS dCountry," +
+                            " SUM(DISTINCT country.Population) AS coPopulation," +
+                            " SUM(city.Population) AS cPopulation "
+                            + " FROM country JOIN city ON country.Code = city.CountryCode "
+                            + " WHERE country.Code = city.CountryCode "
+                            + " GROUP BY dCountry ";
 
             // Execute SQL statement
             ResultSet result_set1 = statement.executeQuery(stringSelect1);
 
+            ArrayList<Country> country = new ArrayList<Country>();
+
+            // Print out results of SQl statement
             while (result_set1.next())
             {
-                Country country = new Country();
-                City city = new City();
+                Country cnt = new Country();
+                City cCity = new City();
 
-                country.name = result_set1.getString("Country");
-                city.population = result_set1.getInt("Population");
-                country.population = result_set1.getInt("PopulationC");
-                System.out.println(country.name + "   |   " + city.population + "    |    " + country.population);
+                cnt.name = result_set1.getString("dCountry");
+                cnt.popCiLong = result_set1.getLong("coPopulation");
+                cCity.popCoLong = result_set1.getLong("cPopulation");
 
-                cities.add(city);
+                System.out.println(cnt.name + "    |    "
+                        + cnt.popCiLong + "    |    "
+                        + cCity.popCoLong + "    |    "
+                        + (((cCity.popCoLong * 100) / (cnt.popCiLong))) + "%" + "    |    "
+                        + (cnt.popCiLong - cCity.popCoLong) + "    |    "
+                        + (100 - ((cCity.popCoLong * 100) / (cnt.popCiLong))) + "%");
+
+                country.add(cnt);
             }
+            System.out.println("\n");
+            return country;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
+            return null;
         }
-        return cities;
     }
 }
