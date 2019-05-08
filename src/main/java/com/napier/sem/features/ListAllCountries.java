@@ -2,22 +2,19 @@ package com.napier.sem.features;
 
 import com.napier.sem.*;
 import java.sql.*;
+import java.util.ArrayList;
 
-/**
- * Solves requests 1 - 3
- * Listing countries by population ( Descending )
- */
 public class ListAllCountries {
 
     /**
      * Request 1 - All the countries in the world organised by largest population to smallest
-     * @param connection - Connection to the opened database
      */
-    public static void inTheWorld(Connection connection)
+    public static ArrayList<Country> inTheWorld(Connection connection)
     {
-        System.out.println("Country    |    Population");
+        ArrayList<Country> countries = new ArrayList<>();
         try
         {
+            System.out.println("Country    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -35,6 +32,8 @@ public class ListAllCountries {
                 country.name = result_set.getString("Name");
                 country.population = result_set.getInt("Population");
                 System.out.println(country.name + "   |   " + country.population);
+
+                countries.add(country);
             }
         }
         catch (Exception e)
@@ -42,19 +41,19 @@ public class ListAllCountries {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return countries;
     }
 
     /**
      * Request 2 - All the countries on a continent organised by largest population to smallest
-     * @param continent - continent to analyze
-     * @param connection - Connection to the opened database
      */
-    public static void onContinent(String continent, Connection connection)
+    public static ArrayList<Country> onContinent(String continent, Connection connection)
     {
-        System.out.println(" -- " + continent.toUpperCase() + " -- ");
-        System.out.println("Country    |    Population");
+        ArrayList<Country> countries = new ArrayList<>();
         try
         {
+            System.out.println(" -- " + continent.toUpperCase() + " -- ");
+            System.out.println("Country    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -73,6 +72,8 @@ public class ListAllCountries {
                 country.name = result_set.getString("Name");
                 country.population = result_set.getInt("Population");
                 System.out.println(country.name + "   |   " + country.population);
+
+                countries.add(country);
             }
         }
         catch (Exception e)
@@ -80,19 +81,19 @@ public class ListAllCountries {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return countries;
     }
 
     /**
      * Request 3 - All the countries in a region organised by largest population to smallest
-     * @param region - Region to analyze
-     * @param connection - Connection to the opened database
      */
-    public static void inRegion(String region, Connection connection)
+    public static ArrayList<Country> inRegion(String region, Connection connection)
     {
-        System.out.println(" -- " + region.toUpperCase() + " -- ");
-        System.out.println("Country    |    Population");
+        ArrayList<Country> countries = new ArrayList<>();
         try
         {
+            System.out.println(" -- " + region.toUpperCase() + " -- ");
+            System.out.println("Country    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -111,6 +112,7 @@ public class ListAllCountries {
                 country.name = result_set.getString("Name");
                 country.population = result_set.getInt("Population");
                 System.out.println(country.name + "   |   " + country.population);
+                countries.add(country);
             }
         }
         catch (Exception e)
@@ -118,5 +120,6 @@ public class ListAllCountries {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return countries;
     }
 }

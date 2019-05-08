@@ -87,6 +87,15 @@ public class App
          //Population of City
          Extras.cityPop("London", app.connection);
 
+         //list all countries in world
+         ListAllCountries.inTheWorld(app.connection);
+
+         //list all countries on continent
+         ListAllCountries.onContinent("Asia", app.connection);
+
+         //list all countries in region
+         ListAllCountries.inRegion("North America", app.connection);
+
          // Disconnect from the database
          app.disconnect();
     }

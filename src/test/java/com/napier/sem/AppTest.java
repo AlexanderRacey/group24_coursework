@@ -145,32 +145,53 @@ public class AppTest
         ArrayList<Country> countries = Extras.contPop(null, null);
         countries.contains("null");
     }
-    //region
+
     @Test
     void popInRegionNull()
     {
         ArrayList<Country> countries = Extras.regionPop(null, null);
         countries.contains("null");
     }
-    //country
+
     @Test
     void popInCountryNull()
     {
         ArrayList<Country> countries = Extras.countryPop(null, null);
         countries.contains("null");
     }
-    //district
+
     @Test
     void popInDistrictNull()
     {
         ArrayList<City> cities = Extras.districtPop(null, null);
         cities.contains("null");
     }
-    //city
+
     @Test
     void popInCityNull()
     {
         ArrayList<City> cities = Extras.cityPop(null, null);
         cities.contains("null");
+    }
+
+    @Test
+    void countriesPopWorldNull()
+    {
+        ArrayList<Country> countries = ListAllCountries.inTheWorld(null);
+        countries.contains("null");
+    }
+
+    @Test
+    void countriesPopContinentNull()
+    {
+        ArrayList<Country> countries = ListAllCountries.onContinent(null, null);
+        countries.contains("null");
+    }
+
+    @Test
+    void countriesPopRegionNull()
+    {
+        ArrayList<Country> countries = ListAllCountries.onContinent(null, null);
+        countries.contains("null");
     }
 }
