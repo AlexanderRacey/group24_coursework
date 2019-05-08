@@ -17,6 +17,12 @@ public class City {
     // Population
     public int population;
 
+    // Population inside cities
+    public int popIn;
+
+    // Population outside cities
+    public int popOut;
+
     /**
      * Prints the details of the city to the console
      */
