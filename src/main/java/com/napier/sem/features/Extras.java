@@ -1,7 +1,10 @@
 package com.napier.sem.features;
 
 import com.napier.sem.*;
+
+import java.math.BigInteger;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * Solves requests 1 - 3
@@ -14,20 +17,21 @@ public class Extras
      * Request - World pop
      */
 
-    public void worldPop(Connection connection)
+    public static ArrayList<Country> worldPop(Connection connection)
     {
-        System.out.println("World Population:");
+        ArrayList<Country> worldPopulation = new ArrayList<Country>();
         try
         {
-            long totalPop =0;
-            long pop;
+            System.out.println("World Population:");
+            //int totalPop =0;
+            //int pop;
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Population`"
-                            + "FROM country ";
+                    "SELECT SUM(Population) AS Population "
+                            + "FROM country";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
             // Return new city and population table if valid.
@@ -35,18 +39,18 @@ public class Extras
             while (result_set.next())
             {
                 Country country = new Country();
-                country.population = result_set.getInt("Population");
-                pop = country.population;
-                totalPop = totalPop + pop;
-            }
+                country.WorldPopulation = result_set.getLong("Population");
+                System.out.println(country.WorldPopulation);
 
-            System.out.println(totalPop);
+                worldPopulation.add(country);
+            }
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
+        return worldPopulation;
     }
 
     /**

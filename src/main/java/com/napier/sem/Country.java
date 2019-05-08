@@ -1,5 +1,7 @@
 package com.napier.sem;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 /**
@@ -21,6 +23,9 @@ public class Country {
 
     // Population
     public int population;
+
+    //World Pop
+    public long WorldPopulation;
 
     // Population inside cities
     public int popIn;
