@@ -131,4 +131,25 @@ public class AppTest
         ArrayList<City> cities = ListAllCities.nCitiesInDistrict(null,null,null);
         cities.contains("null");
     }
+
+    @Test
+    void listPopulationInOutCitiesContinentNull()
+    {
+        ArrayList<Country> countries = PopulationCitiesInOut.inEachContinent(null);
+        countries.contains("null");
+    }
+
+    @Test
+    void listPopulationInOutCitiesRegionNull()
+    {
+        ArrayList<Country> countries = PopulationCitiesInOut.inEachRegion(null);
+        countries.contains("null");
+    }
+
+    @Test
+    void listPopulationInOutCitiesCountryNull()
+    {
+        ArrayList<Country> countries = PopulationCitiesInOut.inEachCountry(null);
+        countries.contains("null");
+    }
 }
