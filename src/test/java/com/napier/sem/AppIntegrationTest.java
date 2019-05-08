@@ -134,22 +134,21 @@ public class AppIntegrationTest
     @Test
     void listPopulationInOutCitiesContinent()
     {
-        ArrayList<Country> countries = PopulationCitiesInOut.inEachContinent(app.connection);
-        assertEquals(countries.get(0). name, "Asia");
+        ArrayList<Country> country = PopulationCitiesInOut.inEachContinent(app.connection);
+        assertEquals(country.get(0). continent, "Asia");
     }
 
     @Test
     void listPopulationInOutCitiesRegion()
     {
-        ArrayList<Country> countries = PopulationCitiesInOut.inEachRegion(app.connection);
-        assertEquals(countries.get(0). name, "Australia and New Zealand");
+        ArrayList<Country> country = PopulationCitiesInOut.inEachRegion(app.connection);
+        assertEquals(country.get(0). region, "Australia and New Zealand");
     }
 
     @Test
-    void listPopulationInOutCitiesCountry()
-    {
-        ArrayList<Country> countries = PopulationCitiesInOut.inEachCountry(app.connection);
-        assertEquals(countries.get(0). name, "Afganistan");
+    void listPopulationInOutCitiesCountry() {
+        ArrayList<Country> country = PopulationCitiesInOut.inEachCountry(app.connection);
+        assertEquals(country.get(0).name, "Afghanistan");
     }
 
 }
