@@ -14,9 +14,9 @@ public class ListAllCities
     public static ArrayList<City> citiesInWorld(Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
-        System.out.println("City    |    Population");
         try
         {
+            System.out.println("City    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -55,11 +55,10 @@ public class ListAllCities
     public static ArrayList<City> citiesContinent(String continent, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
-        System.out.println("-- " + continent.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + continent.toUpperCase() + " --");
+            System.out.println("City    |     Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -99,11 +98,10 @@ public class ListAllCities
     public static ArrayList<City> citiesInRegion(String region, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
-        System.out.println("-- " + region.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + region.toUpperCase() + " --");
+            System.out.println("City    |     Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -144,11 +142,10 @@ public class ListAllCities
     public static ArrayList<City> citiesInCountry(String countryName, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
-        System.out.println("-- " + countryName.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + countryName.toUpperCase() + " --");
+            System.out.println("City    |     Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
@@ -201,10 +198,10 @@ public class ListAllCities
     public static ArrayList<City> citiesInDistrict(String district, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
-        System.out.println("-- " + district.toUpperCase() + " --");
-        System.out.println("City    |    Population");
         try
         {
+            System.out.println("-- " + district.toUpperCase() + " --");
+            System.out.println("City    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -242,9 +239,9 @@ public class ListAllCities
     public static ArrayList<City> nCitiesInWorld(String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
-        System.out.println("City    |    Population");
         try
         {
+            System.out.println("City    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -288,11 +285,10 @@ public class ListAllCities
     public static ArrayList<City> nCitiesContinent(String continent, String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
-        System.out.println("-- " + continent.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + continent.toUpperCase() + " --");
+            System.out.println("City    |     Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -333,10 +329,9 @@ public class ListAllCities
 
     public static ArrayList<City> nCitiesInRegion(String region, String number, Connection connection) {
         ArrayList<City> cities = new ArrayList<City>();
-        System.out.println("-- " + region.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try {
+            System.out.println("-- " + region.toUpperCase() + " --");
+            System.out.println("City    |     Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement
@@ -374,11 +369,10 @@ public class ListAllCities
     public static ArrayList<City> nCitiesInCountry(String countryName, String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
-        System.out.println("-- " + countryName.toUpperCase() + " --");
-        System.out.println("City    |     Population");
-
         try
         {
+            System.out.println("-- " + countryName.toUpperCase() + " --");
+            System.out.println("City    |     Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
@@ -432,10 +426,10 @@ public class ListAllCities
     public static ArrayList<City> nCitiesInDistrict(String district,String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
-        System.out.println("-- " + district.toUpperCase() + " --");
-        System.out.println("City    |    Population");
         try
         {
+            System.out.println("-- " + district.toUpperCase() + " --");
+            System.out.println("City    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
             // Create string for SQL statement

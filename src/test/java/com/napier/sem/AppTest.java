@@ -63,72 +63,72 @@ public class AppTest
     @Test
     void listAllCitiesInWorldNull()
     {
-        ListAllCities listAllCitiesWorld = new ListAllCities();
-        listAllCitiesWorld.citiesInWorld(null);
+        ArrayList<City> cities = ListAllCities.citiesInWorld(null);
+        cities.contains("null");
     }
 
-    /*
+
     @Test
     void listAllCitiesInContinentNull()
     {
-        ListAllCities listAllCitiesContinent = new ListAllCities();
-        listAllCitiesContinent.citiesContinent(null, null);
+        ArrayList<City> cities = ListAllCities.citiesContinent(null, null);
+        cities.contains("null");
+
     }
 
     @Test
     void listAllCitiesInCountryNull()
     {
-        ListAllCities listAllCitiesCountry = new ListAllCities();
-        listAllCitiesCountry.citiesInCountry(null, null);
+        ArrayList<City> cities = ListAllCities.citiesInCountry(null, null);
+        cities.contains("null");
     }
 
     @Test
     void listAllCitiesInRegionNull()
     {
-        ListAllCities listAllCitiesRegion = new ListAllCities();
-        listAllCitiesRegion.citiesInRegion(null, null);
+        ArrayList<City> cities = ListAllCities.citiesInRegion(null, null);
+        cities.contains("null");
     }
 
     @Test
     void listAllCitiesInDistrictNull()
     {
-        ListAllCities listAllCitiesDistrict = new ListAllCities();
-        listAllCitiesDistrict.citiesInDistrict(null,null);
+        ArrayList<City> cities = ListAllCities.citiesInDistrict(null,null);
+        cities.contains("null");
     }
-*/
+
     @Test
     void listAllNCitiesInWorldNull()
     {
-        ListAllCities listNCitiesWorld = new ListAllCities();
-        listNCitiesWorld.nCitiesInWorld(null,null);
+        ArrayList<City> cities = ListAllCities.nCitiesInWorld(null,null);
+        cities.contains("null");
     }
-/*
+
     @Test
     void listNCitiesInContinentNull()
     {
-        ListAllCities listNCitiesContinent = new ListAllCities();
-        listNCitiesContinent.nCitiesContinent(null,null,null);
+        ArrayList<City> cities = ListAllCities.nCitiesContinent(null,null,null);
+        cities.contains("null");
     }
 
     @Test
     void listNCitiesInRegionNull()
     {
-        ListAllCities listNCitiesRegion = new ListAllCities();
-        listNCitiesRegion.nCitiesInRegion(null,null,null);
+        ArrayList<City> cities = ListAllCities.nCitiesInRegion(null,null,null);
+        cities.contains("null");
     }
 
     @Test
     void listNCitiesInCountryNull()
     {
-        ListAllCities listNCitiesCountry = new ListAllCities();
-        listNCitiesCountry.nCitiesInCountry(null,null,null);
+        ArrayList<City> cities = ListAllCities.nCitiesInCountry(null,null,null);
+        cities.contains("null");
     }
 
     @Test
     void listNCitiesInDistrictNull()
     {
-        ListAllCities listNCitiesDistrict = new ListAllCities();
-        listNCitiesDistrict.nCitiesInDistrict(null,null,null);
+        ArrayList<City> cities = ListAllCities.nCitiesInDistrict(null,null,null);
+        cities.contains("null");
     }
-    */
 }
