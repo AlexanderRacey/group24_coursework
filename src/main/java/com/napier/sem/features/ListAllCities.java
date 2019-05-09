@@ -16,6 +16,7 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<City>();
         try
         {
+            System.out.println("***********************");
             System.out.println("City    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -37,6 +38,7 @@ public class ListAllCities
 
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -57,6 +59,7 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<>();
         try
         {
+            System.out.println("************************");
             System.out.println("-- " + continent.toUpperCase() + " --");
             System.out.println("City    |     Population");
             // Create an SQL statement
@@ -81,6 +84,7 @@ public class ListAllCities
                 cities.add(city);
 
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -100,6 +104,7 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<>();
         try
         {
+            System.out.println("************************");
             System.out.println("-- " + region.toUpperCase() + " --");
             System.out.println("City    |     Population");
             // Create an SQL statement
@@ -123,6 +128,7 @@ public class ListAllCities
 
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -144,6 +150,7 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<>();
         try
         {
+            System.out.println("************************");
             System.out.println("-- " + countryName.toUpperCase() + " --");
             System.out.println("City    |     Population");
             // Create an SQL statement
@@ -181,6 +188,7 @@ public class ListAllCities
 
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -200,6 +208,7 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<>();
         try
         {
+            System.out.println("***********************");
             System.out.println("-- " + district.toUpperCase() + " --");
             System.out.println("City    |    Population");
             // Create an SQL statement
@@ -223,6 +232,7 @@ public class ListAllCities
 
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -241,6 +251,7 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<>();
         try
         {
+            System.out.println("***********************");
             System.out.println("City    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -267,6 +278,7 @@ public class ListAllCities
                 count++;
                 cities.add(city);
             }
+            System.out.println("\n");
 
 
         }
@@ -287,6 +299,7 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<City>();
         try
         {
+            System.out.println("************************");
             System.out.println("-- " + continent.toUpperCase() + " --");
             System.out.println("City    |     Population");
             // Create an SQL statement
@@ -314,6 +327,7 @@ public class ListAllCities
                 count++;
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -330,6 +344,7 @@ public class ListAllCities
     public static ArrayList<City> nCitiesInRegion(String region, String number, Connection connection) {
         ArrayList<City> cities = new ArrayList<City>();
         try {
+            System.out.println("************************");
             System.out.println("-- " + region.toUpperCase() + " --");
             System.out.println("City    |     Population");
             // Create an SQL statement
@@ -356,6 +371,7 @@ public class ListAllCities
                 count++;
                 cities.add(city);
             }
+            System.out.println("\n");
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
@@ -371,6 +387,7 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<City>();
         try
         {
+            System.out.println("************************");
             System.out.println("-- " + countryName.toUpperCase() + " --");
             System.out.println("City    |     Population");
             // Create an SQL statement
@@ -411,6 +428,7 @@ public class ListAllCities
                 count++;
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -428,6 +446,7 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<City>();
         try
         {
+            System.out.println("***********************");
             System.out.println("-- " + district.toUpperCase() + " --");
             System.out.println("City    |    Population");
             // Create an SQL statement
@@ -455,6 +474,7 @@ public class ListAllCities
                 count++;
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {

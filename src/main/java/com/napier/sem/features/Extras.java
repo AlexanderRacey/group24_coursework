@@ -22,6 +22,7 @@ public class Extras
         ArrayList<Country> worldPopulation = new ArrayList<Country>();
         try
         {
+            System.out.println("*****************");
             System.out.println("World Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -41,6 +42,7 @@ public class Extras
 
                 worldPopulation.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -59,6 +61,7 @@ public class Extras
         ArrayList<Country> contPopulation = new ArrayList<Country>();
         try
         {
+            System.out.println("************************");
             System.out.println(continent + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -79,6 +82,7 @@ public class Extras
 
                 contPopulation.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -96,6 +100,7 @@ public class Extras
         ArrayList<Country> regionPopulation = new ArrayList<Country>();
         try
         {
+            System.out.println("*********************");
             System.out.println(region + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -116,6 +121,7 @@ public class Extras
 
                 regionPopulation.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -133,6 +139,7 @@ public class Extras
         ArrayList<Country> countryPopulation = new ArrayList<Country>();
         try
         {
+            System.out.println("****************************");
             System.out.println(searchCountry + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -153,6 +160,7 @@ public class Extras
 
                 countryPopulation.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -170,6 +178,7 @@ public class Extras
         ArrayList<City> districtPopulation = new ArrayList<City>();
         try
         {
+            System.out.println("***********************");
             System.out.println(district + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -190,6 +199,7 @@ public class Extras
 
                 districtPopulation.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -207,6 +217,7 @@ public class Extras
         ArrayList<City> cityPopulation = new ArrayList<City>();
         try
         {
+            System.out.println("*************************");
             System.out.println(selectCity + " Population:");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -227,6 +238,7 @@ public class Extras
 
                 cityPopulation.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {

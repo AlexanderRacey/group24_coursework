@@ -11,6 +11,7 @@ public class ListAllCapitalCities {
         ArrayList<City> cities = new ArrayList<City>();
 
         try {
+            System.out.println("***************************************");
             System.out.println("Name    |    Country    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -36,6 +37,7 @@ public class ListAllCapitalCities {
 
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -52,6 +54,7 @@ public class ListAllCapitalCities {
 
         try
         {
+            System.out.println("***************************************");
             System.out.println(" -- " + continent.toUpperCase() + " -- ");
             System.out.println("Name    |    Country    |    Population");
             if(continent == null)
@@ -83,6 +86,7 @@ public class ListAllCapitalCities {
 
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -99,6 +103,7 @@ public class ListAllCapitalCities {
 
         try
         {
+            System.out.println("***************************************");
             System.out.println(" -- " + region.toUpperCase() + " -- ");
             System.out.println("Name    |    Country    |    Population");
             if(region == null)
@@ -130,6 +135,7 @@ public class ListAllCapitalCities {
 
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -143,6 +149,7 @@ public class ListAllCapitalCities {
         ArrayList<City> cities = new ArrayList<City>();
 
         try {
+            System.out.println("***************************************");
             System.out.println("Name    |    Country    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -171,6 +178,7 @@ public class ListAllCapitalCities {
                 count++;
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -183,6 +191,7 @@ public class ListAllCapitalCities {
         ArrayList<City> cities = new ArrayList<City>();
 
         try {
+            System.out.println("***************************************");
             System.out.println("Name    |    Country    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -211,6 +220,7 @@ public class ListAllCapitalCities {
                 count++;
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -223,6 +233,7 @@ public class ListAllCapitalCities {
         ArrayList<City> cities = new ArrayList<City>();
 
         try {
+            System.out.println("***************************************");
             System.out.println("Name    |    Country    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -251,6 +262,7 @@ public class ListAllCapitalCities {
                 count++;
                 cities.add(city);
             }
+            System.out.println("\n");
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

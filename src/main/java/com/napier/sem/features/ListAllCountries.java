@@ -14,6 +14,7 @@ public class ListAllCountries {
         ArrayList<Country> countries = new ArrayList<>();
         try
         {
+            System.out.println("**************************");
             System.out.println("Country    |    Population");
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -35,6 +36,7 @@ public class ListAllCountries {
 
                 countries.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -52,6 +54,7 @@ public class ListAllCountries {
         ArrayList<Country> countries = new ArrayList<>();
         try
         {
+            System.out.println("**************************");
             System.out.println(" -- " + continent.toUpperCase() + " -- ");
             System.out.println("Country    |    Population");
             // Create an SQL statement
@@ -75,6 +78,7 @@ public class ListAllCountries {
 
                 countries.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -92,6 +96,7 @@ public class ListAllCountries {
         ArrayList<Country> countries = new ArrayList<>();
         try
         {
+            System.out.println("**************************");
             System.out.println(" -- " + region.toUpperCase() + " -- ");
             System.out.println("Country    |    Population");
             // Create an SQL statement
@@ -114,6 +119,7 @@ public class ListAllCountries {
                 System.out.println(country.name + "   |   " + country.population);
                 countries.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {

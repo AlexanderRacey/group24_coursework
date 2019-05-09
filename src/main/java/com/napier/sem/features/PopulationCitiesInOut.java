@@ -12,7 +12,8 @@ import java.util.ArrayList;
 public class PopulationCitiesInOut {
 
     /**
-     * Request 23 - The population of people, people living in cities, and people not living in cities in each continent.     *
+     * Request 23 - The population of people, people living in cities, and people not living in cities in each
+     * continent.
      * @param connection - Connection to the opened database
      */
 
@@ -21,8 +22,8 @@ public class PopulationCitiesInOut {
         try
         {
             // Prints out list headers
-            System.out.println("**************************************************************************************");
-            System.out.println(" Continent | Continent Pop | City Pop | City Pop % | Not a City Pop | Not a City Pop %");
+            System.out.println("***********************************************************************************");
+            System.out.println("Continent | Cont. Pop | City Pop | City Pop % | Out of City Pop | Out of City Pop %");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -31,7 +32,7 @@ public class PopulationCitiesInOut {
             String stringSelect1 =
                     " SELECT DISTINCT country.Continent AS dContinent," +
                             " SUM(DISTINCT country.Population) AS coPopulation," +
-                            " SUM(city.Population) AS cPopulation "
+                            " SUM(city.Population) AS ciPopulation "
                          + " FROM country JOIN city ON country.Code = city.CountryCode "
                          + " WHERE country.Code = city.CountryCode "
                          + " GROUP BY dContinent ";
@@ -49,8 +50,9 @@ public class PopulationCitiesInOut {
 
                 cnt.popCiLong = result_set1.getLong("coPopulation");
                 cnt.continent = result_set1.getString("dContinent");
-                cCity.popCoLong = result_set1.getLong("cPopulation");
+                cCity.popCoLong = result_set1.getLong("ciPopulation");
 
+                // Calculates percentages of populations
                 System.out.println(cnt.continent + "    |    "
                         + cnt.popCiLong + "    |    "
                         + cCity.popCoLong + "    |    "
@@ -65,6 +67,7 @@ public class PopulationCitiesInOut {
         }
         catch (Exception e)
         {
+            // Error message when continents are not found
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
             return null;
@@ -80,8 +83,8 @@ public class PopulationCitiesInOut {
         try
         {
             // Prints out list headers
-            System.out.println("**************************************************************************************");
-            System.out.println(" Region | Region Pop | City Pop | City Pop % | Not a City Pop | Not a City Pop %");
+            System.out.println("*********************************************************************************");
+            System.out.println("Region | Region Pop | City Pop | City Pop % | Out of City Pop | Out of City Pop %");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -90,7 +93,7 @@ public class PopulationCitiesInOut {
             String stringSelect1 =
                     " SELECT DISTINCT country.Region AS dRegion," +
                             " SUM(DISTINCT country.Population) AS coPopulation," +
-                            " SUM(city.Population) AS cPopulation "
+                            " SUM(city.Population) AS ciPopulation "
                             + " FROM country JOIN city ON country.Code = city.CountryCode "
                             + " WHERE country.Code = city.CountryCode "
                             + " GROUP BY dRegion ";
@@ -108,8 +111,9 @@ public class PopulationCitiesInOut {
 
                 cnt.region = result_set1.getString("dRegion");
                 cnt.popCiLong = result_set1.getLong("coPopulation");
-                cCity.popCoLong = result_set1.getLong("cPopulation");
+                cCity.popCoLong = result_set1.getLong("ciPopulation");
 
+                // Calculates percentages of populations
                 System.out.println(cnt.region + "    |    "
                         + cnt.popCiLong + "    |    "
                         + cCity.popCoLong + "    |    "
@@ -124,6 +128,7 @@ public class PopulationCitiesInOut {
         }
         catch (Exception e)
         {
+            // Error message when regions are not found
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
             return null;
@@ -139,8 +144,8 @@ public class PopulationCitiesInOut {
         try
         {
             // Prints out list headers
-            System.out.println("**************************************************************************");
-            System.out.println(" Country | Country Pop | City Pop | City Pop % | Not a City Pop | Not a City Pop %");
+            System.out.println("************************************************************************************");
+            System.out.println("Country | Country Pop | City Pop | City Pop % | Out of City Pop | Out of City Pop %");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -149,7 +154,7 @@ public class PopulationCitiesInOut {
             String stringSelect1 =
                     " SELECT DISTINCT country.Name AS dCountry," +
                             " SUM(DISTINCT country.Population) AS coPopulation," +
-                            " SUM(city.Population) AS cPopulation "
+                            " SUM(city.Population) AS ciPopulation "
                             + " FROM country JOIN city ON country.Code = city.CountryCode "
                             + " WHERE country.Code = city.CountryCode "
                             + " GROUP BY dCountry ";
@@ -167,8 +172,9 @@ public class PopulationCitiesInOut {
 
                 cnt.name = result_set1.getString("dCountry");
                 cnt.popCiLong = result_set1.getLong("coPopulation");
-                cCity.popCoLong = result_set1.getLong("cPopulation");
+                cCity.popCoLong = result_set1.getLong("ciPopulation");
 
+                // Calculates percentages of populations
                 System.out.println(cnt.name + "    |    "
                         + cnt.popCiLong + "    |    "
                         + cCity.popCoLong + "    |    "
@@ -183,6 +189,7 @@ public class PopulationCitiesInOut {
         }
         catch (Exception e)
         {
+            // Error message when countries are not found
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
             return null;

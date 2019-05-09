@@ -19,9 +19,12 @@ public class TopCountries {
         ArrayList<Country> countries = new ArrayList<>();
         try
         {
+            System.out.println("**************************");
             System.out.println("Country    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
@@ -29,6 +32,7 @@ public class TopCountries {
                             + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
             int num = Integer.parseInt(number);
@@ -43,6 +47,7 @@ public class TopCountries {
                 count++;
                 countries.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -60,10 +65,13 @@ public class TopCountries {
         ArrayList<Country> countries = new ArrayList<>();
         try
         {
+            System.out.println("**************************");
             System.out.println(" -- " + continent.toUpperCase() + " -- ");
             System.out.println("Country    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
@@ -72,6 +80,7 @@ public class TopCountries {
                             + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
             int num = Integer.parseInt(number);
@@ -86,6 +95,7 @@ public class TopCountries {
                 count++;
                 countries.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
@@ -103,18 +113,23 @@ public class TopCountries {
         ArrayList<Country> countries = new ArrayList<>();
         try
         {
+            System.out.println("**************************");
             System.out.println(" -- " + region.toUpperCase() + " -- ");
             System.out.println("Country    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
                             + "FROM country "
                             + "WHERE Region = '" + region + "'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
             int num = Integer.parseInt(number);
@@ -129,6 +144,7 @@ public class TopCountries {
                 count++;
                 countries.add(country);
             }
+            System.out.println("\n");
         }
         catch (Exception e)
         {
