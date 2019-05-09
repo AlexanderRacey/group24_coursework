@@ -18,15 +18,19 @@ public class ListAllCities
         {
             System.out.println("***********************");
             System.out.println("City    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
                             + "FROM city "
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
@@ -45,7 +49,6 @@ public class ListAllCities
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
-
         return cities;
     }
 
@@ -62,16 +65,20 @@ public class ListAllCities
             System.out.println("************************");
             System.out.println("-- " + continent.toUpperCase() + " --");
             System.out.println("City    |     Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT city.`Name`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE  country.`Continent` = '" + continent + "'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
             while (result_set.next())
@@ -82,7 +89,6 @@ public class ListAllCities
                 System.out.println(city.name + "   |   " + city.population);
 
                 cities.add(city);
-
             }
             System.out.println("\n");
         }
@@ -91,7 +97,6 @@ public class ListAllCities
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
-
         return cities;
     }
 
@@ -107,16 +112,20 @@ public class ListAllCities
             System.out.println("************************");
             System.out.println("-- " + region.toUpperCase() + " --");
             System.out.println("City    |     Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT city.`Name`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE  country.`Region` = '" + region + "'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
             while (result_set.next())
@@ -135,7 +144,6 @@ public class ListAllCities
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
-
         return cities;
     }
 
@@ -153,6 +161,7 @@ public class ListAllCities
             System.out.println("************************");
             System.out.println("-- " + countryName.toUpperCase() + " --");
             System.out.println("City    |     Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
@@ -195,7 +204,6 @@ public class ListAllCities
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
-
         return cities;
     }
 
@@ -211,16 +219,20 @@ public class ListAllCities
             System.out.println("***********************");
             System.out.println("-- " + district.toUpperCase() + " --");
             System.out.println("City    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
                             + "FROM city "
                             + "WHERE district = '" + district +"'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
@@ -253,15 +265,19 @@ public class ListAllCities
         {
             System.out.println("***********************");
             System.out.println("City    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
                             + "FROM city "
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
 
@@ -279,8 +295,6 @@ public class ListAllCities
                 cities.add(city);
             }
             System.out.println("\n");
-
-
         }
         catch (Exception e)
         {
@@ -302,19 +316,22 @@ public class ListAllCities
             System.out.println("************************");
             System.out.println("-- " + continent.toUpperCase() + " --");
             System.out.println("City    |     Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT city.`Name`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE  country.`Continent` = '" + continent + "'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
-
             int num = Integer.parseInt(number);
             int count = 0;
 
@@ -341,29 +358,35 @@ public class ListAllCities
      * Request 14 - Top n Region
      */
 
-    public static ArrayList<City> nCitiesInRegion(String region, String number, Connection connection) {
+    public static ArrayList<City> nCitiesInRegion(String region, String number, Connection connection)
+    {
         ArrayList<City> cities = new ArrayList<City>();
-        try {
+        try
+        {
             System.out.println("************************");
             System.out.println("-- " + region.toUpperCase() + " --");
             System.out.println("City    |     Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT city.`Name`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE  country.`Region` = '" + region + "'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
-
             int num = Integer.parseInt(number);
             int count = 0;
 
-            while (result_set.next() && count < num) {
+            while (result_set.next() && count < num)
+            {
                 City city = new City();
                 city.name = result_set.getString("Name");
                 city.population = result_set.getInt("Population");
@@ -372,7 +395,9 @@ public class ListAllCities
                 cities.add(city);
             }
             System.out.println("\n");
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             System.out.println(e.getMessage());
             System.out.println("Something went wrong");
         }
@@ -390,6 +415,7 @@ public class ListAllCities
             System.out.println("************************");
             System.out.println("-- " + countryName.toUpperCase() + " --");
             System.out.println("City    |     Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
@@ -449,19 +475,22 @@ public class ListAllCities
             System.out.println("***********************");
             System.out.println("-- " + district.toUpperCase() + " --");
             System.out.println("City    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
                             + "FROM city "
                             + "WHERE district = '" + district +"'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
-
             int num = Integer.parseInt(number);
             int count = 0;
 
@@ -483,5 +512,4 @@ public class ListAllCities
         }
         return cities;
     }
-
 }

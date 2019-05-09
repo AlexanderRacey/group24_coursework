@@ -16,15 +16,19 @@ public class ListAllCountries {
         {
             System.out.println("**************************");
             System.out.println("Country    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
                             + "FROM country "
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
             while (result_set.next())
@@ -57,16 +61,20 @@ public class ListAllCountries {
             System.out.println("**************************");
             System.out.println(" -- " + continent.toUpperCase() + " -- ");
             System.out.println("Country    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
                             + "FROM country "
                             + "WHERE Continent = '" + continent + "'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
             while (result_set.next())
@@ -99,16 +107,20 @@ public class ListAllCountries {
             System.out.println("**************************");
             System.out.println(" -- " + region.toUpperCase() + " -- ");
             System.out.println("Country    |    Population");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT `Name`, `Population`"
                             + "FROM country "
                             + "WHERE Region = '" + region + "'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+            
             // Return new country and population table if valid.
             // Take countries one by one from the top
             while (result_set.next())

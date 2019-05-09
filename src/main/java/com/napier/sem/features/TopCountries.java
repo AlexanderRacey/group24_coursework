@@ -78,6 +78,7 @@ public class TopCountries {
                             + "FROM country "
                             + "WHERE Continent = '" + continent + "'"
                             + "ORDER BY Population DESC";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
 

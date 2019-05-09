@@ -24,14 +24,18 @@ public class Extras
         {
             System.out.println("*****************");
             System.out.println("World Population:");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT SUM(Population) AS Population "
                             + "FROM country";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
@@ -63,15 +67,19 @@ public class Extras
         {
             System.out.println("************************");
             System.out.println(continent + " Population:");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT SUM(Population) AS Population "
                             + "FROM country "
                             + "WHERE Continent = '" + continent +"'";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
@@ -102,15 +110,19 @@ public class Extras
         {
             System.out.println("*********************");
             System.out.println(region + " Population:");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT SUM(Population) AS Population "
                             + "FROM country "
                             + "WHERE Region = '" + region +"'";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
@@ -141,15 +153,19 @@ public class Extras
         {
             System.out.println("****************************");
             System.out.println(searchCountry + " Population:");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT SUM(Population) AS Population "
                             + "FROM country "
                             + "WHERE `Name` = '" + searchCountry +"'";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
@@ -180,15 +196,19 @@ public class Extras
         {
             System.out.println("***********************");
             System.out.println(district + " Population:");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT SUM(Population) AS Population "
                             + "FROM city "
                             + "WHERE district = '" + district +"'";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
@@ -219,15 +239,19 @@ public class Extras
         {
             System.out.println("*************************");
             System.out.println(selectCity + " Population:");
+
             // Create an SQL statement
             Statement statement = connection.createStatement();
+
             // Create string for SQL statement
             String stringSelect =
                     "SELECT SUM(Population) AS Population "
                             + "FROM city "
                             + "WHERE `Name` = '" + selectCity +"'";
+
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
+
             // Return new city and population table if valid.
             // Take cities one by one from the top
             while (result_set.next())
