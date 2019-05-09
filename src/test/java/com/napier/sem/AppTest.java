@@ -26,13 +26,6 @@ public class AppTest
     }
 
     @Test
-    void listAllCapitalCitiesNInWorldNull()
-    {
-        ArrayList<City> cities = ListAllCapitalCities.nInTheWorld(null, null);
-        cities.contains("null");
-    }
-
-    @Test
     void listAllCapitalCitiesOnContinentNull()
     {
         ArrayList<City> cities = ListAllCapitalCities.onContinent(null, null);
@@ -40,16 +33,23 @@ public class AppTest
     }
 
     @Test
-    void listAllCapitalCitiesNOnContinentNull()
+    void listAllCapitalCitiesInRegionNull()
     {
-        ArrayList<City> cities = ListAllCapitalCities.nOnContinent(null, null, null);
+        ArrayList<City> cities = ListAllCapitalCities.inRegion(null, null);
         cities.contains("null");
     }
 
     @Test
-    void listAllCapitalCitiesInRegionNull()
+    void listAllCapitalCitiesNInWorldNull()
     {
-        ArrayList<City> cities = ListAllCapitalCities.inRegion(null, null);
+        ArrayList<City> cities = ListAllCapitalCities.nInTheWorld(null, null);
+        cities.contains("null");
+    }
+
+    @Test
+    void listAllCapitalCitiesNOnContinentNull()
+    {
+        ArrayList<City> cities = ListAllCapitalCities.nOnContinent(null, null, null);
         cities.contains("null");
     }
 
@@ -191,7 +191,28 @@ public class AppTest
     @Test
     void countriesPopRegionNull()
     {
-        ArrayList<Country> countries = ListAllCountries.onContinent(null, null);
+        ArrayList<Country> countries = ListAllCountries.inRegion(null, null);
+        countries.contains("null");
+    }
+
+    @Test
+    void topNCountriesPopWorldNull()
+    {
+        ArrayList<Country> countries = TopCountries.nInTheWorld(null ,null);
+        countries.contains("null");
+    }
+
+    @Test
+    void topNCountriesPopContinentNull()
+    {
+        ArrayList<Country> countries = TopCountries.nOnContinent(null, null, null);
+        countries.contains("null");
+    }
+
+    @Test
+    void topNCountriesPopRegionNull()
+    {
+        ArrayList<Country> countries = TopCountries.nInRegion(null, null, null);
         countries.contains("null");
     }
 }

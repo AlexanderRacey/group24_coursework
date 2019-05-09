@@ -28,7 +28,7 @@ public class App
          ListAllCapitalCities.onContinent( "Asia", app.connection);
 
          //Lists all Capital Cities in Caribbean by population
-         ListAllCapitalCities.inRegion( "Caribbean", app.connection);
+         ListAllCapitalCities.inRegion( "Middle East", app.connection);
 
          //Lists all N capital cities in the world by population
          ListAllCapitalCities.nInTheWorld("5",app.connection);
@@ -37,7 +37,7 @@ public class App
          ListAllCapitalCities.nOnContinent( "Asia", "5",app.connection);
 
          //Lists all N Capital Cities in Caribbean by population
-         ListAllCapitalCities.nInRegion( "Caribbean","5", app.connection);
+         ListAllCapitalCities.nInRegion( "Middle East","5", app.connection);
 
          //7 - list all cities in world by pop
          ListAllCities.citiesInWorld(app.connection);
@@ -49,7 +49,7 @@ public class App
          ListAllCities.citiesInCountry("France", app.connection);
 
          //10 - list all cities in region by pop
-         ListAllCities.citiesInRegion("North America", app.connection);
+         ListAllCities.citiesInRegion("Middle East", app.connection);
 
          //11 - list all cities in district by pop
          ListAllCities.citiesInDistrict("Scotland",app.connection);
@@ -61,7 +61,7 @@ public class App
          ListAllCities.nCitiesContinent("Asia","5",app.connection);
 
          //list n cities region, user enters n & region, by pop
-         ListAllCities.nCitiesInRegion("North America","5",app.connection);
+         ListAllCities.nCitiesInRegion("Middle East","5",app.connection);
 
          //list n cities country, user enters n & country, by pop
          ListAllCities.nCitiesInCountry("France","5",app.connection);
@@ -76,7 +76,7 @@ public class App
          Extras.contPop("Asia", app.connection);
 
          //Population of Region
-         Extras.regionPop("North America", app.connection);
+         Extras.regionPop("Middle East", app.connection);
 
          //Population of Country
          Extras.countryPop("France", app.connection);
@@ -95,6 +95,15 @@ public class App
 
          //list all countries in region
          ListAllCountries.inRegion("North America", app.connection);
+
+         //list top n countries in world
+         TopCountries.nInTheWorld("5", app.connection);
+
+         //list top n countries on continent
+         TopCountries.nOnContinent("Asia", "5", app.connection);
+
+         //list top n countries in region
+         TopCountries.nInRegion("Middle East", "5", app.connection);
 
          // Disconnect from the database
          app.disconnect();

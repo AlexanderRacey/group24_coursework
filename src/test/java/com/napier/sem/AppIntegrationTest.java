@@ -29,17 +29,24 @@ public class AppIntegrationTest
     }
 
     @Test
-    void listAllCapitalCitiesNInWorld()
-    {
-        ArrayList<City> cities = ListAllCapitalCities.nInTheWorld("5", app.connection);
-        assertEquals(cities.get(4). name, "Tokyo");
-    }
-
-    @Test
     void listAllCapitalCitiesOnContinent()
     {
         ArrayList<City> cities = ListAllCapitalCities.onContinent("Asia", app.connection);
         assertEquals(cities.get(0). name, "Seoul");
+    }
+
+    @Test
+    void listAllCapitalCitiesInRegion()
+    {
+        ArrayList<City> cities = ListAllCapitalCities.inRegion("Middle East" , app.connection);
+        assertEquals(cities.get(0). name, "Baghdad");
+    }
+
+    @Test
+    void listAllCapitalCitiesNInWorld()
+    {
+        ArrayList<City> cities = ListAllCapitalCities.nInTheWorld("5", app.connection);
+        assertEquals(cities.get(4). name, "Tokyo");
     }
 
     @Test
@@ -50,19 +57,18 @@ public class AppIntegrationTest
     }
 
     @Test
-    void listAllCapitalCitiesInRegion()
+    void listAllCapitalCitiesNInRegion()
     {
-        ArrayList<City> cities = ListAllCapitalCities.inRegion( "Caribbean", app.connection);
-        assertEquals(cities.get(0). name, "La Habana");
+        ArrayList<City> cities = ListAllCapitalCities.nInRegion( "Middle East", "5", app.connection);
+        assertEquals(cities.get(4). name, "Damascus");
     }
 
     @Test
-    void listAllCapitalCitiesNInRegion()
+    void listAllCitiesInWorld()
     {
-        ArrayList<City> cities = ListAllCapitalCities.nInRegion( "Caribbean", "5", app.connection);
-        assertEquals(cities.get(4). name, "Nassau");
+        ArrayList<City> cities = ListAllCities.citiesInWorld( app.connection);
+        assertEquals(cities.get(0). name, "Mumbai (Bombay)");
     }
-
 
     @Test
     void listAllCitiesInContinent()
@@ -81,8 +87,8 @@ public class AppIntegrationTest
     @Test
     void listAllCitiesInRegion()
     {
-        ArrayList<City> cities = ListAllCities.citiesInRegion("North America", app.connection);
-        assertEquals(cities.get(0). name, "New York");
+        ArrayList<City> cities = ListAllCities.citiesInRegion("Middle East", app.connection);
+        assertEquals(cities.get(0). name, "Istanbul");
     }
 
     @Test
@@ -109,8 +115,8 @@ public class AppIntegrationTest
     @Test
     void listNCitiesInRegion()
     {
-        ArrayList<City> cities = ListAllCities.nCitiesInRegion("North America","5", app.connection);
-        assertEquals(cities.get(4). name, "Philadelphia");
+        ArrayList<City> cities = ListAllCities.nCitiesInRegion("Middle East","5", app.connection);
+        assertEquals(cities.get(4). name, "Izmir");
     }
 
     @Test
@@ -144,7 +150,7 @@ public class AppIntegrationTest
     @Test
     void popInRegion()
     {
-        ArrayList<Country> countries = Extras.regionPop("North America", app.connection);
+        ArrayList<Country> countries = Extras.regionPop("Middle East", app.connection);
         countries.contains("309632000");
     }
 
@@ -163,7 +169,7 @@ public class AppIntegrationTest
     }
 
     @Test
-    void popInCityNull()
+    void popInCity()
     {
         ArrayList<City> cities = Extras.cityPop("London", app.connection);
         cities.contains("7624917");
@@ -186,7 +192,29 @@ public class AppIntegrationTest
     @Test
     void countriesPopRegion()
     {
-        ArrayList<Country> countries = ListAllCountries.onContinent("North America", app.connection);
-        assertEquals(countries.get(0). name, "United States");
+        ArrayList<Country> countries = ListAllCountries.inRegion("Middle East", app.connection);
+        assertEquals(countries.get(0). name, "Turkey");
     }
+
+    @Test
+    void topNCountriesPopWorld()
+    {
+        ArrayList<Country> countries = TopCountries.nInTheWorld("5", app.connection);
+        assertEquals(countries.get(4). name, "Brazil");
+    }
+
+    @Test
+    void topNCountriesPopContinent()
+    {
+        ArrayList<Country> countries = TopCountries.nOnContinent("Asia", "5", app.connection);
+        assertEquals(countries.get(4). name, "Bangladesh");
+    }
+
+    @Test
+    void topNCountriesPopRegion()
+    {
+        ArrayList<Country> countries = TopCountries.nInRegion("Middle East", "5", app.connection);
+        assertEquals(countries.get(4). name, "Syria");
+    }
+
 }
