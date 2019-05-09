@@ -120,7 +120,7 @@ public class ListAllCountries {
 
             // Execute SQL statement
             ResultSet result_set = statement.executeQuery(stringSelect);
-            
+
             // Return new country and population table if valid.
             // Take countries one by one from the top
             while (result_set.next())

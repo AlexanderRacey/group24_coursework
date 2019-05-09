@@ -18,6 +18,7 @@ public class AppTest
         app = new App();
     }
 
+    // List all capital cities in the world - Test (null)
     @Test
     void listAllCapitalCitiesInWorldNull()
     {
@@ -25,6 +26,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all capital cities in the continent - Test (null)
     @Test
     void listAllCapitalCitiesOnContinentNull()
     {
@@ -32,6 +34,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all capital cities in the region - Test (null)
     @Test
     void listAllCapitalCitiesInRegionNull()
     {
@@ -39,6 +42,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all capital cities (N) in the world - Test (null)
     @Test
     void listAllCapitalCitiesNInWorldNull()
     {
@@ -46,6 +50,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all capital cities (N) in the continent - Test (null)
     @Test
     void listAllCapitalCitiesNOnContinentNull()
     {
@@ -53,6 +58,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all capital cities (N) in the region - Test (null)
     @Test
     void listAllCapitalCitiesNInRegionNull()
     {
@@ -60,6 +66,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all cities in the world - Test (null)
     @Test
     void listAllCitiesInWorldNull()
     {
@@ -67,7 +74,7 @@ public class AppTest
         cities.contains("null");
     }
 
-
+    // List all cities in the continent - Test (null)
     @Test
     void listAllCitiesInContinentNull()
     {
@@ -76,6 +83,7 @@ public class AppTest
 
     }
 
+    // List all cities in the country - Test (null)
     @Test
     void listAllCitiesInCountryNull()
     {
@@ -83,6 +91,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all cities in the region - Test (null)
     @Test
     void listAllCitiesInRegionNull()
     {
@@ -90,6 +99,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all cities in the district - Test (null)
     @Test
     void listAllCitiesInDistrictNull()
     {
@@ -97,6 +107,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all (N) cities in the world - Test (null)
     @Test
     void listAllNCitiesInWorldNull()
     {
@@ -104,6 +115,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all (N) cities in the continent - Test (null)
     @Test
     void listNCitiesInContinentNull()
     {
@@ -111,6 +123,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all (N) cities in the region - Test (null)
     @Test
     void listNCitiesInRegionNull()
     {
@@ -118,6 +131,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all (N) cities in the country - Test (null)
     @Test
     void listNCitiesInCountryNull()
     {
@@ -125,6 +139,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List all (N) cities in the district - Test (null)
     @Test
     void listNCitiesInDistrictNull()
     {
@@ -132,6 +147,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List population in the world - Test (null)
     @Test
     void popInWorldNull()
     {
@@ -139,6 +155,7 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List population in the continent - Test (null)
     @Test
     void popInContinentNull()
     {
@@ -146,6 +163,7 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List population in the region - Test (null)
     @Test
     void popInRegionNull()
     {
@@ -153,6 +171,7 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List population in the country - Test (null)
     @Test
     void popInCountryNull()
     {
@@ -160,6 +179,7 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List population in the district - Test (null)
     @Test
     void popInDistrictNull()
     {
@@ -167,6 +187,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List population in the city - Test (null)
     @Test
     void popInCityNull()
     {
@@ -174,6 +195,7 @@ public class AppTest
         cities.contains("null");
     }
 
+    // List country population in the world - Test (null)
     @Test
     void countriesPopWorldNull()
     {
@@ -181,6 +203,7 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List country population in the continent - Test (null)
     @Test
     void countriesPopContinentNull()
     {
@@ -188,6 +211,7 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List country population in the region - Test (null)
     @Test
     void countriesPopRegionNull()
     {
@@ -195,6 +219,7 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List highest country population (N) in the world - Test (null)
     @Test
     void topNCountriesPopWorldNull()
     {
@@ -202,6 +227,7 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List highest country population (N) in the continent - Test (null)
     @Test
     void topNCountriesPopContinentNull()
     {
@@ -209,6 +235,7 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List highest country population (N) in the region - Test (null)
     @Test
     void topNCountriesPopRegionNull()
     {
@@ -216,22 +243,24 @@ public class AppTest
         countries.contains("null");
     }
 
+    // List population in and out of cities in each continent - Test (null)
     @Test
     void listPopulationInOutCitiesContinentNull()
     {
         ArrayList<Country> country = PopulationCitiesInOut.inEachContinent(null);
     }
 
+    // List population in and out of cities in each region - Test (null)
     @Test
     void listPopulationInOutCitiesRegionNull()
     {
         ArrayList<Country> country = PopulationCitiesInOut.inEachRegion(null);
     }
 
+    // List population in and out of cities in each country - Test (null)
     @Test
     void listPopulationInOutCitiesCountryNull()
     {
         ArrayList<Country> countries = PopulationCitiesInOut.inEachCountry(null);
     }
-
 }

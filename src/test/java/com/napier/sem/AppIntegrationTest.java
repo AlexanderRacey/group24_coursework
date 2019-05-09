@@ -18,9 +18,9 @@ public class AppIntegrationTest
     {
         app = new App();
         app.connect("localhost:33060");
-
     }
 
+    // List all capital cities in the world - Test (int.)
     @Test
     void listAllCapitalCitiesInWorld()
     {
@@ -28,6 +28,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(0). name, "Seoul");
     }
 
+    // List all capital cities in the continent - Test (int.)
     @Test
     void listAllCapitalCitiesOnContinent()
     {
@@ -35,6 +36,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(0). name, "Seoul");
     }
 
+    // List all capital cities in the region - Test (int.)
     @Test
     void listAllCapitalCitiesInRegion()
     {
@@ -42,6 +44,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(0). name, "Baghdad");
     }
 
+    // List all capital cities (N) in the world - Test (int.)
     @Test
     void listAllCapitalCitiesNInWorld()
     {
@@ -49,6 +52,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(4). name, "Tokyo");
     }
 
+    // List all capital cities (N) in the continent - Test (int.)
     @Test
     void listAllCapitalCitiesNOnContinent()
     {
@@ -56,6 +60,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(4). name, "Teheran");
     }
 
+    // List all capital cities (N) in the region - Test (int.)
     @Test
     void listAllCapitalCitiesNInRegion()
     {
@@ -63,6 +68,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(4). name, "Damascus");
     }
 
+    // List all cities in the world - Test (int.)
     @Test
     void listAllCitiesInWorld()
     {
@@ -70,6 +76,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(0). name, "Mumbai (Bombay)");
     }
 
+    // List all cities in the continent - Test (int.)
     @Test
     void listAllCitiesInContinent()
     {
@@ -77,6 +84,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(0). name, "Mumbai (Bombay)");
     }
 
+    // List all cities in the country - Test (int.)
     @Test
     void listAllCitiesInCountry()
     {
@@ -84,6 +92,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(0). name, "Paris");
     }
 
+    // List all cities in the region - Test (int.)
     @Test
     void listAllCitiesInRegion()
     {
@@ -91,6 +100,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(0). name, "Istanbul");
     }
 
+    // List all cities in the district - Test (int.)
     @Test
     void listAllCitiesInDistrict()
     {
@@ -98,6 +108,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(0). name, "London");
     }
 
+    // List all (N) cities in the world - Test (int.)
     @Test
     void listAllNCitiesInWorld()
     {
@@ -105,6 +116,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(4). name, "Jakarta");
     }
 
+    // List all (N) cities in the continent - Test (int.)
     @Test
     void listNCitiesInContinent()
     {
@@ -112,6 +124,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(4). name, "Karachi");
     }
 
+    // List all (N) cities in the region - Test (int.)
     @Test
     void listNCitiesInRegion()
     {
@@ -119,6 +132,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(4). name, "Izmir");
     }
 
+    // List all (N) cities in the country - Test (int.)
     @Test
     void listNCitiesInCountry()
     {
@@ -126,6 +140,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(4). name, "Nice");
     }
 
+    // List all (N) cities in the district - Test (int.)
     @Test
     void listNCitiesInDistrict()
     {
@@ -133,6 +148,7 @@ public class AppIntegrationTest
         assertEquals(cities.get(4). name, "Manchester");
     }
 
+    // List population in the world - Test (int.)
     @Test
     void popInWorld()
     {
@@ -140,6 +156,7 @@ public class AppIntegrationTest
         countries.contains("6078749450");
     }
 
+    // List population in the continent - Test (int.)
     @Test
     void popInContinent()
     {
@@ -147,6 +164,7 @@ public class AppIntegrationTest
         countries.contains("3705025700");
     }
 
+    // List population in the region - Test (int.)
     @Test
     void popInRegion()
     {
@@ -154,6 +172,7 @@ public class AppIntegrationTest
         countries.contains("309632000");
     }
 
+    // List population in the country - Test (int.)
     @Test
     void popInCountry()
     {
@@ -161,6 +180,7 @@ public class AppIntegrationTest
         countries.contains("59225700");
     }
 
+    // List population in the district - Test (int.)
     @Test
     void popInDistrict()
     {
@@ -168,6 +188,7 @@ public class AppIntegrationTest
         cities.contains("19978543");
     }
 
+    // List population in the city - Test (int.)
     @Test
     void popInCity()
     {
@@ -175,6 +196,7 @@ public class AppIntegrationTest
         cities.contains("7624917");
     }
 
+    // List country population in the world - Test (int.)
     @Test
     void countriesPopWorld()
     {
@@ -182,6 +204,7 @@ public class AppIntegrationTest
         assertEquals(countries.get(0). name, "China");
     }
 
+    // List country population in the continent - Test (int.)
     @Test
     void countriesPopContinent()
     {
@@ -189,6 +212,7 @@ public class AppIntegrationTest
         assertEquals(countries.get(0). name, "China");
     }
 
+    // List country population in the region - Test (int.)
     @Test
     void countriesPopRegion()
     {
@@ -196,6 +220,7 @@ public class AppIntegrationTest
         assertEquals(countries.get(0). name, "Turkey");
     }
 
+    // List highest country population (N) in the world - Test (int.)
     @Test
     void topNCountriesPopWorld()
     {
@@ -203,6 +228,7 @@ public class AppIntegrationTest
         assertEquals(countries.get(4). name, "Brazil");
     }
 
+    // List highest country population (N) in the continent - Test (int.)
     @Test
     void topNCountriesPopContinent()
     {
@@ -210,6 +236,7 @@ public class AppIntegrationTest
         assertEquals(countries.get(4). name, "Bangladesh");
     }
 
+    // List highest country population (N) in the region - Test (int.)
     @Test
     void topNCountriesPopRegion()
     {
@@ -217,6 +244,7 @@ public class AppIntegrationTest
         assertEquals(countries.get(4). name, "Syria");
     }
 
+    // List population in and out of cities in each continent - Test (int.)
     @Test
     void listPopulationInOutCitiesContinent()
     {
@@ -224,6 +252,7 @@ public class AppIntegrationTest
         assertEquals(country.get(0). continent, "Asia");
     }
 
+    // List population in and out of cities in each region - Test (int.)
     @Test
     void listPopulationInOutCitiesRegion()
     {
@@ -231,10 +260,10 @@ public class AppIntegrationTest
         assertEquals(country.get(0). region, "Australia and New Zealand");
     }
 
+    // List population in and out of cities in each country - Test (int.)
     @Test
     void listPopulationInOutCitiesCountry() {
         ArrayList<Country> country = PopulationCitiesInOut.inEachCountry(app.connection);
         assertEquals(country.get(0).name, "Afghanistan");
     }
-
 }
