@@ -1,3 +1,4 @@
+/*
 package com.napier.sem;
 
 import com.napier.sem.features.*;
@@ -5,6 +6,22 @@ import com.napier.sem.features.*;
 
 import java.sql.*;
 
+public class App
+*/
+package com.napier.sem;
+
+import com.napier.sem.features.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.sql.*;
+import java.util.ArrayList;
+
+@SpringBootApplication
+@RestController
 public class App
 {
     public static void main(String[] args)
@@ -17,18 +34,27 @@ public class App
         {
             //app.connect();
             app.connect("localhost:33060");
+            //app.connect("35.246.72.197:3306");
         }
         else
         {
             app.connect(args[0]);
         }
 
+        SpringApplication.run(App.class, args);
+
         /**
          * Lists all capital cities in the world by population
          **/
 
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inTheWorld(app.connection);
+        ListAllCapitalCities.inTheWorld(app.connection);
+
+
+        /**
+         * UPDATE ALL METHODS TO THIS FORMAT
+         **/
+      //  @RequestMapping("employee")
+     //   public Employee getEmployee(@RequestParam(value = "id") String ID);
 
 
         /**
@@ -128,12 +154,12 @@ public class App
     /**
      * Connection to MySQL database.
      */
-    private Connection connection = null;
+     private static Connection connection = null;
 
     /**
      * New Connect to the MySql database
      */
-    public void connect(String location) {
+    public static void connect(String location) {
         try {
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -160,52 +186,11 @@ public class App
             }
         }
     }
-    /**
-     * Old Connect to the MySQL database.
-     */
-    /*
-    public void connect()
-    {
-        try
-        {
-            // Load Database driver
-            Class.forName("com.mysql.jdbc.Driver");
-        }
-        catch (ClassNotFoundException e)
-        {
-            System.out.println("Could not load SQL driver");
-            System.exit(-1);
-        }
 
-        int retries = 10;
-        for (int i = 0; i < retries; ++i)
-        {
-            System.out.println("Connecting to database...");
-            try
-            {
-                // Wait a bit for db to start
-                Thread.sleep(5000);
-                // Connect to database
-                connection = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-                System.out.println("Successfully connected");
-                break;
-            }
-            catch (SQLException sqle)
-            {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                System.out.println(sqle.getMessage());
-            }
-            catch (InterruptedException ie)
-            {
-                System.out.println("Thread interrupted? Should not happen.");
-            }
-        }
-    }
-    */
     /**
      * Disconnect from the MySQL database.
      */
-    public void disconnect()
+    public static void disconnect()
     {
         if (connection != null)
         {
