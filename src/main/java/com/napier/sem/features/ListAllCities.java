@@ -16,15 +16,15 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<City>();
         try
         {
-            System.out.println("***********************");
-            System.out.println("City    |    Population");
+            System.out.println("********************************************************");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Name`, `Population`"
+                    "SELECT `Name`, `CountryCode`, `District`, `Population`"
                             + "FROM city "
                             + "ORDER BY Population DESC";
 
@@ -37,8 +37,11 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
+                city.country_code = result_set.getString("CountryCode");
+                city.district = result_set.getString("District");
                 city.population = result_set.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                                    + "    |    " + city.population);
 
                 cities.add(city);
             }
@@ -62,16 +65,16 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<>();
         try
         {
-            System.out.println("************************");
+            System.out.println("********************************************************");
             System.out.println("-- " + continent.toUpperCase() + " --");
-            System.out.println("City    |     Population");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT city.`Name`, city.`Population`"
+                    "SELECT city.`Name`, city.`CountryCode`, city.`District`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE  country.`Continent` = '" + continent + "'"
                             + "ORDER BY Population DESC";
@@ -85,8 +88,11 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
+                city.country_code = result_set.getString("CountryCode");
+                city.district = result_set.getString("District");
                 city.population = result_set.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                        + "    |    " + city.population);
 
                 cities.add(city);
             }
@@ -109,16 +115,16 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<>();
         try
         {
-            System.out.println("************************");
+            System.out.println("********************************************************");
             System.out.println("-- " + region.toUpperCase() + " --");
-            System.out.println("City    |     Population");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT city.`Name`, city.`Population`"
+                    "SELECT city.`Name`, city.`CountryCode`, city.`District`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE  country.`Region` = '" + region + "'"
                             + "ORDER BY Population DESC";
@@ -132,8 +138,11 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
+                city.country_code = result_set.getString("CountryCode");
+                city.district = result_set.getString("District");
                 city.population = result_set.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                        + "    |    " + city.population);
 
                 cities.add(city);
             }
@@ -151,16 +160,14 @@ public class ListAllCities
     /**
      * Requirement 10 - List All Cities in Country
      */
-
-
     public static ArrayList<City> citiesInCountry(String countryName, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
         try
         {
-            System.out.println("************************");
+            System.out.println("********************************************************");
             System.out.println("-- " + countryName.toUpperCase() + " --");
-            System.out.println("City    |     Population");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -181,7 +188,7 @@ public class ListAllCities
                 countryCode = result_set1.getString("Code");
             }
 
-            String stringSelect2 = "SELECT `Name`, `Population`"
+            String stringSelect2 = "SELECT `Name`, `CountryCode`, `District`, `Population`"
                     + "FROM city "
                     + "WHERE CountryCode = '" + countryCode +"'"
                     + "ORDER BY Population DESC";
@@ -192,8 +199,11 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set2.getString("Name");
+                city.country_code = result_set2.getString("CountryCode");
+                city.district = result_set2.getString("District");
                 city.population = result_set2.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                        + "    |    " + city.population);
 
                 cities.add(city);
             }
@@ -216,16 +226,16 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<>();
         try
         {
-            System.out.println("***********************");
+            System.out.println("********************************************************");
             System.out.println("-- " + district.toUpperCase() + " --");
-            System.out.println("City    |    Population");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Name`, `Population`"
+                    "SELECT `Name`, `CountryCode`, `District`, `Population`"
                             + "FROM city "
                             + "WHERE district = '" + district +"'"
                             + "ORDER BY Population DESC";
@@ -239,8 +249,11 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
+                city.country_code = result_set.getString("CountryCode");
+                city.district = result_set.getString("District");
                 city.population = result_set.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                        + "    |    " + city.population);
 
                 cities.add(city);
             }
@@ -257,21 +270,20 @@ public class ListAllCities
     /**
      * Request 12 - top n world
      */
-
     public static ArrayList<City> nCitiesInWorld(String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
         try
         {
-            System.out.println("***********************");
-            System.out.println("City    |    Population");
+            System.out.println("********************************************************");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Name`, `Population`"
+                    "SELECT `Name`, `CountryCode`, `District`, `Population`"
                             + "FROM city "
                             + "ORDER BY Population DESC";
 
@@ -289,8 +301,12 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
+                city.country_code = result_set.getString("CountryCode");
+                city.district = result_set.getString("District");
                 city.population = result_set.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                        + "    |    " + city.population);
+
                 count++;
                 cities.add(city);
             }
@@ -313,16 +329,16 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<City>();
         try
         {
-            System.out.println("************************");
+            System.out.println("********************************************************");
             System.out.println("-- " + continent.toUpperCase() + " --");
-            System.out.println("City    |     Population");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT city.`Name`, city.`Population`"
+                    "SELECT city.`Name`, city.`CountryCode`, city.`District`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE  country.`Continent` = '" + continent + "'"
                             + "ORDER BY Population DESC";
@@ -339,8 +355,12 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
+                city.country_code = result_set.getString("CountryCode");
+                city.district = result_set.getString("District");
                 city.population = result_set.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                        + "    |    " + city.population);
+
                 count++;
                 cities.add(city);
             }
@@ -363,16 +383,16 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<City>();
         try
         {
-            System.out.println("************************");
+            System.out.println("********************************************************");
             System.out.println("-- " + region.toUpperCase() + " --");
-            System.out.println("City    |     Population");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT city.`Name`, city.`Population`"
+                    "SELECT city.`Name`, city.`CountryCode`, city.`District`, city.`Population`"
                             + "FROM country JOIN city on country.Code = city.CountryCode "
                             + "WHERE  country.`Region` = '" + region + "'"
                             + "ORDER BY Population DESC";
@@ -389,8 +409,12 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
+                city.country_code = result_set.getString("CountryCode");
+                city.district = result_set.getString("District");
                 city.population = result_set.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                        + "    |    " + city.population);
+
                 count++;
                 cities.add(city);
             }
@@ -412,9 +436,9 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<City>();
         try
         {
-            System.out.println("************************");
+            System.out.println("********************************************************");
             System.out.println("-- " + countryName.toUpperCase() + " --");
-            System.out.println("City    |     Population");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
@@ -435,7 +459,7 @@ public class ListAllCities
                 countryCode = result_set1.getString("Code");
             }
 
-            String stringSelect2 = "SELECT `Name`, `Population`"
+            String stringSelect2 = "SELECT `Name`, `CountryCode`, `District`, `Population`"
                     + "FROM city "
                     + "WHERE CountryCode = '" + countryCode +"'"
                     + "ORDER BY Population DESC";
@@ -449,8 +473,12 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set2.getString("Name");
+                city.country_code = result_set2.getString("CountryCode");
+                city.district = result_set2.getString("District");
                 city.population = result_set2.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                        + "    |    " + city.population);
+
                 count++;
                 cities.add(city);
             }
@@ -472,16 +500,16 @@ public class ListAllCities
         ArrayList<City> cities = new ArrayList<City>();
         try
         {
-            System.out.println("***********************");
+            System.out.println("********************************************************");
             System.out.println("-- " + district.toUpperCase() + " --");
-            System.out.println("City    |    Population");
+            System.out.println("City    |    Country    |    District    |    Population");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Name`, `Population`"
+                    "SELECT `Name`, `CountryCode`, `District`, `Population`"
                             + "FROM city "
                             + "WHERE district = '" + district +"'"
                             + "ORDER BY Population DESC";
@@ -498,8 +526,12 @@ public class ListAllCities
             {
                 City city = new City();
                 city.name = result_set.getString("Name");
+                city.country_code = result_set.getString("CountryCode");
+                city.district = result_set.getString("District");
                 city.population = result_set.getInt("Population");
-                System.out.println(city.name + "   |   " + city.population);
+                System.out.println(city.name + "    |    " + city.country_code + "    |    " + city.district
+                        + "    |    " + city.population);
+
                 count++;
                 cities.add(city);
             }
