@@ -42,7 +42,7 @@ public class App
         }
 
         SpringApplication.run(App.class, args);
-
+        //TEST
         /**
          * Lists all capital cities in the world by population
          **/
