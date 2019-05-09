@@ -31,7 +31,7 @@ public class App
         ListAllCountries.inRegion("North America", app.connection);
 
         //4 - The top N populated countries in the world where N is provided by the user
-        TopCountries.nInTheWorld("5", app.connection);
+        //TopCountries.nInTheWorld("5", app.connection);
 
         //5 - The top N populated countries in a continent where N is provided by the user
         TopCountries.nOnContinent("Asia", "5", app.connection);
@@ -114,8 +114,8 @@ public class App
         //31 - The population of a city
         Extras.cityPop("London", app.connection);
 
-         // Disconnect from the database
-         app.disconnect();
+        // Disconnect from the database
+        app.disconnect();
     }
 
     /**
