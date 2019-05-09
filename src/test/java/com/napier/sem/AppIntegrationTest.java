@@ -217,4 +217,24 @@ public class AppIntegrationTest
         assertEquals(countries.get(4). name, "Syria");
     }
 
+    @Test
+    void listPopulationInOutCitiesContinent()
+    {
+        ArrayList<Country> country = PopulationCitiesInOut.inEachContinent(app.connection);
+        assertEquals(country.get(0). continent, "Asia");
+    }
+
+    @Test
+    void listPopulationInOutCitiesRegion()
+    {
+        ArrayList<Country> country = PopulationCitiesInOut.inEachRegion(app.connection);
+        assertEquals(country.get(0). region, "Australia and New Zealand");
+    }
+
+    @Test
+    void listPopulationInOutCitiesCountry() {
+        ArrayList<Country> country = PopulationCitiesInOut.inEachCountry(app.connection);
+        assertEquals(country.get(0).name, "Afghanistan");
+    }
+
 }

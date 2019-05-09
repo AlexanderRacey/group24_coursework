@@ -105,6 +105,15 @@ public class App
          //list top n countries in region
          TopCountries.nInRegion("Middle East", "5", app.connection);
 
+         //List the population of people, those living in cities and those not living in cities in each continent
+         PopulationCitiesInOut.inEachContinent(app.connection);
+
+         //List the population of people, those living in cities and those not living in cities in each region
+         PopulationCitiesInOut.inEachRegion(app.connection);
+
+         //List the population of people, those living in cities and those not living in cities in each country
+         PopulationCitiesInOut.inEachCountry(app.connection);
+
          // Disconnect from the database
          app.disconnect();
     }

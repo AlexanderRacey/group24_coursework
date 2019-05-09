@@ -215,4 +215,23 @@ public class AppTest
         ArrayList<Country> countries = TopCountries.nInRegion(null, null, null);
         countries.contains("null");
     }
+
+    @Test
+    void listPopulationInOutCitiesContinentNull()
+    {
+        ArrayList<Country> country = PopulationCitiesInOut.inEachContinent(null);
+    }
+
+    @Test
+    void listPopulationInOutCitiesRegionNull()
+    {
+        ArrayList<Country> country = PopulationCitiesInOut.inEachRegion(null);
+    }
+
+    @Test
+    void listPopulationInOutCitiesCountryNull()
+    {
+        ArrayList<Country> countries = PopulationCitiesInOut.inEachCountry(null);
+    }
+
 }
