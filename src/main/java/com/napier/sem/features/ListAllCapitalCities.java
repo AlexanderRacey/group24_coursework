@@ -7,6 +7,11 @@ import java.util.ArrayList;
 
 public class ListAllCapitalCities {
 
+    /**
+     * Lists all the capital cities in the world from largest to smallest population
+     * @param connection
+     * @return arraylist of cities
+     */
     public static ArrayList<City> inTheWorld(Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
@@ -54,7 +59,12 @@ public class ListAllCapitalCities {
     }
 
 
-    //lists all the capital cities in a continent from largest population to smallest
+    /**
+     * lists all the capital cities in a continent from largest population to smallest
+     * @param continent selects continent
+     * @param connection
+     * @return arraylist of cities
+     */
     public static ArrayList<City> onContinent(String continent, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
@@ -107,7 +117,13 @@ public class ListAllCapitalCities {
         return cities;
     }
 
-    //lists all the capital cities in a region from largest population to smallest
+
+    /**
+     * lists all the capital cities in a region from largest population to smallest
+     * @param region selects region
+     * @param connection
+     * @return arraylist of cities
+     */
     public static ArrayList<City> inRegion(String region, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
@@ -159,6 +175,12 @@ public class ListAllCapitalCities {
         return cities;
     }
 
+    /**
+     * Returns top n capital cities in the world and lists them by population
+     * @param number the number of cities that are returned
+     * @param connection
+     * @return ArrayList of cities
+     */
     public static ArrayList<City> nInTheWorld(String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
@@ -208,6 +230,13 @@ public class ListAllCapitalCities {
         return cities;
     }
 
+    /**
+     * lists the top n capital cities in a continent by population
+     * @param continent selects continent
+     * @param number selects how many are returned
+     * @param connection
+     * @return arraylist of cities
+     */
     public static ArrayList<City> nOnContinent(String continent, String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
@@ -257,6 +286,13 @@ public class ListAllCapitalCities {
         return cities;
     }
 
+    /**
+     * lists the top n capital cities in a region by population
+     * @param region selects region
+     * @param number selects how many are returned
+     * @param connection
+     * @return arraylist of cities
+     */
     public static ArrayList<City> nInRegion(String region, String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();

@@ -6,15 +6,13 @@ import java.math.BigInteger;
 import java.sql.*;
 import java.util.ArrayList;
 
-/**
- * Solves requests 1 - 3
- * Listing countries by population ( Descending )
- */
 public class Extras
 {
 
     /**
-     * Request - World pop
+     *  gets population of world
+     * @param connection
+     * @return ArrayList of country with world population
      */
     public static ArrayList<Country> worldPop(Connection connection)
     {
@@ -55,10 +53,13 @@ public class Extras
         return worldPopulation;
     }
 
-    /**
-     * Request - Population of a continent.
-     */
 
+    /**
+     * gets continent
+     * @param continent selects the continent
+     * @param connection
+     * @return ArrayList of country with continent population
+     */
     public static ArrayList<Country> contPop(String continent, Connection connection)
     {
         ArrayList<Country> contPopulation = new ArrayList<Country>();
@@ -100,7 +101,10 @@ public class Extras
     }
 
     /**
-     *Request - Population of a region
+     * gets the population of a region
+     * @param region selects the region
+     * @param connection
+     * @return ArrayList of country with region population in WorldPopulation
      */
     public static ArrayList<Country> regionPop(String region, Connection connection)
     {
@@ -143,7 +147,10 @@ public class Extras
     }
 
     /**
-     * Request - Population of a country
+     * Gets population of country
+     * @param searchCountry selects the country
+     * @param connection
+     * @return ArrayList of country with population
      */
     public static ArrayList<Country> countryPop(String searchCountry, Connection connection)
     {
@@ -170,8 +177,8 @@ public class Extras
             while (result_set.next())
             {
                 Country country = new Country();
-                country.WorldPopulation = result_set.getLong("Population");
-                System.out.println(country.WorldPopulation);
+                country.population = result_set.getInt("Population");
+                System.out.println(country.population);
 
                 countryPopulation.add(country);
             }
@@ -186,7 +193,10 @@ public class Extras
     }
 
     /**
-     * Request - Population of a district
+     * Gets Population of District
+     * @param district selects district
+     * @param connection
+     * @return ArrayList with District population
      */
     public static ArrayList<City> districtPop(String district, Connection connection)
     {
@@ -229,7 +239,10 @@ public class Extras
     }
 
     /**
-     * Request - Population of a city
+     * Gets City population
+     * @param selectCity selects city
+     * @param connection
+     * @return ArrayList of city with a population
      */
     public static ArrayList<City> cityPop(String selectCity, Connection connection)
     {
@@ -256,8 +269,8 @@ public class Extras
             while (result_set.next())
             {
                 City city = new City();
-                city.districtPopulation = result_set.getLong("Population");
-                System.out.println(city.districtPopulation);
+                city.population = result_set.getInt("Population");
+                System.out.println(city.population);
 
                 cityPopulation.add(city);
             }

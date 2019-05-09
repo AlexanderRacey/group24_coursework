@@ -6,13 +6,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- * Solves requests 4 - 6
- * Listing top N populated countries
- */
 public class TopCountries {
     /**
-     * Request 1 - All the countries in the world organised by largest population to smallest
+     * lists the top n countries in the world and orders by population
+     * @param number selects how many are returned
+     * @param connection
+     * @return arrayList of countries
      */
     public static ArrayList<Country> nInTheWorld(String number, Connection connection)
     {
@@ -63,7 +62,11 @@ public class TopCountries {
     }
 
     /**
-     * Request 2 - All the countries on a continent organised by largest population to smallest
+     * lists n countries on a continent and orders them by population from largest to smallest
+     * @param continent selects continent
+     * @param number selects how many countries are returned
+     * @param connection
+     * @return ArrayList of countries
      */
     public static ArrayList<Country> nOnContinent(String continent, String number, Connection connection)
     {
@@ -117,7 +120,11 @@ public class TopCountries {
     }
 
     /**
-     * Request 3 - All the countries in a region organised by largest population to smallest
+     * lists n countries on a region and orders them by population from largest to smallest
+     * @param region selects region
+     * @param number selects how many countries are returned
+     * @param connection
+     * @return ArrayList of countries
      */
     public static ArrayList<Country> nInRegion(String region, String number, Connection connection)
     {

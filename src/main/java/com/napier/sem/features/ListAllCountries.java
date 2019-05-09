@@ -7,7 +7,9 @@ import java.util.ArrayList;
 public class ListAllCountries {
 
     /**
-     * Request 1 - All the countries in the world organised by largest population to smallest
+     * Lists all countries in the world from largest population to smallest
+     * @param connection
+     * @return ArrayList of countries
      */
     public static ArrayList<Country> inTheWorld(Connection connection)
     {
@@ -56,7 +58,10 @@ public class ListAllCountries {
     }
 
     /**
-     * Request 2 - All the countries on a continent organised by largest population to smallest
+     * lists all countries on a continent from largest to smallest population
+     * @param continent selects continent
+     * @param connection
+     * @return ArrayList of countries
      */
     public static ArrayList<Country> onContinent(String continent, Connection connection)
     {
@@ -107,7 +112,10 @@ public class ListAllCountries {
     }
 
     /**
-     * Request 3 - All the countries in a region organised by largest population to smallest
+     * lists all countries on a region from largest to smallest population
+     * @param region selects region
+     * @param connection
+     * @return ArrayList of countries
      */
     public static ArrayList<Country> inRegion(String region, Connection connection)
     {

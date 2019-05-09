@@ -4,19 +4,13 @@ import com.napier.sem.*;
 import java.sql.*;
 import java.util.ArrayList;
 
-/**
- * Solves requests 23 - 25
- * Listing population of people in and out of cities
- */
-
 public class PopulationCitiesInOut {
 
     /**
-     * Request 23 - The population of people, people living in cities, and people not living in cities in each
-     * continent.
-     * @param connection - Connection to the opened database
+     * shows the population of people, people living in cities, and people not living in cities in each continent
+     * @param connection
+     * @return country with the population
      */
-
     public static ArrayList<Country> inEachContinent(Connection connection)
     {
         try
@@ -75,8 +69,9 @@ public class PopulationCitiesInOut {
     }
 
     /**
-     * Request 24 - The population of people, people living in cities, and people not living in cities in each region.
-     * @param connection - Connection to the opened database
+     * shows the population of people, people living in cities, and people not living in cities in each region
+     * @param connection
+     * @return country with the population
      */
     public static ArrayList<Country> inEachRegion(Connection connection)
     {
@@ -136,8 +131,9 @@ public class PopulationCitiesInOut {
     }
 
     /**
-     * Request 25 - The population of people, people living in cities, and people not living in cities in each country.
-     * @param connection - Connection to the opened database
+     * shows the population of people, people living in cities, and people not living in cities in each country
+     * @param connection
+     * @return country with the population
      */
     public static ArrayList<Country> inEachCountry(Connection connection)
     {

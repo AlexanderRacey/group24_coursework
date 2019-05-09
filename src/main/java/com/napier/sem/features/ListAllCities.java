@@ -7,10 +7,10 @@ import java.util.ArrayList;
 public class ListAllCities
 {
     /**
-     * Request 1 - All the countries in the world organised by largest population to smallest
-     * @param connection - Connection to the opened database
+     * list cities in the world from most to least populated
+     * @param connection
+     * @return ArrayList of Cities
      */
-
     public static ArrayList<City> citiesInWorld(Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
@@ -57,9 +57,11 @@ public class ListAllCities
 
 
     /**
-     * Request 8 - List all cities in a continent by order of size
+     * Gets all the cities from a continent and orders them by population
+     * @param continent selects continent
+     * @param connection
+     * @return ArrayList of cities
      */
-
     public static ArrayList<City> citiesContinent(String continent, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
@@ -107,9 +109,11 @@ public class ListAllCities
     }
 
     /**
-     * Requirement 9 - list all cities in a region
+     * gets all cities in region and orders by population
+     * @param region selects region
+     * @param connection
+     * @return arraylist of cities
      */
-
     public static ArrayList<City> citiesInRegion(String region, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
@@ -158,7 +162,10 @@ public class ListAllCities
 
 
     /**
-     * Requirement 10 - List All Cities in Country
+     * Gets cities in a country and orders them by population size
+     * @param countryName selects country
+     * @param connection
+     * @return ArrayList of cities
      */
     public static ArrayList<City> citiesInCountry(String countryName, Connection connection)
     {
@@ -218,9 +225,11 @@ public class ListAllCities
     }
 
     /**
-     * Request 11 - List All cities in district
+     * gets all cities in a district and orders by population size
+     * @param district selects district
+     * @param connection
+     * @return ArrayList of cities
      */
-
     public static ArrayList<City> citiesInDistrict(String district, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<>();
@@ -268,7 +277,10 @@ public class ListAllCities
     }
 
     /**
-     * Request 12 - top n world
+     * Gets N cities from the world and orders them from most to least populated
+     * @param number selects how many cities are returned
+     * @param connection
+     * @return ArrayList of cities
      */
     public static ArrayList<City> nCitiesInWorld(String number, Connection connection)
     {
@@ -321,9 +333,12 @@ public class ListAllCities
     }
 
     /**
-     * Request 13 - top n cities in Continent
+     * Gets N cities in a continent and orders them from most to least populated
+     * @param continent Selects continent
+     * @param number Selects how many are returned
+     * @param connection
+     * @return ArrayList of cities
      */
-
     public static ArrayList<City> nCitiesContinent(String continent, String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
@@ -375,9 +390,12 @@ public class ListAllCities
     }
 
     /**
-     * Request 14 - Top n Region
+     * Gets N cities in a region and orders them from most to least populated
+     * @param region Selects region
+     * @param number Selects how many are returned
+     * @param connection
+     * @return ArrayList of cities
      */
-
     public static ArrayList<City> nCitiesInRegion(String region, String number, Connection connection)
     {
         ArrayList<City> cities = new ArrayList<City>();
@@ -429,7 +447,11 @@ public class ListAllCities
     }
 
     /**
-     * Request - 15 top n country
+     * Gets N cities in a country and orders them from most to least populated
+     * @param countryName Selects country
+     * @param number Selects how many are returned
+     * @param connection
+     * @return ArrayList of cities
      */
     public static ArrayList<City> nCitiesInCountry(String countryName, String number, Connection connection)
     {
@@ -493,7 +515,11 @@ public class ListAllCities
     }
 
     /**
-     * Request 16 - n Cities in district
+     * Gets N cities in a district and orders them from most to least populated
+     * @param district Selects district
+     * @param number Selects how many are returned
+     * @param connection
+     * @return ArrayList of cities
      */
     public static ArrayList<City> nCitiesInDistrict(String district,String number, Connection connection)
     {
