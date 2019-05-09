@@ -1,27 +1,8 @@
-/*
 package com.napier.sem;
 
 import com.napier.sem.features.*;
-
-
 import java.sql.*;
 
-public class App
-*/
-package com.napier.sem;
-
-import com.napier.sem.features.*;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.sql.*;
-import java.util.ArrayList;
-
-@SpringBootApplication
-@RestController
 public class App
 {
     public static void main(String[] args)
@@ -34,132 +15,119 @@ public class App
         {
             //app.connect();
             app.connect("localhost:33060");
-            //app.connect("35.246.72.197:3306");
         }
         else
         {
             app.connect(args[0]);
         }
 
-        SpringApplication.run(App.class, args);
-        //TEST to get rid of google
-        /**
-         * Lists all capital cities in the world by population
-         **/
+         //Lists all capital cities in the world by population
+         ListAllCapitalCities.inTheWorld(app.connection);
 
-        ListAllCapitalCities.inTheWorld(app.connection);
+         //Lists all Capital Cities in ASIA by population
+         ListAllCapitalCities.onContinent( "Asia", app.connection);
 
+         //Lists all Capital Cities in Caribbean by population
+         ListAllCapitalCities.inRegion( "Middle East", app.connection);
 
-        /**
-         * UPDATE ALL METHODS TO THIS FORMAT
-         **/
-      //  @RequestMapping("employee")
-     //   public Employee getEmployee(@RequestParam(value = "id") String ID);
+         //Lists all N capital cities in the world by population
+         ListAllCapitalCities.nInTheWorld("5",app.connection);
 
+         //Lists all N Capital Cities in ASIA by population
+         ListAllCapitalCities.nOnContinent( "Asia", "5",app.connection);
 
-        /**
-         * Lists all Capital Cities in ASIA by population
-         **/
+         //Lists all N Capital Cities in Caribbean by population
+         ListAllCapitalCities.nInRegion( "Middle East","5", app.connection);
 
-        /*
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.onContinent( "Asia", app.connection);
-        */
+         //7 - list all cities in world by pop
+         ListAllCities.citiesInWorld(app.connection);
 
-        /**
-         * Lists all Capital Cities in Caribbean by population
-         **/
-        /*
-        ListAllCapitalCities listAllCapitalCities = new ListAllCapitalCities();
-        listAllCapitalCities.inRegion( "Caribbean", app.connection);
-        */
+         //8 - list all cities in continent by pop
+         ListAllCities.citiesContinent("Asia", app.connection);
 
-        /**
-         * 7 - list all cities in world by pop
-         **/
-        /*
-        ListAllCities listAllCitiesWorld = new ListAllCities();
-        listAllCitiesWorld.citiesInWorld(app.connection);
-        */
+         //9 - list all cities in country by pop
+         ListAllCities.citiesInCountry("France", app.connection);
 
-        /**
-         * 8 - list all cities in entered continent by pop
-         **/
-        /*
-        ListAllCities listAllCitiesContinent = new ListAllCities();
-        listAllCitiesContinent.citiesContinent("Asia", app.connection);
-        */
+         //10 - list all cities in region by pop
+         ListAllCities.citiesInRegion("Middle East", app.connection);
 
-        /**
-         * 9 - list all cities in country by pop
-         **/
-        /*
-        ListAllCities listAllCitiesCountry = new ListAllCities();
-        listAllCitiesCountry.citiesInCountry("France", app.connection);
-        */
-        /**
-         * 10 - list all cities in region by pop
-         **/
-        /*
-        ListAllCities listAllCitiesRegion = new ListAllCities();
-        listAllCitiesRegion.citiesInRegion("North America", app.connection);
-        */
-        /**
-         * 11 - list all cities in district by pop
-         **/
-        /*
-        ListAllCities listAllCitiesDistrict = new ListAllCities();
-        listAllCitiesDistrict.citiesInDistrict("Scotland",app.connection);
-        */
-        /**
-         * list n cities world, user enters n, by pop
-         **/
-        /*
-        ListAllCities listNCitiesWorld = new ListAllCities();
-        listNCitiesWorld.nCitiesInWorld("5",app.connection);
-        */
-        /**
-         * list n cities continent, user enters n & continent, by pop
-         **/
-        /*
-        ListAllCities listNCitiesContinent = new ListAllCities();
-        listNCitiesContinent.nCitiesContinent("Asia","5",app.connection);
-        */
-        /**
-         * list n cities region, user enters n & region, by pop
-         **/
-        /*
-        ListAllCities listNCitiesRegion = new ListAllCities();
-        listNCitiesRegion.nCitiesInRegion("North America","5",app.connection);
-        */
-        /**
-         * list n cities country, user enters n & country, by pop
-         **/
-        /*
-        ListAllCities listNCitiesCountry = new ListAllCities();
-        listNCitiesCountry.nCitiesInCountry("France","5",app.connection);
-        */
-        /**
-         * list n cities district, user enters n & district, by pop
-         **/
-        /*
-        ListAllCities listNCitiesDistrict = new ListAllCities();
-        listNCitiesDistrict.nCitiesInDistrict("England","5",app.connection);
-        */
+         //11 - list all cities in district by pop
+         ListAllCities.citiesInDistrict("Scotland",app.connection);
 
-        // Disconnect from the database
-        app.disconnect();
+         //list n cities world, user enters n, by pop
+         ListAllCities.nCitiesInWorld("5",app.connection);
+
+         //list n cities continent, user enters n & continent, by pop
+         ListAllCities.nCitiesContinent("Asia","5",app.connection);
+
+         //list n cities region, user enters n & region, by pop
+         ListAllCities.nCitiesInRegion("Middle East","5",app.connection);
+
+         //list n cities country, user enters n & country, by pop
+         ListAllCities.nCitiesInCountry("France","5",app.connection);
+
+         //list n cities district, user enters n & district, by pop
+         ListAllCities.nCitiesInDistrict("England","5",app.connection);
+
+         //Population of the world
+         Extras.worldPop(app.connection);
+
+         //Population of continent
+         Extras.contPop("Asia", app.connection);
+
+         //Population of Region
+         Extras.regionPop("Middle East", app.connection);
+
+         //Population of Country
+         Extras.countryPop("France", app.connection);
+
+         //Population of District
+         Extras.districtPop("England", app.connection);
+
+         //Population of City
+         Extras.cityPop("London", app.connection);
+
+         //list all countries in world
+         ListAllCountries.inTheWorld(app.connection);
+
+         //list all countries on continent
+         ListAllCountries.onContinent("Asia", app.connection);
+
+         //list all countries in region
+         ListAllCountries.inRegion("North America", app.connection);
+
+         //list top n countries in world
+         TopCountries.nInTheWorld("5", app.connection);
+
+         //list top n countries on continent
+         TopCountries.nOnContinent("Asia", "5", app.connection);
+
+         //list top n countries in region
+         TopCountries.nInRegion("Middle East", "5", app.connection);
+
+         //List the population of people, those living in cities and those not living in cities in each continent
+         PopulationCitiesInOut.inEachContinent(app.connection);
+
+         //List the population of people, those living in cities and those not living in cities in each region
+         PopulationCitiesInOut.inEachRegion(app.connection);
+
+         //List the population of people, those living in cities and those not living in cities in each country
+         PopulationCitiesInOut.inEachCountry(app.connection);
+
+         // Disconnect from the database
+         app.disconnect();
     }
 
     /**
      * Connection to MySQL database.
      */
-     private static Connection connection = null;
+    //private Connection connection = null;
+    public Connection connection = null;
 
     /**
      * New Connect to the MySql database
      */
-    public static void connect(String location) {
+    public void connect(String location) {
         try {
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -190,7 +158,7 @@ public class App
     /**
      * Disconnect from the MySQL database.
      */
-    public static void disconnect()
+    public void disconnect()
     {
         if (connection != null)
         {

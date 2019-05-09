@@ -17,6 +17,15 @@ public class City {
     // Population
     public int population;
 
+    //dictrict population
+    public long districtPopulation;
+
+    // Population inside cities
+    public long popCoLong;
+
+    // Population outside cities
+    public int popOut;
+
     /**
      * Prints the details of the city to the console
      */
