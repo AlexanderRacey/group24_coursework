@@ -14,15 +14,15 @@ public class ListAllCountries {
         ArrayList<Country> countries = new ArrayList<>();
         try
         {
-            System.out.println("**************************");
-            System.out.println("Country    |    Population");
+            System.out.println("******************************************************************************");
+            System.out.println("Code   |   Country   |   Continent   |   Region   |   Population   |   Capital");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Name`, `Population`"
+                    "SELECT `Code`, `Name`, `Continent`, `Region`, `Population`, `Capital`"
                             + "FROM country "
                             + "ORDER BY Population DESC";
 
@@ -34,9 +34,14 @@ public class ListAllCountries {
             while (result_set.next())
             {
                 Country country = new Country();
+                country.code = result_set.getString("Code");
                 country.name = result_set.getString("Name");
+                country.continent = result_set.getString("Continent");
+                country.region = result_set.getString("Region");
                 country.population = result_set.getInt("Population");
-                System.out.println(country.name + "   |   " + country.population);
+                country.capital = result_set.getString("Capital");
+                System.out.println(country.code + "   |   " + country.name + "   |   " + country.continent + "   |   "
+                        + country.region + "   |   " + country.population + "   |   " + country.capital);
 
                 countries.add(country);
             }
@@ -58,16 +63,16 @@ public class ListAllCountries {
         ArrayList<Country> countries = new ArrayList<>();
         try
         {
-            System.out.println("**************************");
+            System.out.println("******************************************************************************");
             System.out.println(" -- " + continent.toUpperCase() + " -- ");
-            System.out.println("Country    |    Population");
+            System.out.println("Code   |   Country   |   Continent   |   Region   |   Population   |   Capital");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Name`, `Population`"
+                    "SELECT `Code`, `Name`, `Continent`, `Region`, `Population`, `Capital`"
                             + "FROM country "
                             + "WHERE Continent = '" + continent + "'"
                             + "ORDER BY Population DESC";
@@ -80,9 +85,14 @@ public class ListAllCountries {
             while (result_set.next())
             {
                 Country country = new Country();
+                country.code = result_set.getString("Code");
                 country.name = result_set.getString("Name");
+                country.continent = result_set.getString("Continent");
+                country.region = result_set.getString("Region");
                 country.population = result_set.getInt("Population");
-                System.out.println(country.name + "   |   " + country.population);
+                country.capital = result_set.getString("Capital");
+                System.out.println(country.code + "   |   " + country.name + "   |   " + country.continent + "   |   "
+                        + country.region + "   |   " + country.population + "   |   " + country.capital);
 
                 countries.add(country);
             }
@@ -104,16 +114,16 @@ public class ListAllCountries {
         ArrayList<Country> countries = new ArrayList<>();
         try
         {
-            System.out.println("**************************");
+            System.out.println("******************************************************************************");
             System.out.println(" -- " + region.toUpperCase() + " -- ");
-            System.out.println("Country    |    Population");
+            System.out.println("Code   |   Country   |   Continent   |   Region   |   Population   |   Capital");
 
             // Create an SQL statement
             Statement statement = connection.createStatement();
 
             // Create string for SQL statement
             String stringSelect =
-                    "SELECT `Name`, `Population`"
+                    "SELECT `Code`, `Name`, `Continent`, `Region`, `Population`, `Capital`"
                             + "FROM country "
                             + "WHERE Region = '" + region + "'"
                             + "ORDER BY Population DESC";
@@ -126,9 +136,15 @@ public class ListAllCountries {
             while (result_set.next())
             {
                 Country country = new Country();
+                country.code = result_set.getString("Code");
                 country.name = result_set.getString("Name");
+                country.continent = result_set.getString("Continent");
+                country.region = result_set.getString("Region");
                 country.population = result_set.getInt("Population");
-                System.out.println(country.name + "   |   " + country.population);
+                country.capital = result_set.getString("Capital");
+                System.out.println(country.code + "   |   " + country.name + "   |   " + country.continent + "   |   "
+                        + country.region + "   |   " + country.population + "   |   " + country.capital);
+
                 countries.add(country);
             }
             System.out.println("\n");

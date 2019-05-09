@@ -16,7 +16,6 @@ public class Extras
     /**
      * Request - World pop
      */
-
     public static ArrayList<Country> worldPop(Connection connection)
     {
         ArrayList<Country> worldPopulation = new ArrayList<Country>();
