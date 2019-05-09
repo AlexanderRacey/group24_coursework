@@ -49,10 +49,17 @@ jobs:
     # Package the Application.
     - mvn package -DskipTests=true -Dmaven.javadoc.skip=true
     before_deploy:
+<<<<<<< HEAD
     # Set our Git user name and email.
     - git config --local user.name "Jonathan Binns"
     - git config --local user.email "40311703@live.napier.ac.uk"
     # Create unique tag for the commit.
+=======
+    # Set up git user name and tag this commit
+    - git config --local user.name "jonny-binns"
+    - git config --local user.email "40311703@napier.ac.uk"
+    # Create temporary tag from date and Git log.
+>>>>>>> parent of aef17a1... Updated: changed name on travis
     - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y-%m-%d')-$(git log --format=%h -1)}
     # Tag the commit.
     - git tag $TRAVIS_TAG
